@@ -1,3 +1,6 @@
+/*
+andres diaz
+*/
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
 
@@ -689,4 +692,5 @@ footer {
         flex-direction: column; /* Dirección vertical */
         gap: 1rem;         /* Espaciado reducido */
     }
+
 }
