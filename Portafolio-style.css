@@ -1,0 +1,692 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+
+nav {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 { font-size: 1.8rem; font-weight: bold; }
+nav ul { list-style: none; display: flex; gap: 2rem; }
+nav a { color: white; text-decoration: none; transition: color 0.3s; }
+nav a:hover { color: #3498db; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* SECCIÓN INICIO */
+.seccion-inicio {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 120px 20px;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.fondo-inicio { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+
+.circulo { position: absolute; border-radius: 50%; opacity: 0.1; animation: flotacion 20s infinite ease-in-out; }
+.circulo-1 { width: 300px; height: 300px; top: -50px; left: -100px; background: rgba(255, 255, 255, 0.5); }
+.circulo-2 { width: 200px; height: 200px; bottom: -50px; right: 10%; background: rgba(255, 255, 255, 0.3); animation-delay: 2s; }
+.circulo-3 { width: 150px; height: 150px; top: 50%; right: -50px; background: rgba(255, 255, 255, 0.4); animation-delay: 4s; }
+
+
+
+.contenido-inicio { position: relative; z-index: 2; max-width: 800px; animation: aparecer-arriba 1s ease-out; }
+
+
+.contenedor-texto { margin-bottom: 40px; }
+
+.titulo-inicio {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+.subtitulo-inicio {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: deslizar-abajo 1s ease-out 0.2s both;
+}
+
+.botones-inicio {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: deslizar-abajo 1.4s ease-out 0.6s both;
+}
+
+/* BOTONES */
+.boton {
+    display: inline-block;
+    padding: 14px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.boton-primario {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #667eea;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.boton-primario:hover {
+    background-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.boton-secundario:hover {
+    background-color: white;
+    color: #667eea;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* SECCIÓN ACERCA DE */
+.about {
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+}
+
+.about h3 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.about-image { text-align: center; }
+.about-image img { width: 300px; height: 300px; border-radius: 50%; border: 5px solid #667eea; object-fit: cover; }
+.contacto-info { margin-top: 20px; font-size: 0.95rem; color: #555; }
+.contacto-info p { margin: 10px 0; }
+.contacto-info a { color: #667eea; text-decoration: none; font-weight: 600; }
+.contacto-info a:hover { text-decoration: underline; }
+
+/* SECCIÓN INICIO */
+.seccion-inicio {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 120px 20px;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.fondo-inicio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.circulo {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+    animation: flotacion 20s infinite ease-in-out;
+}
+
+.circulo-1 { width: 300px; height: 300px; top: -50px; left: -100px; background: rgba(255, 255, 255, 0.5); }
+.circulo-2 { width: 200px; height: 200px; bottom: -50px; right: 10%; background: rgba(255, 255, 255, 0.3); animation-delay: 2s; }
+.circulo-3 { width: 150px; height: 150px; top: 50%; right: -50px; background: rgba(255, 255, 255, 0.4); animation-delay: 4s; }
+
+@keyframes flotacion { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(20px); } }
+
+.contenido-inicio { position: relative; z-index: 2; max-width: 800px; animation: aparecer-arriba 1s ease-out; }
+
+@keyframes aparecer-arriba { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+.contenedor-texto { margin-bottom: 40px; }
+
+.titulo-inicio {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+    animation: deslizar-abajo 0.8s ease-out;
+}
+
+@keyframes deslizar-abajo { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+
+.subtitulo-inicio {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.95);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: deslizar-abajo 1s ease-out 0.2s both;
+}
+
+.descripcion-inicio {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.8;
+    font-weight: 300;
+    animation: deslizar-abajo 1.2s ease-out 0.4s both;
+}
+
+.botones-inicio {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: deslizar-abajo 1.4s ease-out 0.6s both;
+}
+
+/* BOTONES */
+.boton {
+    display: inline-block;
+    padding: 14px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.boton-primario {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #667eea;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.boton-primario:hover {
+    background-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.boton-secundario {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.boton-secundario:hover {
+    background-color: white;
+    color: #667eea;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.desplazamiento-inicio {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    animation: aparecer-arriba 2s ease-out 1s both;
+}
+
+.desplazamiento-inicio .flecha { animation: rebote 2s infinite; }
+
+@keyframes rebote { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+
+/* ============================================ */
+/* SECCIÓN ACERCA DE (ABOUT) */
+/* ============================================ */
+
+/* Estilos de la sección about */
+.about {
+    padding: 80px 20px;      /* Espaciado vertical y horizontal */
+    background-color: #f8f9fa; /* Fondo gris muy claro */
+}
+
+/* Título h3 en la sección about */
+.about h3 {
+    font-size: 2.5rem;  /* Tamaño de fuente grande */
+    margin-bottom: 2rem; /* Espaciado inferior */
+    color: #2c3e50;     /* Color azul oscuro */
+    text-align: center; /* Texto centrado */
+}
+
+/* Contenedor con dos columnas en la sección about */
+.about-content {
+    display: grid;      /* Activa CSS Grid */
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 3rem;         /* Espaciado entre columnas */
+    align-items: center; /* Alineación vertical centrada */
+}
+
+/* Párrafos en la sección de texto about */
+.about-text p {
+    margin-bottom: 1.5rem; /* Espaciado entre párrafos */
+    font-size: 1.1rem;    /* Tamaño de fuente ligeramente mayor */
+    line-height: 1.8;     /* Espaciado entre líneas */
+    color: #555;         /* Color gris más oscuro */
+}
+
+/* Contenedor de la imagen de perfil */
+.about-image {
+    text-align: center; /* Texto centrado */
+}
+
+/* Imagen de perfil */
+.about-image img {
+    width: 300px;       /* Ancho */
+    height: 300px;      /* Alto (imagen cuadrada) */
+    border-radius: 50%; /* Hace la imagen circular */
+    border: 5px solid #667eea; /* Borde azul */
+    object-fit: cover;  /* Asegura que la imagen llene el contenedor */
+}
+
+/* ============================================ */
+/* SECCIÓN PROYECTOS (PROJECTS) */
+/* ============================================ */
+
+/* Estilos de la sección projects */
+.projects {
+    padding: 80px 20px; /* Espaciado vertical y horizontal */
+}
+
+/* Título h3 en la sección projects */
+.projects h3 {
+    font-size: 2.5rem;  /* Tamaño de fuente grande */
+    margin-bottom: 3rem; /* Espaciado inferior */
+    color: #2c3e50;     /* Color azul oscuro */
+    text-align: center; /* Texto centrado */
+}
+
+/* Grid que contiene las tarjetas de proyectos */
+.project-grid {
+    display: grid;      /* Activa CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas con mínimo 300px */
+    gap: 2rem;         /* Espaciado entre tarjetas */
+}
+
+/* Tarjeta individual de proyecto */
+.project-card {
+    background: white;  /* Fondo blanco */
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    overflow: hidden;   /* Oculta contenido que sobresale */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra sutil */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+/* Efecto hover en las tarjetas de proyecto */
+.project-card:hover {
+    transform: translateY(-10px); /* Se eleva 10 píxeles */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2); /* Sombra más pronunciada */
+}
+
+/* Sección superior de la tarjeta de proyecto (imagen) */
+.project-image {
+    width: 100%;        /* Ancho completo */
+    height: 200px;      /* Altura fija */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradiente azul-morado */
+    display: flex;      /* Activa flexbox */
+    align-items: center; /* Alineación vertical centrada */
+    justify-content: center; /* Alineación horizontal centrada */
+    color: white;       /* Texto en blanco */
+    font-size: 3rem;    /* Tamaño del emoji/icono */
+}
+
+/* Sección inferior de la tarjeta de proyecto (contenido) */
+.project-content {
+    padding: 1.5rem;    /* Espaciado interno */
+}
+
+/* Título h4 en la tarjeta de proyecto */
+.project-content h4 {
+    color: #2c3e50;     /* Color azul oscuro */
+    margin-bottom: 0.5rem; /* Espaciado inferior */
+    font-size: 1.3rem;  /* Tamaño de fuente */
+}
+
+/* Descripción en la tarjeta de proyecto */
+.project-content p {
+    color: #666;        /* Color gris */
+    margin-bottom: 1rem; /* Espaciado inferior */
+    font-size: 0.95rem; /* Tamaño de fuente ligeramente menor */
+}
+
+/* ============================================ */
+/* TAGS DE PROYECTO */
+/* ============================================ */
+
+/* Contenedor de los tags en una tarjeta */
+.project-tags {
+    display: flex;      /* Activa flexbox */
+    flex-wrap: wrap;    /* Los elementos se envuelven en la siguiente línea */
+    gap: 0.7rem;       /* Espaciado entre tags */
+}
+
+/* Estilos individuales de un tag */
+.tag {
+    background-color: #e8f1f8; /* Fondo azul muy claro */
+    color: #667eea;    /* Color azul */
+    padding: 0.5rem 1rem; /* Espaciado interno */
+    border-radius: 20px; /* Bordes muy redondeados (forma de pastilla) */
+    font-size: 0.85rem; /* Tamaño de fuente pequeño */
+    font-weight: bold;  /* Texto en negrita */
+    display: inline-flex; /* Flexbox en línea */
+    align-items: center; /* Alineación vertical centrada */
+    gap: 0.4rem;       /* Espaciado entre icono y texto */
+    transition: all 0.3s; /* Transición suave para todos los cambios */
+    border: 2px solid transparent; /* Borde transparente (preparado para hover) */
+}
+
+/* Efecto hover en los tags */
+.tag:hover {
+    background-color: #667eea; /* Fondo azul */
+    color: white;      /* Texto blanco */
+    transform: translateY(-2px); /* Se eleva ligeramente */
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3); /* Sombra azulada */
+}
+
+/* Icono dentro de un tag */
+.tech-icon {
+    font-size: 1rem;    /* Tamaño del emoji/icono */
+    display: inline-block; /* Elemento en línea con dimensiones */
+}
+
+/* ============================================ */
+/* SECCIÓN HABILIDADES (SKILLS) */
+/* ============================================ */
+
+/* Estilos de la sección skills */
+.skills {
+    padding: 80px 20px;     /* Espaciado vertical y horizontal */
+    background-color: #f8f9fa; /* Fondo gris muy claro */
+}
+
+/* Título h3 en la sección skills */
+.skills h3 {
+    font-size: 2.5rem;  /* Tamaño de fuente grande */
+    margin-bottom: 3rem; /* Espaciado inferior */
+    color: #2c3e50;     /* Color azul oscuro */
+    text-align: center; /* Texto centrado */
+}
+
+/* Grid que contiene las tarjetas de habilidades */
+.skills-grid {
+    display: grid;      /* Activa CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 2.5rem;       /* Espaciado entre tarjetas */
+}
+
+/* Tarjeta individual de habilidad */
+.skill-item {
+    background: white;  /* Fondo blanco */
+    padding: 2.5rem 2rem; /* Espaciado interno */
+    border-radius: 12px; /* Bordes redondeados */
+    text-align: center; /* Texto centrado */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Sombra */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Transiciones suaves */
+    border: 2px solid transparent; /* Borde transparente (preparado para hover) */
+}
+
+/* Efecto hover en las tarjetas de habilidad */
+.skill-item:hover {
+    transform: translateY(-8px); /* Se eleva 8 píxeles */
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2); /* Sombra azulada más pronunciada */
+    border-color: #667eea; /* Borde azul */
+    background-color: #f8fbff; /* Fondo azul muy claro */
+}
+
+/* Icono de la categoría de habilidad */
+.skill-icon {
+    font-size: 4rem;    /* Tamaño grande del emoji/icono */
+    margin-bottom: 1.5rem; /* Espaciado inferior */
+    display: block;     /* Elemento en bloque (ocupa todo el ancho) */
+    animation: bounce 2s ease-in-out infinite; /* Animación de rebote infinita */
+}
+
+/* Animación acelerada del icono al hacer hover */
+.skill-item:hover .skill-icon {
+    animation: bounce 0.6s ease-in-out; /* Animación más rápida */
+}
+
+/* Título h4 en la tarjeta de habilidad */
+.skill-item h4 {
+    color: #667eea;     /* Color azul */
+    margin-bottom: 1.5rem; /* Espaciado inferior */
+    font-size: 1.4rem;  /* Tamaño de fuente */
+    font-weight: bold;  /* Texto en negrita */
+}
+
+/* ============================================ */
+/* TAGS DE HABILIDAD */
+/* ============================================ */
+
+/* Contenedor de los tags en una tarjeta de habilidad */
+.skill-tags {
+    display: flex;      /* Activa flexbox */
+    flex-wrap: wrap;    /* Los elementos se envuelven en la siguiente línea */
+    gap: 0.6rem;       /* Espaciado entre tags */
+    justify-content: center; /* Centra los tags horizontalmente */
+}
+
+/* Estilos individuales de un tag de habilidad */
+.skill-tag {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradiente azul-morado */
+    color: white;       /* Texto en blanco */
+    padding: 0.6rem 1rem; /* Espaciado interno */
+    border-radius: 20px; /* Bordes muy redondeados */
+    font-size: 0.8rem;  /* Tamaño de fuente pequeño */
+    font-weight: 600;   /* Texto en negrita */
+    display: inline-flex; /* Flexbox en línea */
+    align-items: center; /* Alineación vertical centrada */
+    gap: 0.4rem;       /* Espaciado entre icono y texto */
+    transition: all 0.3s; /* Transición suave */
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.2); /* Sombra azulada */
+}
+
+/* Efecto hover en los tags de habilidad */
+.skill-tag:hover {
+    transform: translateY(-4px) scale(1.05); /* Se eleva y agranda ligeramente */
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4); /* Sombra más pronunciada */
+}
+
+/* ============================================ */
+/* SECCIÓN CONTACTO (CONTACT) */
+/* ============================================ */
+
+/* Estilos de la sección contact */
+.contact {
+    padding: 80px 20px; /* Espaciado vertical y horizontal */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradiente azul-morado */
+    color: white;       /* Texto en blanco */
+    text-align: center; /* Texto centrado */
+}
+
+/* Título h3 en la sección contact */
+.contact h3 {
+    font-size: 2.5rem;  /* Tamaño de fuente grande */
+    margin-bottom: 2rem; /* Espaciado inferior */
+}
+
+/* Descripción en la sección contact */
+.contact p {
+    font-size: 1.2rem;  /* Tamaño de fuente grande */
+    margin-bottom: 2rem; /* Espaciado inferior */
+    opacity: 0.95;     /* Transparencia ligera */
+}
+
+/* Contenedor de los enlaces de contacto */
+.contact-links {
+    display: flex;      /* Activa flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 2rem;         /* Espaciado entre enlaces */
+    flex-wrap: wrap;    /* Los elementos se envuelven en la siguiente línea */
+}
+
+/* Enlaces en la sección contact */
+.contact-links a {
+    color: white;       /* Texto en blanco */
+    text-decoration: none; /* Sin subrayado */
+    padding: 10px 20px; /* Espaciado interno */
+    border: 2px solid white; /* Borde blanco */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: all 0.3s; /* Transición suave */
+}
+
+/* Efecto hover en los enlaces de contacto */
+.contact-links a:hover {
+    background-color: white; /* Fondo blanco */
+    color: #667eea;     /* Color azul */
+}
+
+/* ============================================ */
+/* FOOTER */
+/* ============================================ */
+
+/* Estilos del pie de página */
+footer {
+    background-color: #2c3e50; /* Fondo azul oscuro */
+    color: white;       /* Texto en blanco */
+    text-align: center; /* Texto centrado */
+    padding: 2rem;     /* Espaciado interno */
+}
+
+/* ============================================ */
+/* ANIMACIONES */
+/* ============================================ */
+
+/* Animación de entrada desde arriba (slideDown) */
+@keyframes slideDown {
+    from {
+        opacity: 0;            /* Totalmente transparente */
+        transform: translateY(-30px); /* 30 píxeles arriba */
+    }
+    to {
+        opacity: 1;            /* Totalmente opaco */
+        transform: translateY(0); /* En su posición final */
+    }
+}
+
+/* Animación de entrada desde abajo (slideUp) */
+@keyframes slideUp {
+    from {
+        opacity: 0;            /* Totalmente transparente */
+        transform: translateY(30px); /* 30 píxeles abajo */
+    }
+    to {
+        opacity: 1;            /* Totalmente opaco */
+        transform: translateY(0); /* En su posición final */
+    }
+}
+
+/* Animación de rebote vertical (bounce) */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Posición original */
+    }
+    50% {
+        transform: translateY(-10px); /* Se eleva 10 píxeles en el punto medio */
+    }
+}
+
+/* ============================================ */
+/* DISEÑO RESPONSIVO */
+/* ============================================ */
+
+/* Estilos para pantallas de 768px o menos (tablets y móviles) */
+@media (max-width: 768px) {
+    /* Navegación: reduce el espaciado entre elementos y el tamaño de fuente */
+    nav ul {
+        gap: 1rem;         /* Reduce el espaciado */
+        font-size: 0.9rem; /* Reduce el tamaño de fuente */
+    }
+
+    /* Hero: reduce el tamaño del título principal */
+    .hero-content h2 {
+        font-size: 2rem;   /* Tamaño más pequeño */
+    }
+
+    /* Hero: reduce el tamaño del párrafo descriptivo */
+    .hero-content p {
+        font-size: 1rem;   /* Tamaño más pequeño */
+    }
+
+    /* About: cambia el grid de 2 columnas a 1 columna */
+    .about-content {
+        grid-template-columns: 1fr; /* Una única columna */
+    }
+
+    /* About: reduce el tamaño de la imagen de perfil */
+    .about-image img {
+        width: 250px;      /* Ancho reducido */
+        height: 250px;     /* Alto reducido */
+    }
+
+    /* Projects: cambia el grid de 3 columnas a 1 columna */
+    .project-grid {
+        grid-template-columns: 1fr; /* Una única columna */
+    }
+
+    /* Contact: cambia los enlaces a una columna vertical */
+    .contact-links {
+        flex-direction: column; /* Dirección vertical */
+        gap: 1rem;         /* Espaciado reducido */
+    }
+}
