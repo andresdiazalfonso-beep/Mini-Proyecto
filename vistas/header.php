@@ -9,8 +9,8 @@
 </head>
 <body>
 
-<div class="flex flex-col justify-center items-center min-h-screen">
-    <div class="carousel w-full h-screen ">
+<div class="flex flex-col ">
+    <div class="carousel w-full">
   <div id="slide1" class="carousel-item relative w-full">
     <img
       src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
