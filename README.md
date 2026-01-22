@@ -1,107 +1,79 @@
-🌍 Nombre del Proyecto
+🌍 Proyecto ONG Solidaria – Donaciones para África
+📌 Descripción del proyecto
 
-Breve descripción del proyecto. Explica en 2–3 líneas qué problema aborda, a quién ayuda y cómo contribuye a la misión de la ONG.
+Este proyecto consiste en el desarrollo de una página web para una ONG solidaria, creada como trabajo de clase junto a un compañero.
+La finalidad de la web es concienciar y facilitar la ayuda solidaria, permitiendo que las personas puedan donar dinero o productos que serán destinados a ayudar a comunidades necesitadas en África.
 
-Ejemplo:
-Este proyecto tiene como objetivo mejorar el acceso a recursos educativos en comunidades vulnerables mediante el uso de tecnología y voluntariado digital.
+La página busca ser simple, clara y accesible, para que cualquier usuario pueda entender la causa y colaborar fácilmente.
 
-🧡 Sobre la ONG
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-[Nombre de la ONG] es una organización sin ánimo de lucro dedicada a [misión principal].
+🎯 Objetivos del proyecto
 
-📍 Ubicación: [País / Ciudad]
+Crear una web funcional para una ONG ficticia.
 
-🎯 Misión: [Misión de la ONG]
+Permitir donaciones de:
 
-🌱 Valores: Solidaridad, transparencia, inclusión, sostenibilidad
+💰 Dinero
+📦 Productos (ropa, alimentos, material escolar, etc.)
 
-🌐 Web: [enlace si existe]
+- Concienciar sobre la importancia de la ayuda humanitaria en África.
 
-🎯 Objetivos del Proyecto
+- Aplicar los conocimientos aprendidos en clase sobre:
 
-✔️ Objetivo 1
+- Programación web
 
-✔️ Objetivo 2
+- Validación de formularios
 
-✔️ Objetivo 3
+- Trabajo en equipo
 
-🛠️ Tecnologías Utilizadas
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Este proyecto ha sido desarrollado utilizando:
+🛠️ Tecnologías utilizadas
 
-HTML5 / CSS3
+-HTML → Estructura de la web
 
-Bootstrap
+-TAILWIND → Diseño y estilos
 
-JavaScript
+-PHP → Lógica del servidor y validaciones
 
-[Framework / Backend si aplica]
+-MySQL → Almacenamiento de datos
 
-[Base de datos si aplica]
+-XAMPP → Entorno de desarrollo local
 
-📂 Estructura del Proyecto
-📁 proyecto-ong
-├── index.html
-├── css/
-│   └── styles.css
-├── js/
-│   └── main.js
-├── assets/
-│   └── images/
-└── README.md
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-🚀 Instalación y Uso
+👥 Equipo de trabajo
 
-Clona el repositorio:
+👨‍💻 Alumno 1: (Andrés Diaz Alfonso)
 
-git clone https://github.com/usuario/proyecto-ong.git
+👨‍💻 Alumno 2: (Abel Hernandez Pereira)
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Accede al directorio del proyecto:
+🧩 Funcionalidades principales
 
-cd proyecto-ong
+-Página informativa sobre la ONG y su misión.
 
+-Formulario de donaciones monetarias.
 
-Abre el archivo index.html en tu navegador
-o ejecuta el proyecto según la tecnología utilizada.
+-Formulario de donaciones de productos.
 
-🤝 Cómo Contribuir
+-Validación de datos para evitar errores.
 
-¡Las contribuciones son bienvenidas! 💚
+-Sistema básico de usuarios y admin.
 
-Haz un fork del repositorio
+-Mensajes de confirmación y seguridad.
 
-Crea una nueva rama:
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-git checkout -b feature/nueva-funcionalidad
+🌱 Finalidad solidaria
 
+Aunque se trata de un proyecto académico, la idea está basada en una problemática real:
+Ayudar a personas y comunidades de África que carecen de recursos básicos como alimentación, educación y productos esenciales.
 
-Realiza tus cambios y haz commit
-
-Envía un Pull Request
-
-📢 Impacto Social
-
-Este proyecto contribuye a:
-
-📚 Mejorar el acceso a recursos
-
-🤲 Apoyar comunidades vulnerables
-
-🌍 Generar impacto social positivo
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 📄 Licencia
 
-Este proyecto está bajo la licencia [MIT / GPL / Apache / otra].
-Consulta el archivo LICENSE para más información.
-
-📬 Contacto
-
-Si deseas colaborar o tienes alguna pregunta:
-
-✉️ Email: [correo@ong.org
-]
-
-🌐 Web: [sitio web]
-
-📱 Redes sociales: [links]
+Proyecto realizado con fines educativos. Uso libre para aprendizaje.
