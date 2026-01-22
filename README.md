@@ -31,15 +31,15 @@ Permitir donaciones de:
 
 🛠️ Tecnologías utilizadas
 
--HTML → Estructura de la web
+- HTML → Estructura de la web
 
--TAILWIND → Diseño y estilos
+- TAILWIND → Diseño y estilos
 
--PHP → Lógica del servidor y validaciones
+- PHP → Lógica del servidor y validaciones
 
--MySQL → Almacenamiento de datos
+- MySQL → Almacenamiento de datos
 
--XAMPP → Entorno de desarrollo local
+- XAMPP → Entorno de desarrollo local
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -53,17 +53,17 @@ Permitir donaciones de:
 
 🧩 Funcionalidades principales
 
--Página informativa sobre la ONG y su misión.
+- Página informativa sobre la ONG y su misión.
 
--Formulario de donaciones monetarias.
+- Formulario de donaciones monetarias.
 
--Formulario de donaciones de productos.
+- Formulario de donaciones de productos.
 
--Validación de datos para evitar errores.
+- Validación de datos para evitar errores.
 
--Sistema básico de usuarios y admin.
+- Sistema básico de usuarios y admin.
 
--Mensajes de confirmación y seguridad.
+- Mensajes de confirmación y seguridad.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
