@@ -1,7 +1,7 @@
 🌍 Proyecto ONG Solidaria – Donaciones para África
 📌 Descripción del proyecto
 
-Este proyecto consiste en el desarrollo de una página web para una ONG solidaria, creada como trabajo de clase junto a un compañero.
+Este proyecto consiste en el desarrollo de una página web para una ONG solidaria, creada como trabajo en equipo.
 La finalidad de la web es concienciar y facilitar la ayuda solidaria, permitiendo que las personas puedan donar dinero o productos que serán destinados a ayudar a comunidades necesitadas en África.
 
 La página busca ser simple, clara y accesible, para que cualquier usuario pueda entender la causa y colaborar fácilmente.
