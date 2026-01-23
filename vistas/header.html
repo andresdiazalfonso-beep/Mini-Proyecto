@@ -8,23 +8,58 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- Contenedor del nav -->
+<nav class="relative bg-base-200 p-4">
+  <!-- Botón hamburguesa para móvil -->
+  <button id="menu-toggle" class="p-2 rounded bg-base-300">
+    <img src="../assets/menu.png" class="w-6 h-6">
+  </button>
+
+  <!-- Menú principal -->
+  <ul id="menu" class="hidden flex-col gap-4 absolute top-full left-0 w-full bg-base-100 rounded-box ">
+    <li><a href="#" class="block p-2 hover:bg-base-300 rounded">Inicio</a></li>
+    <li><a href="#" class="block p-2 hover:bg-base-300 rounded">Producto</a></li>
+    <li><a href="#" class="block p-2 hover:bg-base-300 rounded">Donar</a></li>
+    <li><a href="#" class="block p-2 hover:bg-base-300 rounded">Contacto</a></li>
+  </ul>
+</nav>
+
+
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  // Abrir/cerrar menú móvil
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+
+  // Cerrar menú si clic fuera
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+      menu.classList.add('hidden');
+    }
+  });
+</script>
+
+
+
+
+
     <div class="bg-slate-400 md:flex w-screen h-16 md:justify-center md:gap-20 md:items-center ">
-        <details>
-            <summary class="btn rounded-box  "></summary>
-            <nav class="flex gap-8 text-white">
+        <nav class="flex gap-8 text-white">
             <a href="#">Inicio</a>
             <a href="#">Producto</a>
             <a href="#">Donar</a>
             <a href="#">Contacto</a>
         </nav>
-        </details>
-            
-        </div>
-        
         <div class="md:flex md:gap-4 md:right-30 md:absolute ">
             <button class="bg-slate-300 btn btn-sm">Iniciar Sesion</button>
             <button class="bg-slate-300 btn btn-sm">Registrarse</button>
         </div>
+            
     </div>
+        
 </body>
 </html>
