@@ -54,12 +54,53 @@
             <a href="#">Donar</a>
             <a href="#">Contacto</a>
         </nav>
-        <div class="md:flex md:gap-4 md:right-30 md:absolute ">
-            <button class="bg-slate-300 btn btn-sm">Iniciar Sesion</button>
-            <button class="bg-slate-300 btn btn-sm">Registrarse</button>
-        </div>
             
     </div>
+
+<header class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <div class="text-xl font-bold">
+      Help<span class="text-orange-500 text-2xl">4</span>África
+    </div>
+
+    <!-- Botón menú (solo móvil) -->
+    <button id="menuBtn" class="md:hidden text-3xl focus:outline-none">
+      ☰
+    </button>
+
+    <!-- Menú escritorio -->
+    <nav class="hidden md:flex space-x-6">
+      <a href="#" class="hover:text-orange-500">Inicio</a>
+      <a href="#" class="hover:text-orange-500">Quiénes somos</a>
+      <a href="#" class="hover:text-orange-500">Donar</a>
+      <a href="#" class="hover:text-orange-500">Contacto</a>
+    </nav>
+  </div>
+
+  <!-- Menú móvil -->
+  <nav id="mobileMenu" class="hidden md:hidden flex flex-col items-center bg-white border-t space-x-6">
+    <a href="#" class="py-3 w-full text-center hover:bg-gray-100">Inicio</a>
+    <a href="#" class="py-3 w-full text-center hover:bg-gray-100">Quiénes somos</a>
+    <a href="#" class="py-3 w-full text-center hover:bg-gray-100">Donar</a>
+    <a href="#" class="py-3 w-full text-center hover:bg-gray-100">Contacto</a>
+  </nav>
+</header>
+
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+
+
+    
         
 </body>
 </html>
