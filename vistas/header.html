@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-
+<!-- Header -->
 <header class="bg-white shadow-md">
   <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
     <a href="#"> 
@@ -17,16 +17,12 @@
       <div>
         <img src="../assets/logo.svg" alt="Logo" class="w-10 h-10 transition-transform hover:scale-110 duration-400">
       </div>
+      <!-- Texto del logo -->
       <div class="text-xl font-bold font-serif">
       Help<span class="text-orange-500 text-2xl">4</span>África
     </div>
      </div>
     </a>
-
-    <!-- Botón menú (solo móvil) -->
-    <button id="menuBtn" class="md:hidden text-3xl focus:outline-none" aria-expanded="false">
-      <img src="../assets/boton_menu.svg" alt="Menu" class="w-8 h-8">
-    </button>
 
     <!-- Menú escritorio -->
     <nav class="hidden md:flex space-x-6 md:justify-center md:items-center font-semibold size-lg">
@@ -39,9 +35,14 @@
   </div>
 
 
-  <!-- Menú móvil -->
-   <div id="mobileMenu" class="md:hidden bg-white m-1 pb-3 font-semibold size-lg">
-    <nav class="flex flex-col w-full px-4 ">
+    <!-- Botón menú (solo móvil) -->
+    <button id="menuBtn" class="md:hidden text-3xl focus:outline-none" aria-expanded="false">
+      <img src="../assets/boton_menu.svg" alt="Menu" class="w-8 h-8">
+    </button>
+    
+    <!-- Menú móvil -->
+<div id="mobileMenu" class="md:hidden bg-white m-1 pb-3 font-semibold size-lg">
+  <nav class="flex flex-col w-full px-4 ">
     <a href="#" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Inicio</a>
     <a href="#" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Cómo Ayudar</a>
     <a href="#" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Productos</a>
@@ -59,6 +60,8 @@
 </main>
 
 
+<!-- Script para menú móvil -->
+<!-- Sirve para mostrar y ocultar el menú móvil -->
 <script>
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
