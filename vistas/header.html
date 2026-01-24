@@ -8,73 +8,28 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- Contenedor del nav -->
-<nav class="relative bg-base-200 p-4">
-  <!-- Botón hamburguesa para móvil -->
-  <button id="menu-toggle" class="p-2 rounded bg-base-300">
-    <img src="../assets/boton_menu.svg" class="w-6 h-6">
-  </button>
-
-  <!-- Menú principal -->
-  <ul id="menu" class="hidden flex-col gap-4 absolute top-full left-0 w-full bg-base-100 rounded-box ">
-    <li><a href="#" class="block p-2 hover:bg-base-300 rounded">Inicio</a></li>
-    <li><a href="#" class="block p-2 hover:bg-base-300 rounded">Producto</a></li>
-    <li><a href="#" class="block p-2 hover:bg-base-300 rounded">Donar</a></li>
-    <li><a href="#" class="block p-2 hover:bg-base-300 rounded">Contacto</a></li>
-  </ul>
-</nav>
-
-
-
-<script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const menu = document.getElementById('menu');
-
-  // Abrir/cerrar menú móvil
-  menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-
-  // Cerrar menú si clic fuera
-  document.addEventListener('click', (e) => {
-    if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
-      menu.classList.add('hidden');
-    }
-  });
-</script>
-
-
-
-
-
-    <div class="bg-slate-400 md:flex w-screen h-16 md:justify-center md:gap-20 md:items-center ">
-        <nav class="flex gap-8 text-white">
-            <a href="#">Inicio</a>
-            <a href="#">Producto</a>
-            <a href="#">Donar</a>
-            <a href="#">Contacto</a>
-        </nav>
-            
-    </div>
 
 <header class="bg-white shadow-md">
   <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
     
     <!-- Logo -->
-     <div>
-      <div class="text-xl font-bold">
+     <div class="flex gap-2 justify-center items-center">
+      <div>
+        <img src="../assets/logo.svg" alt="Logo" class="w-10 h-10">
+      </div>
+      <div class="text-xl font-bold font-serif">
       Help<span class="text-orange-500 text-2xl">4</span>África
     </div>
      </div>
     
 
     <!-- Botón menú (solo móvil) -->
-    <button id="menuBtn" class="md:hidden text-3xl focus:outline-none">
-      ☰
+    <button id="menuBtn" class="md:hidden text-3xl focus:outline-none" aria-expanded="false">
+      <img src="../assets/boton_menu.svg" alt="Menu" class="w-8 h-8">
     </button>
 
     <!-- Menú escritorio -->
-    <nav class="hidden md:flex space-x-6">
+    <nav class="hidden md:flex space-x-6 md:justify-center md:items-center">
       <a href="#" class="hover:text-orange-500">Inicio</a>
       <a href="#" class="hover:text-orange-500">Quiénes somos</a>
       <a href="#" class="hover:text-orange-500">Donar</a>
@@ -82,23 +37,40 @@
     </nav>
   </div>
 
+
   <!-- Menú móvil -->
-  <nav id="mobileMenu" class="hidden md:hidden flex flex-col items-center bg-white border-t space-x-6">
-    <a href="#" class="py-3 w-full text-center hover:bg-gray-100">Inicio</a>
-    <a href="#" class="py-3 w-full text-center hover:bg-gray-100">Quiénes somos</a>
-    <a href="#" class="py-3 w-full text-center hover:bg-gray-100">Donar</a>
-    <a href="#" class="py-3 w-full text-center hover:bg-gray-100">Contacto</a>
+   <div id="mobileMenu" class="md:hidden bg-white border-t">
+    <nav class="flex flex-col w-full px-4">
+    <a href="#" class="py-3 w-full text-left hover:text-orange-500">Inicio</a>
+    <a href="#" class="py-3 w-full text-left hover:text-orange-500">Cómo Ayudar</a>
+    <a href="#" class="py-3 w-full text-left hover:text-orange-500">Productos</a>
+    <a href="#" class="py-3 w-full text-left hover:text-orange-500">Impacto</a>
+    <a href="#" class="py-3 w-full text-left hover:text-orange-500">Contacto</a>
   </nav>
+  <a href="#" class=""><div class="btn w-full rounded-full bg-orange-500 justify-center items-center mx-3">Donar Ahora</div></a>
+</div>
 </header>
+
+
+<main class="bg-slate-400 h-full">
+
+
+</main>
 
 
 <script>
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
 
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+ menuBtn.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', !isHidden);
   });
+    document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+      mobileMenu.classList.add('hidden');
+    }
+    });
 </script>
 
 
