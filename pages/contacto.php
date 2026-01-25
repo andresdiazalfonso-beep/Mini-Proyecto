@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Document</title>
+    <title>Contacto</title>
 </head>
 <body>
 <!-- Header -->
@@ -47,7 +47,7 @@
       <p class="text-xs text-center text-gray-500">
         Al enviar este formulario aceptas nuestra política de privacidad.
       </p>
-      
+
     </form>
 
   </div>
