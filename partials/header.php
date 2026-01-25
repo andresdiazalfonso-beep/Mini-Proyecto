@@ -8,7 +8,7 @@
 </head>
 <body>
 <!-- Header -->
-<header class="bg-[#faf7f4] shadow-md">
+<header class="bg-[#faf7f4] shadow-md border-b-2 border-[#e0dad1]">
   <div class="max-w-7xl mx-auto px-3 py-4 flex justify-between items-center">
     <!-- Logo -->
     <a href="#"> 
