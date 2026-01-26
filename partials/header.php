@@ -34,7 +34,7 @@
     <!-- Botón Donar Ahora (solo escritorio) -->
     <div class="hidden md:flex gap-2">
     <a href="#"><div class="md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm">Login</div></a>
-    <a href="#"><div class="md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm">Registro</div></a>
+    <a href="#"><div class="hover md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm">Registro</div></a>
     </div>
 
 
