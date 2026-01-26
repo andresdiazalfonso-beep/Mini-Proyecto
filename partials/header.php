@@ -23,17 +23,18 @@
     </a>
 
     <!-- Menú escritorio -->
-    <nav class="hidden md:flex md:space-x-6 md:justify-center md:items-center md:font-semibold md:size-lg">
-      <a href="#" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Inicio</a>
+    <nav class="hidden md:flex md:space-x-5 md:justify-center md:items-center md:font-semibold md:size-lg">
+      <a href="../pages/index.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Inicio</a>
       <a href="#" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Cómo Ayudar</a>
       <a href="#" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Productos</a>
       <a href="#" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Impacto</a>
-      <a href="#" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Contacto</a>
+      <a href="../pages/contacto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Contacto</a>
     </nav>
 
     <!-- Botón Donar Ahora (solo escritorio) -->
-    <div class="hidden md:block">
-    <a href="#"><div class="md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm">Donar Ahora</div></a>
+    <div class="hidden md:flex gap-2">
+    <a href="#"><div class="md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm">Login</div></a>
+    <a href="#"><div class="md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm">Registro</div></a>
     </div>
 
 
