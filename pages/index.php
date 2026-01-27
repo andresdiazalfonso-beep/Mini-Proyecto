@@ -52,6 +52,11 @@
         DONA AHORA
       </button>
     </div>
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+  <button class="dot w-3 h-3 rounded-full bg-white/40"></button>
+  <button class="dot w-3 h-3 rounded-full bg-white"></button>
+    </div>
+
   </div>
 
 </div>
@@ -70,6 +75,7 @@
     showSlide(currentSlide);
   }, 5000);
 </script>
+
 
 
 
