@@ -12,7 +12,7 @@
 <?php include_once "../partials/header.php";?>
 
 <!-- Carrusel -->
- <div class="relative w-full h-[500px] overflow-hidden">
+ <div class="relative w-full h-200 overflow-hidden">
 
   <!-- Slide 1 -->
   <div class="slide absolute inset-0 bg-cover bg-center flex items-center transition-opacity duration-700 opacity-100"
