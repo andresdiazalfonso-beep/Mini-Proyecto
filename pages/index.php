@@ -77,7 +77,7 @@
 
 
 
-// Preguntas Frecuentes
+<!-- Preguntas Frecuentes -->
 <div class="max-w-7xl mx-auto px-3 py-10">
     <h1 class="text-4xl font-bold mb-6 text-center text-[#3d120d]">Preguntas Frecuentes</h1>
 
