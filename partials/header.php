@@ -33,8 +33,8 @@
 
     <!-- Botón Login y Registro (solo escritorio) -->
     <div class="hidden md:flex gap-2">
-    <a href="../pages/login.php"><div class="md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm">Login</div></a>
-    <a href="../pages/registro.php"><div class="hover md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm">Registro</div></a>
+    <a href="../pages/login.php"><div class="md:btn md:w-full md:rounded-full hover:bg-[#e36935e6] border-[#e36935e6] text-[#e36935e6] hover:text-white md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-sm">Login</div></a>
+    <a href="../pages/registro.php"><div class="hover md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 hover:bg-[#faf7f4] hover:border-[#e36935e6] hover:text-[#e36935e6] md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm">Registro</div></a>
     </div>
 
 
