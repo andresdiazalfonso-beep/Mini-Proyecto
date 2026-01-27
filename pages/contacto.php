@@ -13,10 +13,10 @@
 
 
 <!-- formulario de contacto -->
-<section class="bg-[#faf7f4] py-16">
+<section class="bg-[#FDF8F2] py-16">
   <div class="max-w-3xl mx-auto px-4">
     
-    <h1 class="text-4xl font-serif font-bold text-[#3d120d] text-center mb-4">
+    <h1 class="text-4xl font-serif font-bold text-[#4A2C2A] text-center mb-4">
       Contáctanos
     </h1>
 
