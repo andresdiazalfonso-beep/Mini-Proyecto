@@ -13,7 +13,7 @@
 
 
 <!-- formulario de contacto -->
-<section class="bg-[#FDF8F2] py-16">
+<section class="bg-white py-16">
   <div class="max-w-3xl mx-auto px-4">
     
     <h1 class="text-4xl font-serif font-bold text-[#4A2C2A] text-center mb-4">

@@ -37,7 +37,7 @@
 
   <!-- Slide 2 -->
   <div class="slide absolute inset-0 bg-cover bg-center flex items-center transition-opacity duration-700 opacity-0"
-       style="background-image:url('/img2.jpg')">
+       style="background-image:url('../assets/carrusel2.jpg')">
 
     <div class="absolute inset-0 bg-black/60"></div>
 
@@ -78,8 +78,8 @@
 
 
 <!-- Preguntas Frecuentes -->
-<div class="max-w-7xl mx-auto px-3 py-10">
-    <h1 class="text-4xl font-bold mb-6 text-center text-[#3d120d]">Preguntas Frecuentes</h1>
+<div class="max-w-7xl mx-auto px-3 py-10 mt-10">
+    <h1 class="text-4xl font-bold mb-6 text-center text-[#4A2C2A]">Preguntas Frecuentes</h1>
 
 <div class="collapse collapse-arrow bg-base-100 border border-base-300 mb-10">
   <input type="checkbox"/>
