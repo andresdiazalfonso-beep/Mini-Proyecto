@@ -14,11 +14,11 @@
 <!-- Carrusel -->
  <div class="relative w-full h-200 overflow-hidden">
 
-  <!-- Slide 1 -->
+  <!-- Carrusel 1 -->
   <div class="slide absolute inset-0 bg-cover bg-center flex items-center transition-opacity duration-700 opacity-100"
        style="background-image:url('../assets/carrusel1.jpg')">
-    
-    <!-- Overlay oscuro -->
+
+    <!-- Oscuridad Imagen -->
     <div class="absolute inset-0 bg-black/60"></div>
 
     <!-- Texto -->
@@ -29,18 +29,19 @@
       <p class="mb-6">
         Necesitan ayuda urgente.
       </p>
-      <button class="bg-yellow-400 text-black px-6 py-3 font-semibold">
-        AYÚDALOS AHORA
-      </button>
+      <a href="../pages/producto.php"><div class="btn bg-[#e36935e6]/80 text-black px-6 py-3 font-semibold rounded-full border-0">
+        Donar Productos
+      </div></a>
     </div>
   </div>
 
-  <!-- Slide 2 -->
+  <!-- Carrusel 2 -->
   <div class="slide absolute inset-0 bg-cover bg-center flex items-center transition-opacity duration-700 opacity-0"
        style="background-image:url('../assets/carrusel2.jpg')">
-
+    <!-- Oscuridad Imagen -->
     <div class="absolute inset-0 bg-black/60"></div>
-
+  
+    <!-- Texto -->
     <div class="relative z-10 max-w-xl px-10 text-white">
       <h2 class="text-4xl font-bold mb-4">
         Tu ayuda salva vidas
@@ -48,15 +49,11 @@
       <p class="mb-6">
         Cada donación cuenta.
       </p>
-      <button class="bg-yellow-400 text-black px-6 py-3 font-semibold">
-        DONA AHORA
-      </button>
+      <a href="../pages/dinero.php">
+      <div class="btn bg-[#e36935e6]/80 text-black px-6 py-3 font-semibold rounded-full border-0">
+        Donar Dinero
+      </div></a>
     </div>
-    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
-  <button class="dot w-3 h-3 rounded-full bg-white/40"></button>
-  <button class="dot w-3 h-3 rounded-full bg-white"></button>
-    </div>
-
   </div>
 
 </div>
