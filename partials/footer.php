@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <footer class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10 fixed bottom-0">
+  <footer class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10">
   <nav class="grid grid-flow-col gap-4">
     <a class="link link-hover">About us</a>
     <a class="link link-hover">Contact</a>
