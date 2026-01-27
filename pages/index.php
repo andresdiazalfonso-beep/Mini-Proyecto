@@ -29,7 +29,7 @@
       <p class="mb-6">
         Necesitan ayuda urgente.
       </p>
-      <a href="../pages/producto.php"><div class="btn bg-[#e36935e6]/70 text-black px-6 py-3 font-semibold rounded-full border-0">
+      <a href="../pages/producto.php"><div class="btn bg-[#e36935e6]/70 px-6 py-3 font-semibold rounded-full border-0 text-white/70">
         Donar Productos
       </div></a>
     </div>
@@ -50,7 +50,7 @@
         Cada donación cuenta.
       </p>
       <a href="../pages/dinero.php">
-      <div class="btn bg-[#e36935e6]/70 text-black px-6 py-3 font-semibold rounded-full border-0">
+      <div class="btn bg-[#e36935e6]/70 px-6 py-3 font-semibold rounded-full border-0 text-white/70">
         Donar Dinero
       </div></a>
     </div>
