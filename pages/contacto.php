@@ -13,7 +13,7 @@
 
 
 <!-- formulario de contacto -->
-<section class="bg-[#faf7f4] py-16">
+<section class="bg-[#faf7f4da] py-16">
   <div class="max-w-3xl mx-auto px-4">
     
     <h1 class="text-4xl font-serif font-bold text-[#3d120d] text-center mb-4">
@@ -40,13 +40,9 @@
         class="textarea textarea-bordered w-full h-32" required></textarea>
 
       <button type="submit"
-        class="btn w-full rounded-full bg-[#e36935e6] text-white hover:opacity-90">
+        class="btn w-full rounded-full bg-[#e36935e6] text-white hover:opacity-95">
         Enviar mensaje
       </button>
-
-      <p class="text-xs text-center text-gray-500">
-        Al enviar este formulario aceptas nuestra política de privacidad.
-      </p>
 
     </form>
 
