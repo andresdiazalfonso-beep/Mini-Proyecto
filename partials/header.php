@@ -26,15 +26,15 @@
     <nav class="hidden md:flex md:space-x-5 md:justify-center md:items-center md:font-semibold md:size-lg">
       <a href="../pages/index.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Inicio</a>
       <a href="../pages/producto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Productos</a>
-      <a href="#" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Dinero</a>
+      <a href="../pages/dinero.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Dinero</a>
       <a href="#" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Impacto</a>
       <a href="../pages/contacto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Contacto</a>
     </nav>
 
     <!-- Botón Login y Registro (solo escritorio) -->
     <div class="hidden md:flex gap-2">
-    <a href="#"><div class="md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm">Login</div></a>
-    <a href="#"><div class="hover md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm">Registro</div></a>
+    <a href="../pages/login.php"><div class="md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm">Login</div></a>
+    <a href="../pages/registro.php"><div class="hover md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm">Registro</div></a>
     </div>
 
 
@@ -50,14 +50,14 @@
 <div id="mobileMenu" class="hidden md:hidden bg-white m-1 pb-3 font-semibold size-lg">
   <nav class="flex flex-col w-full px-4 ">
     <a href="../pages/index.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Inicio</a>
-    <a href="../pages/productos" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Productos</a>
-    <a href="../pages/dinero" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Dinero</a>
+    <a href="../pages/productos.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Productos</a>
+    <a href="../pages/dinero.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Dinero</a>
     <a href="#" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Impacto</a>
     <a href="../pages/contacto.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Contacto</a>
   </nav>
   <!-- Botón Login y Registro (móvil) -->
-  <a href="#"><div class="btn w-full rounded-full bg-[#e36935e6] hover:opacity-90 transition-transform hover:-translate-y-0.5 duration-300 mb-2 mt-2">Login</div></a>
-  <a href="#"><div class="btn w-full rounded-full bg-[#e36935e6] hover:opacity-90 transition-transform hover:-translate-y-0.5 duration-300">Registrar</div></a>
+  <a href="../pages/login.php"><div class="btn w-full rounded-full bg-[#e36935e6] hover:opacity-90 transition-transform hover:-translate-y-0.5 duration-300 mb-2 mt-2">Login</div></a>
+  <a href="../pages/registro.php"><div class="btn w-full rounded-full bg-[#e36935e6] hover:opacity-90 transition-transform hover:-translate-y-0.5 duration-300">Registrar</div></a>
 </div>
 </header>
 
