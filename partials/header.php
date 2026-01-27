@@ -56,7 +56,8 @@
     <a href="#" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Contacto</a>
   </nav>
   <!-- Botón Donar Ahora (móvil) -->
-  <a href="#"><div class="btn w-full rounded-full bg-[#e36935e6] hover:opacity-90 transition-transform hover:-translate-y-0.5 duration-300">Donar Ahora</div></a>
+  <a href="#"><div class="btn w-full rounded-full bg-[#e36935e6] hover:opacity-90 transition-transform hover:-translate-y-0.5 duration-300">Login</div></a>
+  <a href="#"><div class="btn w-full rounded-full bg-[#e36935e6] hover:opacity-90 transition-transform hover:-translate-y-0.5 duration-300">Registrar</div></a>
 </div>
 </header>
 
