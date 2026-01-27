@@ -25,8 +25,8 @@
     <!-- Menú escritorio -->
     <nav class="hidden md:flex md:space-x-5 md:justify-center md:items-center md:font-semibold md:size-lg">
       <a href="../pages/index.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Inicio</a>
-      <a href="#" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Cómo Ayudar</a>
-      <a href="#" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Productos</a>
+      <a href="../pages/producto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Productos</a>
+      <a href="#" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Dinero</a>
       <a href="#" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Impacto</a>
       <a href="../pages/contacto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Contacto</a>
     </nav>
@@ -49,11 +49,11 @@
     <!-- Menú móvil -->
 <div id="mobileMenu" class="hidden md:hidden bg-white m-1 pb-3 font-semibold size-lg">
   <nav class="flex flex-col w-full px-4 ">
-    <a href="#" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Inicio</a>
-    <a href="#" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Cómo Ayudar</a>
-    <a href="#" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Productos</a>
+    <a href="../pages/index.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Inicio</a>
+    <a href="../pages/productos" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Productos</a>
+    <a href="../pages/dinero" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Dinero</a>
     <a href="#" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Impacto</a>
-    <a href="#" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Contacto</a>
+    <a href="../pages/contacto.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Contacto</a>
   </nav>
   <!-- Botón Login y Registro (móvil) -->
   <a href="#"><div class="btn w-full rounded-full bg-[#e36935e6] hover:opacity-90 transition-transform hover:-translate-y-0.5 duration-300 mb-2 mt-2">Login</div></a>
