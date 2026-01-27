@@ -16,7 +16,7 @@
 
   <!-- Slide 1 -->
   <div class="slide absolute inset-0 bg-cover bg-center flex items-center transition-opacity duration-700 opacity-100"
-       style="background-image:url('/img1.jpg')">
+       style="background-image:url('../assets/carrusel1.jpg')">
     
     <!-- Overlay oscuro -->
     <div class="absolute inset-0 bg-black/60"></div>
