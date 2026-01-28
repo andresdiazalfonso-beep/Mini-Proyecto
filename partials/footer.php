@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-  <footer class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10">
+  <footer class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10 bottom-0">
   <nav class="grid grid-flow-col gap-4">
     <a class="link link-hover">About us</a>
     <a class="link link-hover">Contact</a>
