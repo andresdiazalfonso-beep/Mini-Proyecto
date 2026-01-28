@@ -7,53 +7,87 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-  <footer class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10 bottom-0">
-  <nav class="grid grid-flow-col gap-4">
-    <a class="link link-hover">About us</a>
-    <a class="link link-hover">Contact</a>
-    <a class="link link-hover">Jobs</a>
-    <a class="link link-hover">Press kit</a>
-  </nav>
-  <nav>
-    <div class="grid grid-flow-col gap-4">
-      <a>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          class="fill-current">
-          <path
-            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-        </svg>
-      </a>
-      <a>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          class="fill-current">
-          <path
-            d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-        </svg>
-      </a>
-      <a>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          class="fill-current">
-          <path
-            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-        </svg>
-      </a>
+  <footer class="bg-[#5A4032] text-[#EAD9C9]">
+
+  <!-- Contenido principal -->
+  <div class="max-w-7xl mx-auto px-6 py-16 grid gap-12 md:grid-cols-3">
+
+    <!-- Logo + descripción -->
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="/logo-help4africa.png" alt="Help4África" class="h-10 w-auto">
+        
+        <!-- Texto del logo -->
+        <div class="text-xl font-bold font-serif tracking-wide text-white/80">
+        Help<span class="text-[#e36935e6] text-2xl">4</span>África
+        </div>
+      </div>
+
+      <p class="text-sm leading-relaxed text-[#D6C2AE]">
+        Trabajamos para mejorar la calidad de vida de comunidades vulnerables
+        en África mediante ayuda humanitaria y desarrollo sostenible.
+      </p>
+
+      <!-- Redes -->
+      <div class="flex gap-3 mt-6">
+        <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#6C4C3B] hover:bg-[#8B5E3C] transition">
+          <span>f</span>
+        </a>
+        <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#6C4C3B] hover:bg-[#8B5E3C] transition">
+          <span>🐦</span>
+        </a>
+        <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#6C4C3B] hover:bg-[#8B5E3C] transition">
+          <span>📸</span>
+        </a>
+        <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#6C4C3B] hover:bg-[#8B5E3C] transition">
+          <span>▶</span>
+        </a>
+      </div>
     </div>
-  </nav>
-  <aside>
-    <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
-  </aside>
+
+    <!-- Navegación -->
+    <div>
+      <h4 class="text-white font-semibold mb-4">Enlaces Rápidos</h4>
+      <ul class="space-y-3 text-sm">
+        <li><a href="#" class="hover:text-white transition">Inicio</a></li>
+        <li><a href="#" class="hover:text-white transition">Sobre Nosotros</a></li>
+        <li><a href="#" class="hover:text-white transition">Donar Productos</a></li>
+        <li><a href="#" class="hover:text-white transition">Donar Dinero</a></li>
+        <li><a href="#" class="hover:text-white transition">Impacto</a></li>
+        <li><a href="#" class="hover:text-white transition">Contacto</a></li>
+      </ul>
+    </div>
+
+    <!-- Contacto -->
+    <div>
+      <h4 class="text-white font-semibold mb-4">Contacto</h4>
+      <ul class="space-y-4 text-sm">
+        <li class="flex gap-3">
+          <span>📍</span>
+          <span>Madrid, España</span>
+        </li>
+        <li class="flex gap-3">
+          <span>📞</span>
+          <span>+34 600 123 456</span>
+        </li>
+        <li class="flex gap-3">
+          <span>✉️</span>
+          <span>help4africa@gmail.com</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Línea inferior -->
+  <div class="border-t border-[#6C4C3B]">
+    <div class="w-full py-4 text-center justify-center text-sm text-[#CDB8A5] tracking-wider">
+      <span>© 2026 Help4África. Todos los derechos reservados.</span> 
+    </div>
+  </div>
+
 </footer>
+
+
 </body>
 </html>
