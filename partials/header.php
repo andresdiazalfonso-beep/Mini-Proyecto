@@ -13,7 +13,7 @@
     <!-- Logo -->
     <a href="#"> 
     <div class="flex gap-2 justify-center items-center">
-        <img src="../assets/logo.svg" alt="Logo" class="w-10 h-10 transition-transform hover:scale-110 duration-400">
+        <img src="../assets/iconos/logo.svg" alt="Logo" class="w-10 h-10 transition-transform hover:scale-110 duration-400">
       
         <!-- Texto del logo -->
         <div class="text-xl font-bold font-serif tracking-wide text-[#3d120d]">
@@ -42,7 +42,7 @@
 
     <!-- Botón menú (solo móvil) -->
     <button id="menuBtn" class="md:hidden text-3xl focus:outline-none" aria-expanded="false">
-      <img src="../assets/boton_menu.svg" alt="Menu" class="w-8 h-8">
+      <img src="../assets/iconos/boton_menu.svg" alt="Menu" class="w-8 h-8">
     </button>
   
   </div>
