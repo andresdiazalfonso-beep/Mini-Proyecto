@@ -16,7 +16,7 @@
 
   <!-- Carrusel 1 -->
   <div class="slide absolute inset-0 bg-cover bg-center flex items-center transition-opacity duration-700 opacity-100"
-       style="background-image:url('../assets/carrusel1.jpg')">
+       style="background-image:url('../assets/imagenes/carrusel1.jpg')">
 
     <!-- Oscuridad Imagen -->
     <div class="absolute inset-0 bg-black/60"></div>
@@ -37,7 +37,7 @@
 
   <!-- Carrusel 2 -->
   <div class="slide absolute inset-0 bg-cover bg-center flex items-center transition-opacity duration-700 opacity-0"
-       style="background-image:url('../assets/carrusel2.jpg')">
+       style="background-image:url('../assets/imagenes/carrusel2.jpg')">
     <!-- Oscuridad Imagen -->
     <div class="absolute inset-0 bg-black/60"></div>
   

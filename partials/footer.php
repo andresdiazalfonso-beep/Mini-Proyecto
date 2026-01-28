@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-  <footer class="bg-[#5A4032] text-[#EAD9C9]">
+  <footer class="bg-[#5A4032] text-[#EAD9C9] w-full">
 
   <!-- Contenido principal -->
   <div class="max-w-7xl mx-auto px-6 py-16 grid gap-12 md:grid-cols-3">
@@ -16,7 +16,7 @@
     <div>
       <div class="flex items-center gap-3 mb-4">
         <img src="/logo-help4africa.png" alt="Help4África" class="h-10 w-auto">
-        
+
         <!-- Texto del logo -->
         <div class="text-xl font-bold font-serif tracking-wide text-white/80">
         Help<span class="text-[#e36935e6] text-2xl">4</span>África
@@ -46,11 +46,10 @@
     </div>
 
     <!-- Navegación -->
-    <div>
+    <div class="md:pl-30">
       <h4 class="text-white font-semibold mb-4">Enlaces Rápidos</h4>
       <ul class="space-y-3 text-sm">
         <li><a href="#" class="hover:text-white transition">Inicio</a></li>
-        <li><a href="#" class="hover:text-white transition">Sobre Nosotros</a></li>
         <li><a href="#" class="hover:text-white transition">Donar Productos</a></li>
         <li><a href="#" class="hover:text-white transition">Donar Dinero</a></li>
         <li><a href="#" class="hover:text-white transition">Impacto</a></li>
@@ -59,23 +58,41 @@
     </div>
 
     <!-- Contacto -->
-    <div>
-      <h4 class="text-white font-semibold mb-4">Contacto</h4>
-      <ul class="space-y-4 text-sm">
-        <li class="flex gap-3">
-          <span>📍</span>
-          <span>Madrid, España</span>
-        </li>
-        <li class="flex gap-3">
-          <span>📞</span>
-          <span>+34 600 123 456</span>
-        </li>
-        <li class="flex gap-3">
-          <span>✉️</span>
-          <span>help4africa@gmail.com</span>
-        </li>
-      </ul>
+<!-- Contacto -->
+<div>
+  <h4 class="text-white font-semibold mb-4">Contacto</h4>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
+
+    <!-- Datos -->
+    <ul class="space-y-4 text-sm">
+      <li class="flex gap-3">
+        <span>📍</span>
+        <span>Madrid, España</span>
+      </li>
+      <li class="flex gap-3">
+        <span>📞</span>
+        <span>+34 600 123 456</span>
+      </li>
+      <li class="flex gap-3">
+        <span>✉️</span>
+        <span>help4africa@gmail.com</span>
+      </li>
+    </ul>
+
+    <!-- Mapa -->
+    <div class="w-full h-40 rounded-lg overflow-hidden border border-[#6C4C3B]">
+      <iframe
+        class="w-full h-full"
+        src="https://www.google.com/maps?q=Av de la Arboleda, s/n, Av. Arboleda, 21440 Lepe, Huelva, España&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
+
+  </div>
+</div>
+
 
   </div>
 
