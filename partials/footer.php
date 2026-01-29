@@ -69,12 +69,12 @@
         <span>📍</span>
         <span>Madrid, España</span>
       </li>
-      <li class="flex gap-3">
+      <li class="flex gap-3 text-[#D6C2AE]">
         <img src="../assets/iconos/phone.svg" class="h-5 w-5">
         <span>+34 600 123 456</span>
       </li>
-      <li class="flex gap-3">
-        <img src="../assets/iconos/email.svg" class="h-5 w-5">
+      <li class="flex gap-3 text-[#D6C2AE]">
+        <img src="../assets/iconos/email-blanco.svg" class="h-5 w-5">
         <span>help4africa@gmail.com</span>
       </li>
     </ul>
