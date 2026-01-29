@@ -57,7 +57,6 @@
       </ul>
     </div>
 
-    <!-- Contacto -->
 <!-- Contacto -->
 <div>
   <h4 class="text-white font-semibold mb-4">Contacto</h4>
@@ -71,11 +70,11 @@
         <span>Madrid, España</span>
       </li>
       <li class="flex gap-3">
-        <span>📞</span>
+        <img src="../assets/iconos/phone.svg" class="h-5 w-5">
         <span>+34 600 123 456</span>
       </li>
       <li class="flex gap-3">
-        <span>✉️</span>
+        <img src="../assets/iconos/email.svg" class="h-5 w-5">
         <span>help4africa@gmail.com</span>
       </li>
     </ul>
@@ -89,12 +88,9 @@
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
-
   </div>
 </div>
-
-
-  </div>
+</div>
 
   <!-- Línea inferior -->
   <div class="border-t border-[#6C4C3B]">
