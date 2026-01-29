@@ -15,7 +15,7 @@
     <!-- Logo + descripción -->
     <div>
       <div class="flex items-center gap-3 mb-4">
-        <img src="../assets/iconos/logo.svg" alt="Help4África" class="h-10 w-auto">
+        <img src="../assets/iconos/logo.svg" alt="Help4África" class="w-10 h-10 transition-transform hover:scale-110 duration-400">
 
         <!-- Texto del logo -->
         <div class="text-xl font-bold font-serif tracking-wide text-white/80">
@@ -30,17 +30,17 @@
 
       <!-- Redes -->
       <div class="flex gap-3 mt-6">
-        <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#6C4C3B] hover:bg-[#8B5E3C] transition">
-          <span>f</span>
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#6C4C3B] hover:bg-[#8B5E3C] transition">
+          <img src="../assets/iconos/facebook.svg" alt="Facebook" class="w-6 h-6">
         </a>
-        <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#6C4C3B] hover:bg-[#8B5E3C] transition">
-          <span>🐦</span>
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#6C4C3B] hover:bg-[#8B5E3C] transition">
+          <img src="../assets/iconos/X_logo.svg" alt="Twitter" class="w-6 h-6">
         </a>
-        <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#6C4C3B] hover:bg-[#8B5E3C] transition">
-          <span>📸</span>
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#6C4C3B] hover:bg-[#8B5E3C] transition">
+          <img src="../assets/iconos/instagram.svg" alt="Instagram" class="w-6 h-6">
         </a>
-        <a href="#" class="w-9 h-9 flex items-center justify-center rounded-full bg-[#6C4C3B] hover:bg-[#8B5E3C] transition">
-          <span>▶</span>
+        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#6C4C3B] hover:bg-[#8B5E3C] transition">
+          <img src="../assets/iconos/youtube.svg" alt="YouTube" class="w-6 h-6">
         </a>
       </div>
     </div>
