@@ -15,7 +15,7 @@
     <!-- Logo + descripción -->
     <div>
       <div class="flex items-center gap-3 mb-4">
-        <img src="/logo-help4africa.png" alt="Help4África" class="h-10 w-auto">
+        <img src="../assets/iconos/logo.svg" alt="Help4África" class="h-10 w-auto">
 
         <!-- Texto del logo -->
         <div class="text-xl font-bold font-serif tracking-wide text-white/80">
@@ -74,7 +74,7 @@
         <span>+34 600 123 456</span>
       </li>
       <li class="flex gap-3 text-[#D6C2AE]">
-        <img src="../assets/iconos/email-blanco.svg" class="h-5 w-5">
+        <img src="../assets/iconos/email.svg" class="h-5 w-5">
         <span>help4africa@gmail.com</span>
       </li>
     </ul>
