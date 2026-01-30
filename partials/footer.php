@@ -9,7 +9,7 @@
 
 <body>
 
-<footer class="bg-[#5A4032] text-[#EAD9C9] w-full">
+<footer class="bg-[#5A4032] text-[#EAD9C9] w-full w-full relative z-[1000]">
 
   <!-- Contenido principal -->
   <div class="max-w-7xl mx-auto px-6 py-10 grid gap-12 md:grid-cols-4">
