@@ -119,9 +119,11 @@
     Ve a “Mi cuenta”, selecciona “Editar perfil” y guarda los cambios.
   </div>
 </div>
+</div>
 
 
 
 <?php include_once "../partials/footer.php";?>
+
 </body>
 </html>

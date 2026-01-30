@@ -9,10 +9,10 @@
 
 <body>
 
-<footer class="bg-[#5A4032] text-[#EAD9C9] w-full w-full relative z-[1000]">
+<footer class="bg-[#5A4032] text-[#EAD9C9] w-full relative z-[1000] pt-5 mt-20">
 
   <!-- Contenido principal -->
-  <div class="max-w-7xl mx-auto px-6 py-10 grid gap-12 md:grid-cols-4">
+  <div class="max-w-8xl mx-auto md:px-40 px-10 py-10 grid gap-12 md:grid-cols-4">
 
     <!-- Logo + descripción -->
     <div>
