@@ -80,7 +80,7 @@
 
       <ul class="space-y-4 text-sm mb-4 text-[#D6C2AE]">
         <li class="flex gap-3">
-          <span>📍</span>
+          <img src="../assets/iconos/location.svg" class="h-5 w-5">
           <span>Av de la Arboleda, s/n, Av. Arboleda, 21440 Lepe, Huelva, España</span>
         </li>
       </ul>
