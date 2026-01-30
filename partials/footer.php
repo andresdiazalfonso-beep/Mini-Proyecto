@@ -12,7 +12,7 @@
 <footer class="bg-[#5A4032] text-[#EAD9C9] w-full">
 
   <!-- Contenido principal -->
-  <div class="max-w-7xl mx-auto px-6 py-16 grid gap-12 md:grid-cols-4">
+  <div class="max-w-7xl mx-auto px-6 py-10 grid gap-12 md:grid-cols-4">
 
     <!-- Logo + descripción -->
     <div>
@@ -46,7 +46,7 @@
     </div>
 
     <!-- Enlaces rápidos -->
-    <div class="pl-12">
+    <div class="md:pl-12">
       <h4 class="text-white font-semibold mb-4">Enlaces Rápidos</h4>
       <ul class="space-y-3 text-sm">
         <li><a href="index.php" class="hover:text-orange-500 transition">Inicio</a></li>
@@ -62,11 +62,19 @@
     <div>
       <h4 class="text-white font-semibold mb-4">Contacto</h4>
       <ul class="space-y-4 text-sm text-[#D6C2AE]">
+         <li class="flex gap-3 tracking-wide">
+          <img src="../assets/iconos/collaboration.svg" class="h-5 w-5 mt-2">
+          <div>
+            <p>Andrés Diaz Alfonso</p>
+            <p>Abel Hernandez Pereira</p>
+          </div>  
+          
+        </li>
         <li class="flex gap-3">
           <img src="../assets/iconos/phone.svg" class="h-5 w-5">
             +34 600 123 456
         </li>
-        <li class="flex gap-3">
+        <li class="flex gap-3 tracking-wide">
           <img src="../assets/iconos/email.svg" class="h-5 w-5">
             help4africa@gmail.com
         </li>
