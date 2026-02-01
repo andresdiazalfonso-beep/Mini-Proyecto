@@ -2,67 +2,82 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Iniciar sesión</title>
+  <title>Iniciar Sesión</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+
+<style>
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.15); }
+}
+</style>
+
+
 </head>
-<body class="bg-base-200">
 
-<?php include_once "../partials/header.php"; ?>
+<body class="min-h-screen bg-white flex items-center justify-center px-4">
 
-<section class="min-h-screen flex items-center justify-center px-4">
-  <div class="card w-full max-w-md bg-base-100 shadow-xl">
-    <div class="card-body">
+  <div class="w-full max-w-md rounded-2xl p-8">
 
-      <h2 class="text-3xl font-extrabold text-center mb-6 text-[#4A2C2A]">
-        Iniciar sesión
-      </h2>
+    <!-- LOGO + TITULO -->
+    <div class="text-center mb-5">
+      <img src="../assets/iconos/logo.svg" alt="Logo ONG" class="w-20 mx-auto mb-4"  style="animation: latido 5s infinite; transform-origin: center;">
 
-      <form action="../controllers/loginController.php" method="POST" class="space-y-4">
-
-        <div>
-          <label class="label">Correo electrónico</label>
-          <input type="email" name="email" required
-                 class="input input-bordered w-full"
-                 placeholder="correo@ejemplo.com">
-        </div>
-
-        <div>
-          <label class="label">Contraseña</label>
-          <input type="password" name="password" required
-                 class="input input-bordered w-full"
-                 placeholder="••••••••">
-        </div>
-
-        <div class="flex justify-between items-center text-sm">
-          <label class="flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" class="checkbox checkbox-sm">
-            Recuérdame
-          </label>
-          <a href="#" class="text-[#e36935] hover:underline">
-            ¿Olvidaste tu contraseña?
-          </a>
-        </div>
-
-        <button type="submit"
-                class="btn bg-[#e36935] text-white border-0 w-full mt-4">
-          Entrar
-        </button>
-      </form>
-
-      <p class="text-center text-sm mt-6">
-        ¿No tienes cuenta?
-        <a href="registro.php" class="text-[#e36935] font-semibold hover:underline">
-          Regístrate
-        </a>
+      <h1 class="text-2xl font-extrabold text-[#4A2C2A]">
+        Iniciar Sesión
+      </h1>
+      <p class="text-sm text-gray-500 mt-1">
+        Todo por una buena causa
       </p>
-
     </div>
-  </div>
-</section>
 
-<?php include_once "../partials/footer.php"; ?>
+    <!-- SEPARADOR -->
+    <div class="flex items-center mb-5">
+        <hr class="h-0 border-b border-solid grow border-gray-200">
+    </div>
+
+    <!-- FORMULARIO -->
+    <form action="../controlador/logincontrolador.php" method="POST" class="space-y-5">
+
+      <div>
+        <label class="label text-sm font-semibold">Correo electrónico</label>
+        <input type="email" name="email" required class="input input-bordered w-full rounded-xl">
+      </div>
+
+      <div>
+        <label class="label text-sm font-semibold">Contraseña</label>
+        <input type="password" name="password" required class="input input-bordered w-full rounded-xl">
+      </div>
+
+      <div class="flex items-center text-sm">
+        <label class="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" class="checkbox checkbox-sm">
+          <span>
+            Recordar
+          </span>
+        </label>
+      </div>
+
+      <button type="submit"
+              class="btn w-full bg-[#e36935] hover:bg-[#d65f2f] border-0 text-white rounded-xl text-lg">
+        Iniciar Sesión
+      </button>
+    </form>
+
+    <!-- LOGIN -->
+    <p class="text-center text-sm mt-8 text-gray-600">
+      ¿No tienes cuenta?
+      <a href="registro.php" class="text-[#e36935] font-semibold hover:underline">
+        Regístrate aquí
+      </a>
+    </p>
+
+  </div>
 
 </body>
 </html>
