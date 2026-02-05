@@ -1,18 +1,6 @@
 <?php
-// Guardar idioma desde el select
-if (isset($_POST['idioma'])) {
-    setcookie('idioma', $_POST['idioma'], time() + 3600 * 24 * 30);
-    header("Location: " . $_SERVER['REQUEST_URI']);
-    exit();
-}
-
-// Idioma por defecto
-$idioma = $_COOKIE['idioma'] ?? 'es';
-
-// Cargar idioma
-$textos = require "../language/$idioma.php";
+include_once '../language/lenguage.php';
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,8 +45,8 @@ $textos = require "../language/$idioma.php";
       <div class="hidden lg:block">
         <form method="post">
             <select name="idioma" onchange="this.form.submit()" class="select select-sm rounded-full">
-                <option value="es" <?= $idioma === 'es' ? 'selected' : '' ?>><img src="../assets/iconos/espanol.svg" class="w-4 h-4 mr-2 inline-block">ES</option>
-                <option value="en" <?= $idioma === 'en' ? 'selected' : '' ?>><img src="../assets/iconos/ingles.svg" class="w-4 h-4 mr-2 inline-block">EN</option>
+                <option value="es" <?= $idioma === 'es' ? 'selected' : '' ?>><img src="../assets/iconos/bandera-spain.svg" class="w-4 h-4 mr-2 inline-block"></option>
+                <option value="en" <?= $idioma === 'en' ? 'selected' : '' ?>><img src="../assets/iconos/bandera-english.svg" class="w-4 h-4 mr-2 inline-block"></option>
             </select>
         </form>
       </div>
