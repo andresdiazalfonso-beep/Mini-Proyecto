@@ -38,15 +38,16 @@ include_once '../language/lenguage.php';
     <!-- Botón Login y Registro (solo escritorio) -->
     <div class="hidden md:flex gap-2">
     <a href="../pages/login.php"><div class="md:btn md:w-full md:rounded-full hover:bg-[#e36935e6] border-[#e36935e6] text-[#e36935e6] hover:text-white md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-sm"><?= $textos['login'] ?></div></a>
+    
     <a href="../pages/registro.php"><div class="hover md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 hover:bg-[#faf7f4] hover:border-[#e36935e6] hover:text-[#e36935e6] md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm"><?= $textos['registro'] ?></div></a>
     </div>
 
         <!-- Select idioma -->
-      <div class="hidden lg:block">
+      <div class="hidden md:block">
         <form method="post">
             <select name="idioma" onchange="this.form.submit()" class="select select-sm rounded-full">
-                <option value="es" <?= $idioma === 'es' ? 'selected' : '' ?>><img src="../assets/iconos/bandera-spain.svg" class="w-4 h-4 mr-2 inline-block"></option>
-                <option value="en" <?= $idioma === 'en' ? 'selected' : '' ?>><img src="../assets/iconos/bandera-english.svg" class="w-4 h-4 mr-2 inline-block"></option>
+                <option value="es" <?= $idioma === 'es' ? 'selected' : '' ?>><img src="../assets/iconos/bandera-spain.svg" class="w-4 h-4 mr-2 inline-block">Español</option>
+                <option value="en" <?= $idioma === 'en' ? 'selected' : '' ?>><img src="../assets/iconos/bandera-english.svg" class="w-4 h-4 mr-2 inline-block">English</option>
             </select>
         </form>
       </div>
@@ -72,6 +73,21 @@ include_once '../language/lenguage.php';
   <!-- Botón Login y Registro (móvil) -->
   <a href="../pages/login.php"><div class="btn w-full rounded-full hover:opacity-90 transition-transform hover:-translate-y-0.5 duration-300 mb-2 mt-2 hover:bg-[#e36935e6] border-[#e36935e6] text-[#e36935e6] hover:text-white"><?= $textos['login'] ?></div></a>
   <a href="../pages/registro.php"><div class="btn w-full rounded-full bg-[#e36935e6] hover:opacity-90 transition-transform hover:-translate-y-0.5 duration-300"><?= $textos['registro'] ?></div></a>
+
+
+          <!-- Select idioma -->
+      <div class="lg:hidden mt-4 px-2">
+  <form method="post" class="w-full">
+    <div class="flex items-center gap-2 ">
+      <!-- Select -->
+      <select name="idioma" onchange="this.form.submit()" class="w-full font-semibold text-[#3d120d] bg-white border border-[#e0dad1] px-4 py-3 shadow-sm appearance-none">
+        <option value="es" <?= $idioma === 'es' ? 'selected' : '' ?>>Español</option>
+        <option value="en" <?= $idioma === 'en' ? 'selected' : '' ?>>English</option>
+      </select>
+    </div>
+  </form>
+</div>
+
 </div>
 </header>
 
