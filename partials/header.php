@@ -53,6 +53,16 @@ $textos = require "../language/$idioma.php";
     <a href="../pages/registro.php"><div class="hover md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 hover:bg-[#faf7f4] hover:border-[#e36935e6] hover:text-[#e36935e6] md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm"><?= $textos['registro'] ?></div></a>
     </div>
 
+        <!-- Select idioma -->
+      <div class="hidden lg:block">
+        <form method="post">
+            <select name="idioma" onchange="this.form.submit()" class="select select-sm rounded-full">
+                <option value="es" <?= $idioma === 'es' ? 'selected' : '' ?>><img src="../assets/iconos/espanol.svg" class="w-4 h-4 mr-2 inline-block">ES</option>
+                <option value="en" <?= $idioma === 'en' ? 'selected' : '' ?>><img src="../assets/iconos/ingles.svg" class="w-4 h-4 mr-2 inline-block">EN</option>
+            </select>
+        </form>
+      </div>
+
 
 
 
