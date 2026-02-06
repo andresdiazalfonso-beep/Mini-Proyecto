@@ -1,10 +1,10 @@
 <?php
 return [
-    'inicio' => 'Home',
-    'productos' => 'Donate Products',
-    'dinero' => 'Donate Money',
-    'impacto' => 'Impact',
-    'contacto' => 'Contact',
+    'inicio' => 'Inicio',
+    'productos' => 'Donar Productos',
+    'dinero' => 'Donar Dinero',
+    'impacto' => 'Impacto',
+    'contacto' => 'Contacto',
     'login' => 'Login',
-    'registro' => 'Register'
+    'registro' => 'Registro'
 ];
