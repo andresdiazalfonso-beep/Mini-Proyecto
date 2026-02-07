@@ -7,10 +7,10 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="flex flex-wrap gap-6 justify-center p-10 bg-gray-100">
+<body class="gap-6 justify-center p-10 bg-gray-100">
 
-
-<div class="flex flex-wrap gap-6 justify-center">
+<div>
+  <div class="flex flex-wrap gap-6 justify-center">
     <div class="card bg-base-100 w-96 shadow-sm">
   <figure>
     <img
@@ -35,15 +35,16 @@
 <div class="card bg-base-100 w-96 shadow-sm">
   <figure>
     <img
-      src="https://www.frigicoll.es/blog/wp-content/uploads/2019/09/las-lentejas-se-ponen-en-remojo.jpg"
-      alt="Lentejas" />
+      class="h-84 w-96"
+      src="https://mercadolasaguilas.es/wp-content/uploads/2025/04/Diseno-sin-titulo-9-782x1024.jpg"
+      alt="Comida" />
   </figure>
   <div class="card-body">
     <h2 class="card-title">
-      Lentejas
-      <div class="badge badge-accent text-lg text-gray-800 font-bold"><em>450g</em></div>
+      Comida variada
+      <div class="badge badge-accent text-lg text-gray-800 font-bold"><em>500g</em></div>
     </h2>
-    <p>Unas simples lentejas caseras.<br>Un alimento muy completo.</p>
+    <p>Una variedad de alimentos.<br>Conviene tener una dieta equilibrada.</p>
     <div class="card-actions justify-end">
       <a
       href="#"
@@ -56,7 +57,7 @@
   <figure>
     <img
       src="https://okdiario.com/img/2022/02/19/palmeras-en-espana-655x368.jpg"
-      alt="Shoes" />
+      alt="Palmera" />
   </figure>
   <div class="card-body">
     <h2 class="card-title">
@@ -75,15 +76,15 @@
 <div class="card bg-base-100 w-96 shadow-sm">
   <figure>
     <img
-      src="https://www.eduardolozano.org/wp-content/uploads/2023/05/en-construccion.jpg"
-      alt="Shoes" />
+      src="https://www.pequerecetas.com/wp-content/uploads/2009/02/pures-para-bebes-de-6-meses.jpg"
+      alt="Papillas" />
   </figure>
   <div class="card-body">
     <h2 class="card-title">
-      Card Title
-      <div class="badge badge-secondary">NEW</div>
+      Papillas
+      <div class="badge badge-secondary text-lg font-bold"><em>2 botes</em></div>
     </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <p>Para los ni&ntilde;os.<br>Contienen vitaminas de diferentes frutas, correctas para su desarrollo.</p>
     <div class="card-actions justify-end">
       <a
       href="#"
@@ -91,21 +92,20 @@
       class="hover:scale-105 hover:shadow-lg hover:shadow-gray-700 transition-all duration-300 shadow-md shadow-gray-500 badge text-2xl bg-gray-200 px-5 py-4 border-2 border-orange-300 font-mono"><p class="font-bold text-shadow-lg">1€</p></a>
     </div>
   </div>
-</div>
 </div>
 <div class="flex flex-wrap gap-6 justify-center">
     <div class="card bg-base-100 w-96 shadow-sm">
   <figure>
     <img
-      src="https://www.eduardolozano.org/wp-content/uploads/2023/05/en-construccion.jpg"
-      alt="Shoes" />
+      src="https://jardinesycampos.es/502-large_default/kit-caja-de-herramienta.jpg"
+      alt="Herramientas de cultivo" />
   </figure>
   <div class="card-body">
     <h2 class="card-title">
-      Card Title
-      <div class="badge badge-secondary">NEW</div>
+      Equipo
+      <div class="badge badge-secondary text-lg font-bold"><em>5 piezas</em></div>
     </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <p>Sombrero, guantes, palas de 2 tamaños y una hazada.</p>
     <div class="card-actions justify-end">
       <a
       href="#"
@@ -114,17 +114,20 @@
     </div>
   </div>
 </div>
-<div class="card bg-base-100 w-96 shadow-sm">
+<div class="flex gap-6 justify-center">
+    <div class="card bg-base-100 w-96 shadow-sm">
   <figure>
     <img
-      src="https://www.eduardolozano.org/wp-content/uploads/2023/05/en-construccion.jpg"
-      alt="Shoes" />
+    class="h-84 object-cover"
+      src="https://www.agroboca.com/uploads/blog/produccion-artesanal-de-semillas.jpg"
+      alt="Semillas" />
   </figure>
   <div class="card-body">
     <h2 class="card-title">
-      Card Title
+      Semillas de hortaliza
+      <div class="badge badge-secondary text-lg font-bold"><em>10 semillas</em></div>
     </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <p>Algunas semillas para hortalizas de diverso tipo.<br>Pueden soprtar condiciones climáticas adversas.</p>
     <div class="card-actions justify-end">
       <a
       href="#"
@@ -133,46 +136,14 @@
     </div>
   </div>
 </div>
-<div class="card bg-base-100 w-96 shadow-sm">
-  <figure>
-    <img
-      src="https://www.eduardolozano.org/wp-content/uploads/2023/05/en-construccion.jpg"
-      alt="Shoes" />
-  </figure>
-  <div class="card-body">
-    <h2 class="card-title">
-      Card Title
-      <div class="badge badge-secondary">NEW</div>
-    </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <a
-      href="#"
-      title="Confirmar donación"
-      class="hover:scale-105 hover:shadow-lg hover:shadow-gray-700 transition-all duration-300 shadow-md shadow-gray-500 badge text-2xl bg-gray-200 px-5 py-4 border-2 border-orange-300 font-mono"><p class="font-bold text-shadow-lg">1€</p></a>
-    </div>
-  </div>
 </div>
-<div class="card bg-base-100 w-96 shadow-sm">
-  <figure>
-    <img
-      src="https://www.eduardolozano.org/wp-content/uploads/2023/05/en-construccion.jpg"
-      alt="Shoes" />
-  </figure>
-  <div class="card-body">
-    <h2 class="card-title">
-      Card Title
-      <div class="badge badge-secondary">NEW</div>
-    </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <a
-      href="#"
-      title="Confirmar donación"
-      class="hover:scale-105 hover:shadow-lg hover:shadow-gray-700 transition-all duration-300 shadow-md shadow-gray-500 badge text-2xl bg-gray-200 px-5 py-4 border-2 border-orange-300 font-mono"><p class="font-bold text-shadow-lg">1€</p></a>
-    </div>
-  </div>
 </div>
+
+<div class="flex flex-row g-10 text-center">
+  <p>Todo donativo realizado est&aacute; 100% destinado a la ayuda y mantenimiento de la vida sudafricana, 
+    agradecemos su ayuda tanto el equipo dedicado a esto, como las cientas de personas salvadas diariamente 
+    gracias a las donaciones que nos llegan y le podemos hacer llegar.<br>Gracias de todo corazón.
+  </p>
 </div>
    
 </body>
