@@ -182,7 +182,7 @@
 
 <!-- Preguntas Frecuentes -->
 <div class="max-w-7xl mx-auto px-3 py-10 mt-10">
-    <h1 class="text-4xl font-bold mb-6 text-center text-[#4A2C2A]">Preguntas Frecuentes</h1>
+    <h1 class="text-4xl font-bold mb-10 mt-12 text-center text-[#4A2C2A]"><?= $textos['faq_title'] ?></h1>
 
 <div class="collapse collapse-arrow bg-base-100 border border-base-300 mb-10">
   <input type="checkbox"/>
