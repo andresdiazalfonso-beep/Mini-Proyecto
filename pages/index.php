@@ -99,7 +99,7 @@
 
   <!-- QUÉ HACEMOS -->
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-    <img src="../assets/imagenes/que-hacemos.jpg"
+    <img src="../assets/iconos/"
          alt="Qué hacemos"
          class="rounded-xl shadow-lg object-cover w-full h-[320px]">
 
@@ -123,8 +123,8 @@
 </section>
 
 
-<!-- ================= CÓMO DONAR (MOBILE FIRST) ================= -->
-<section class="bg-[#fdf4ef] py-12">
+<!-- ================= CÓMO DONAR ================= -->
+<section class="bg-[#e36935e6]/20 py-20">
   <div class="max-w-7xl mx-auto px-4">
 
     <!-- Título -->
@@ -141,9 +141,9 @@
 
       <!-- DONAR PRODUCTOS -->
       <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-        <img src="../assets/imagenes/donar-productos.jpg"
+        <img src="../assets/iconos/products.svg"
              alt="Donar productos"
-             class="w-full h-48 object-cover">
+             class="w-full h-48 mt-3">
 
         <div class="p-6 text-center">
           <h3 class="text-xl font-bold mb-2">Donar productos</h3>
@@ -159,9 +159,9 @@
 
       <!-- DONAR DINERO -->
       <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-        <img src="../assets/imagenes/donar-dinero.jpg"
+        <img src="../assets/iconos/donate.svg"
              alt="Donar dinero"
-             class="w-full h-48 object-cover">
+             class="w-full h-48 mt-3">
 
         <div class="p-6 text-center">
           <h3 class="text-xl font-bold mb-2">Donar dinero</h3>
@@ -190,33 +190,29 @@
     ¿Cuál es el destino de mi ayuda?
   </div>
   <div class="collapse-content text-sm">
-    Acción contra el Hambre se compromete a comunicarse con las personas e instituciones que hagan aportaciones finalistas, destinadas a proyectos concretos, sobre el proyecto o actividad apoyada y sus resultados.<br><br>
+  Tus donaciones, ya sean productos o dinero, se destinan a programas de nutrición, seguridad alimentaria, acceso a agua potable, salud y desarrollo comunitario. Garantizamos transparencia y publicamos informes periódicos sobre cómo se usan los recursos. 
+</div>
+</div>
 
-    Tus donaciones llegarán a proyectos de lucha contra las causas y los efectos del hambre. Salvarán la vida de niños y niñas desnutridos, y garantizarán a las familias acceso a agua segura, alimentos, formación y cuidados básicos de salud. En España trabajamos contra el desempleo y por la inclusión sociolaboral de personas con dificultades de acceso al mercado de trabajo.<br><br>    
+<div class="collapse collapse-arrow bg-base-100 border border-base-300 mb-10">
+  <input type="checkbox" />
+  <div class="collapse-title font-semibold">
+    ¿Cómo puedo donar dinero?
+  </div>
+  <div class="collapse-content text-sm">
+    Puedes donar mediante tarjeta de crédito/débito, transferencia bancaria o plataformas en línea. También ofrecemos donaciones recurrentes. Todas las donaciones reciben un comprobante oficial.
 
-    Gracias a tus donaciones a nuestra ONG, llevamos ayuda a más de 26 millones de personas.<br><br>
-
-    Así repartimos los fondos que recibimos según nuestros ejes de actuación: seguridad alimentaria y medios de vida (44% de los fondos), agua, saneamiento & higiene (2% de los fondos), salud (6% de los fondos), nutrición (17% de los fondos), inclusión social (8% de los fondos), reducción de riesgos de desastres (7% de los fondos) e incidencia (2% de los fondos)<br><br>
   </div>
 </div>
 
 <div class="collapse collapse-arrow bg-base-100 border border-base-300 mb-10">
   <input type="checkbox" />
   <div class="collapse-title font-semibold">
-    Olvidé mi contraseña, ¿qué hago?
+  Quiero donar algo que no está en la lista, ¿puedo hacerlo?
   </div>
   <div class="collapse-content text-sm">
-    Haz clic en “¿Olvidaste tu contraseña?” en la página de inicio de sesión y sigue las instrucciones.
-  </div>
-</div>
+  Contáctanos en la pagina de Contacto y revisaremos si podemos aceptarlo. Siempre valoramos la generosidad y buscamos aprovechar todas las donaciones de manera responsable.
 
-<div class="collapse collapse-arrow bg-base-100 border border-base-300 mb-10">
-  <input type="checkbox" />
-  <div class="collapse-title font-semibold">
-    ¿Cómo actualizo mi información personal?
-  </div>
-  <div class="collapse-content text-sm">
-    Ve a “Mi cuenta”, selecciona “Editar perfil” y guarda los cambios.
   </div>
 </div>
 </div>
