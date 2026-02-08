@@ -12,7 +12,7 @@
 <?php include_once "../partials/header.php";?>
 
 <!-- ================= CARRUSEL ================= -->
-<div class="relative w-full h-[500px] overflow-hidden mb-20">
+<div class="relative w-full h-200 overflow-hidden mb-20">
 
     <!-- Slide 1 -->
     <div class="slide absolute inset-0 bg-cover bg-center flex items-center transition-opacity duration-700 opacity-100"
@@ -82,7 +82,7 @@ setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; showSlide(current
 </section>
 
 <!-- ================= CÓMO DONAR ================= -->
-<section class="bg-[#e36935e6]/20 py-20">
+<section class="bg-[#e36935e6]/20 py-10">
     <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-10">
             <h2 class="text-3xl sm:text-4xl font-bold text-[#4A2C2A] mb-4"><?= $textos['como_ayudar_titulo'] ?></h2>
