@@ -46,8 +46,6 @@
 
 </div>
 
-
-
 <!-- ================= QUIÉNES SOMOS ================= -->
 <section class="max-w-7xl mx-auto px-4 py-16 space-y-20 mb-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
