@@ -66,7 +66,6 @@ include_once '../language/lenguage.php';
     <a href="../pages/index.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['inicio'] ?></a>
     <a href="../pages/producto.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['productos'] ?></a>
     <a href="../pages/dinero.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['dinero'] ?></a>
-    <a href="#" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['impacto'] ?></a>
     <a href="../pages/contacto.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['contacto'] ?></a>
   </nav>
   <!-- Botón Login y Registro (móvil) -->

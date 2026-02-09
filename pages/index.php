@@ -46,14 +46,7 @@
 
 </div>
 
-<script>
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slide');
-function showSlide(index) {
-    slides.forEach((slide,i)=>slide.style.opacity = i===index?'1':'0');
-}
-setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; showSlide(currentSlide); },5000);
-</script>
+
 
 <!-- ================= QUIÉNES SOMOS ================= -->
 <section class="max-w-7xl mx-auto px-4 py-16 space-y-20 mb-10">
