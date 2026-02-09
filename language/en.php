@@ -39,6 +39,28 @@ return [
     'donar_dinero_titulo' => 'Donate money',
     'donar_dinero_texto' => 'Help us respond quickly where it’s needed most.',
 
+    // Impact
+    'impacto_label' => 'Our Impact',
+    'impacto_titulo' => 'Together We Are Transforming Africa',
+    'impacto_subtitulo' => 'Every donation has a real and measurable impact on the communities we serve',
+
+    'impacto_card1_titulo' => 'Food Security',
+    'impacto_card1_texto' => 'Sustainable agriculture programs and food distribution reaching more than 5,000 families every month.',
+    'impacto_card1_numero' => '50,000+',
+    'impacto_card1_footer' => 'Meals served',
+
+    'impacto_card2_titulo' => 'Education for All',
+    'impacto_card2_texto' => 'We build schools, train teachers, and provide school supplies to children in rural areas.',
+    'impacto_card2_numero' => '3,200',
+    'impacto_card2_footer' => 'Children in schools',
+
+    'impacto_card3_titulo' => 'Clean Water',
+    'impacto_card3_texto' => 'We install wells and purification systems to ensure access to safe drinking water.',
+    'impacto_card3_numero' => '120',
+    'impacto_card3_footer' => 'Wells built',
+
+
+
     // Preguntas Frecuentes
     'faq_title' => 'Frequently Asked Questions',
     'faq_destino' => 'Where does my donation go?',

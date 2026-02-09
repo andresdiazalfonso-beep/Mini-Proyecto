@@ -22,7 +22,7 @@
             <h2 class="text-4xl font-bold mb-4"><?= $textos['carrusel1_titulo'] ?></h2>
             <p class="mb-6"><?= $textos['carrusel1_texto'] ?></p>
             <a href="../pages/producto.php">
-                <div class="btn bg-[#e36935e6]/80 px-6 py-3 font-semibold rounded-full border-0 text-white/70">
+                <div class="btn bg-[#e36935e6]/80 px-6 py-3 font-semibold rounded-full border-0 text-white/70 transition-transform hover:-translate-y-0.5 duration-300">
                     <?= $textos['carrusel1_boton'] ?>
                 </div>
             </a>
@@ -37,7 +37,7 @@
             <h2 class="text-4xl font-bold mb-4"><?= $textos['carrusel2_titulo'] ?></h2>
             <p class="mb-6"><?= $textos['carrusel2_texto'] ?></p>
             <a href="../pages/dinero.php">
-                <div class="btn bg-[#e36935e6]/80 px-6 py-3 font-semibold rounded-full border-0 text-white/70">
+                <div class="btn bg-[#e36935e6]/80 px-6 py-3 font-semibold rounded-full border-0 text-white/70 transition-transform hover:-translate-y-0.5 duration-300">
                     <?= $textos['carrusel2_boton'] ?>
                 </div>
             </a>
@@ -72,21 +72,22 @@
     </div>
 </section>
 
+
 <!-- ================= CÓMO DONAR ================= -->
-<section class="bg-[#e36935e6]/20 py-10">
+<section class="bg-[#e36935e6]/10 py-10">
     <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-10">
+        <div class="text-center mb-16">
             <h2 class="text-3xl sm:text-4xl font-bold text-[#4A2C2A] mb-4"><?= $textos['como_ayudar_titulo'] ?></h2>
             <p class="text-gray-700 max-w-md mx-auto"><?= $textos['como_ayudar_texto'] ?></p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-26 max-w-3xl mx-auto my-10">
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <img src="../assets/iconos/productosdonar.svg" alt="Donar productos" class="w-full h-48 mt-3">
                 <div class="p-6 text-center">
                     <h3 class="text-xl font-bold mb-2"><?= $textos['donar_productos_titulo'] ?></h3>
                     <p class="text-sm text-gray-600 mb-5"><?= $textos['donar_productos_texto'] ?></p>
-                    <a href="../pages/producto.php" class="btn w-full py-3 rounded-full bg-[#e36935e6]/80 text-white text-base"><?= $textos['productos'] ?></a>
+                    <a href="../pages/producto.php" class="btn w-full py-3 rounded-full bg-[#e36935e6]/80 text-white text-base transition-transform hover:-translate-y-0.5 duration-300"><?= $textos['productos'] ?></a>
                 </div>
             </div>
 
@@ -95,12 +96,115 @@
                 <div class="p-6 text-center">
                     <h3 class="text-xl font-bold mb-2"><?= $textos['donar_dinero_titulo'] ?></h3>
                     <p class="text-sm text-gray-600 mb-5"><?= $textos['donar_dinero_texto'] ?></p>
-                    <a href="../pages/dinero.php" class="btn w-full py-3 rounded-full bg-[#e36935e6]/80 text-white text-base"><?= $textos['dinero'] ?></a>
+                    <a href="../pages/dinero.php" class="btn w-full py-3 rounded-full bg-[#e36935e6]/80 text-white text-base transition-transform hover:-translate-y-0.5 duration-300"><?= $textos['dinero'] ?></a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+
+<!-- ================= NUESTRO IMPACTO ================= -->
+<section class="bg-white py-20">
+
+  <!-- Encabezado -->
+  <div class="max-w-7xl mx-auto px-4 text-center mb-16">
+    <span class="uppercase tracking-widest text-sm text-orange-500 font-semibold">
+      Nuestro impacto
+    </span>
+
+    <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6 text-[#4A2C2A]">
+      Juntos Estamos Transformando África
+    </h2>
+
+    <p class="text-gray-600 max-w-2xl mx-auto">
+      Cada donación tiene un impacto real y medible en las comunidades que servimos.
+    </p>
+  </div>
+
+  <!-- Tarjetas -->
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+
+    <!-- Seguridad Alimentaria -->
+    <div class="relative rounded-3xl overflow-hidden shadow-lg">
+      <img src="../assets/imagenes/impacto1.jpg"
+           alt="Seguridad Alimentaria"
+           class="w-full h-full">
+
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-6 text-white">
+        <h3 class="text-xl font-bold mb-2">
+          Seguridad Alimentaria
+        </h3>
+
+        <p class="text-sm mb-4">
+          Programas de agricultura sostenible y distribución de alimentos que llegan
+          a más de 5,000 familias cada mes.
+        </p>
+
+        <div class="text-orange-400 text-2xl font-bold">
+          50,000+
+        </div>
+        <span class="text-sm">
+          Comidas servidas
+        </span>
+      </div>
+    </div>
+
+    <!-- Educación -->
+    <div class="relative rounded-3xl overflow-hidden shadow-lg">
+      <img src="../assets/imagenes/impacto2.jpg"
+           alt="Educación para Todos"
+           class="w-full h-full object-cover">
+
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-6 text-white">
+        <h3 class="text-xl font-bold mb-2">
+          Educación para Todos
+        </h3>
+
+        <p class="text-sm mb-4">
+          Construimos escuelas, formamos maestros y proporcionamos material escolar
+          a niños en zonas rurales.
+        </p>
+
+        <div class="text-orange-400 text-2xl font-bold">
+          3,200
+        </div>
+        <span class="text-sm">
+          Niños en escuelas
+        </span>
+      </div>
+    </div>
+
+    <!-- Agua -->
+    <div class="relative rounded-3xl overflow-hidden shadow-lg">
+      <img src="../assets/imagenes/impacto3.jpg"
+           alt="Agua Limpia"
+           class="w-full h-full object-cover">
+
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-6 text-white">
+        <h3 class="text-xl font-bold mb-2">
+          Agua Limpia
+        </h3>
+
+        <p class="text-sm mb-4">
+          Instalamos pozos y sistemas de purificación para garantizar acceso
+          a agua potable segura.
+        </p>
+
+        <div class="text-orange-400 text-2xl font-bold">
+          120
+        </div>
+        <span class="text-sm">
+          Pozos construidos
+        </span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
 
 <!-- ================= PREGUNTAS FRECUENTES ================= -->
 <div class="max-w-7xl mx-auto px-3 py-10 mt-10">
