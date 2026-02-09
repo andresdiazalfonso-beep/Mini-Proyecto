@@ -19,12 +19,12 @@ return [
 
     // Sección Quiénes somos
     'quienes_somos_titulo' => '¿Quiénes somos?',
-    'quienes_somos_texto1' => 'Somos una organización comprometida con la lucha contra el hambre y la desnutrición infantil. Trabajamos cada día para brindar apoyo a comunidades vulnerables, garantizando el acceso a alimentos, agua potable y atención básica de salud.',
-    'quienes_somos_texto2' => 'Creemos que ningún niño debería sufrir hambre. Por eso, unimos esfuerzos con personas solidarias para generar un impacto real y duradero.',
+    'quienes_somos_texto1' => 'Somos una organización comprometida con la lucha del hambre, la falta de acceso a agua potable, educación y recursos básicos. Trabajamos cada día para brindar apoyo a comunidades vulnerables en África, garantizando el acceso a alimentos, agua potable y atención básica de salud.',
+    'quienes_somos_texto2' => 'Creemos en la solidaridad y en el poder de las personas para generar un cambio real. Por eso trabajamos de manera honesta y comprometida, conectando a personas solidarias con quienes más lo necesitan.',
 
     // Sección Qué hacemos
     'que_hacemos_titulo' => '¿Qué hacemos?',
-    'que_hacemos_texto' => 'Desarrollamos programas de nutrición, seguridad alimentaria y acceso a agua segura. Atendemos emergencias humanitarias y acompañamos a familias en procesos de recuperación y desarrollo.',
+    'que_hacemos_texto' => 'Trabajamos para brindar apoyo humanitario a comunidades africanas a través de donaciones de productos esenciales y aportes económicos, asegurando que cada ayuda llegue de manera eficiente y responsable.',
     'que_hacemos_lista1' => 'Atención nutricional a niños y niñas',
     'que_hacemos_lista2' => 'Distribución de alimentos',
     'que_hacemos_lista3' => 'Acceso a agua potable',

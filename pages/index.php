@@ -15,7 +15,7 @@
 <div class="relative w-full h-200 overflow-hidden mb-20">
 
     <!-- Slide 1 -->
-    <div class="slide absolute inset-0 bg-cover bg-center flex items-center transition-opacity duration-700 opacity-100"
+    <div class="slide absolute inset-0 bg-cover bg-center flex items-center transition-opacity opacity-100"
          style="background-image:url('../assets/imagenes/carrusel1.jpg')">
         <div class="absolute inset-0 bg-black/60"></div>
         <div class="relative z-10 max-w-xl px-10 text-white ml-10">
@@ -45,6 +45,16 @@
     </div>
 
 </div>
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+function showSlide(index) {
+    slides.forEach((slide,i)=>slide.style.opacity = i===index?'1':'0');
+}
+setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; showSlide(currentSlide); },5000);
+</script>
+
+
 
 <!-- ================= QUIÉNES SOMOS ================= -->
 <section class="max-w-7xl mx-auto px-4 py-16 space-y-20 mb-10">

@@ -20,12 +20,12 @@ return [
 
     // Sección Quiénes somos
     'quienes_somos_titulo' => 'Who we are',
-    'quienes_somos_texto1' => 'We are an organization committed to fighting hunger and child malnutrition. Every day we work to support vulnerable communities, ensuring access to food, clean water, and basic healthcare.',
-    'quienes_somos_texto2' => 'We believe no child should suffer from hunger. That’s why we join forces with generous people to create a real and lasting impact.',
+    'quienes_somos_texto1' => 'We are an organization committed to fighting hunger, lack of access to clean water, education, and basic resources. We work every day to support vulnerable communities in Africa, ensuring access to food, clean water, and basic healthcare.',
+    'quienes_somos_texto2' => 'We believe in solidarity and in the power of people to create real change. That is why we work in an honest and committed way, connecting compassionate people with those who need it most.',
 
     // Sección Qué hacemos
     'que_hacemos_titulo' => 'What we do',
-    'que_hacemos_texto' => 'We develop nutrition programs, food security, and access to safe water. We respond to humanitarian emergencies and support families in recovery and development processes.',
+    'que_hacemos_texto' => 'We work to provide humanitarian support to African communities through donations of essential products and financial contributions, ensuring that every form of aid reaches its destination efficiently and responsibly.',
     'que_hacemos_lista1' => 'Nutritional care for children',
     'que_hacemos_lista2' => 'Food distribution',
     'que_hacemos_lista3' => 'Access to clean water',
@@ -39,7 +39,7 @@ return [
     'donar_dinero_titulo' => 'Donate money',
     'donar_dinero_texto' => 'Help us respond quickly where it’s needed most.',
 
-    // Impact
+    // Impacto
     'impacto_label' => 'Our Impact',
     'impacto_titulo' => 'Together We Are Transforming Africa',
     'impacto_subtitulo' => 'Every donation has a real and measurable impact on the communities we serve',
