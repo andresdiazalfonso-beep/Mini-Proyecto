@@ -57,18 +57,18 @@ setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; showSlide(current
 
 
 <!-- ================= QUIÉNES SOMOS ================= -->
-<section class="max-w-7xl mx-auto px-4 py-16 space-y-20 mb-10">
+<section class="max-w-7xl mx-auto px-4 py-16 space-y-20 mb-30 mt-30">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
             <h2 class="text-4xl font-bold text-[#4A2C2A] mb-10"><?= $textos['quienes_somos_titulo'] ?></h2>
             <p class="text-base text-gray-700 mb-4"><?= $textos['quienes_somos_texto1'] ?></p>
             <p class="text-base text-gray-700"><?= $textos['quienes_somos_texto2'] ?></p>
         </div>
-        <img src="../assets/imagenes/quienes-somos.jpg" alt="Quiénes somos" class="rounded-xl shadow-lg object-cover w-full h-[320px]">
+        <img src="../assets/imagenes/quien_somos.jpg" alt="Quiénes somos" class="rounded-xl shadow-lg object-cover w-full h-[320px]">
     </div>
-
+<!--================= QUÉ HACEMOS ================= -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <img src="../assets/imagenes/que-hacemos.jpg" alt="Qué hacemos" class="rounded-xl shadow-lg object-cover w-full h-[320px]">
+        <img src="../assets/imagenes/impacto1.jpg" alt="Qué hacemos" class="rounded-xl shadow-lg object-cover w-full h-[320px]">
         <div>
             <h2 class="text-4xl font-bold text-[#4A2C2A] mb-10"><?= $textos['que_hacemos_titulo'] ?></h2>
             <p class="text-base text-gray-700 mb-4"><?= $textos['que_hacemos_texto'] ?></p>
