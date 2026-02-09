@@ -91,7 +91,7 @@ setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; showSlide(current
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                <img src="../assets/iconos/products.svg" alt="Donar productos" class="w-full h-48 mt-3">
+                <img src="../assets/iconos/productosdonar.svg" alt="Donar productos" class="w-full h-48 mt-3">
                 <div class="p-6 text-center">
                     <h3 class="text-xl font-bold mb-2"><?= $textos['donar_productos_titulo'] ?></h3>
                     <p class="text-sm text-gray-600 mb-5"><?= $textos['donar_productos_texto'] ?></p>
@@ -100,7 +100,7 @@ setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; showSlide(current
             </div>
 
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                <img src="../assets/iconos/donate.svg" alt="Donar dinero" class="w-full h-48 mt-3">
+                <img src="../assets/iconos/money.svg" alt="Donar dinero" class="w-full h-48 mt-3">
                 <div class="p-6 text-center">
                     <h3 class="text-xl font-bold mb-2"><?= $textos['donar_dinero_titulo'] ?></h3>
                     <p class="text-sm text-gray-600 mb-5"><?= $textos['donar_dinero_texto'] ?></p>
