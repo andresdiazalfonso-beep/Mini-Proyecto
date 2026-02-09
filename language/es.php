@@ -38,27 +38,6 @@ return [
     'donar_dinero_titulo' => 'Donar dinero',
     'donar_dinero_texto' => 'Ayúdanos a responder rápido donde más se necesita.',
 
-    // Impacto
-    'impacto_label' => 'Nuestro impacto',
-    'impacto_titulo' => 'Juntos Estamos Transformando África',
-    'impacto_subtitulo' => 'Cada donación tiene un impacto real y medible en las comunidades que servimos',
-
-    'impacto_card1_titulo' => 'Seguridad Alimentaria',
-    'impacto_card1_texto' => 'Programas de agricultura sostenible y distribución de alimentos que llegan a más de 5,000 familias cada mes.',
-    'impacto_card1_numero' => '50,000+',
-    'impacto_card1_footer' => 'Comidas servidas',
-
-    'impacto_card2_titulo' => 'Educación para Todos',
-    'impacto_card2_texto' => 'Construimos escuelas, formamos maestros y proporcionamos material escolar a niños en zonas rurales.',
-    'impacto_card2_numero' => '3,200',
-    'impacto_card2_footer' => 'Niños en escuelas',
-
-    'impacto_card3_titulo' => 'Agua Limpia',
-    'impacto_card3_texto' => 'Instalamos pozos y sistemas de purificación para garantizar acceso a agua potable segura.',
-    'impacto_card3_numero' => '120',
-    'impacto_card3_footer' => 'Pozos construidos',
-
-
     // Preguntas Frecuentes
     'faq_title' => 'Preguntas Frecuentes',
     'faq_destino' => '¿Cuál es el destino de mi ayuda?',
