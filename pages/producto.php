@@ -89,7 +89,7 @@
       <a
       href="#"
       title="Confirmar donación"
-      class="hover:scale-105 hover:shadow-lg hover:shadow-gray-700 transition-all duration-300 shadow-md shadow-gray-500 badge text-2xl bg-gray-200 px-5 py-4 border-2 border-orange-300 font-mono"><p class="font-bold text-shadow-lg">1€</p></a>
+      class="hover:scale-105 hover:shadow-lg hover:shadow-gray-700 transition-all duration-300 shadow-md shadow-gray-500 badge text-2xl bg-gray-200 px-5 py-4 border-2 border-orange-300 font-mono"><p class="font-bold text-shadow-lg">1.50€</p></a>
     </div>
   </div>
 </div>
@@ -110,7 +110,7 @@
       <a
       href="#"
       title="Confirmar donación"
-      class="hover:scale-105 hover:shadow-lg hover:shadow-gray-700 transition-all duration-300 shadow-md shadow-gray-500 badge text-2xl bg-gray-200 px-5 py-4 border-2 border-orange-300 font-mono"><p class="font-bold text-shadow-lg">1€</p></a>
+      class="hover:scale-105 hover:shadow-lg hover:shadow-gray-700 transition-all duration-300 shadow-md shadow-gray-500 badge text-2xl bg-gray-200 px-5 py-4 border-2 border-orange-300 font-mono"><p class="font-bold text-shadow-lg">4€</p></a>
     </div>
   </div>
 </div>
@@ -132,7 +132,7 @@
       <a
       href="#"
       title="Confirmar donación"
-      class="hover:scale-105 hover:shadow-lg hover:shadow-gray-700 transition-all duration-300 shadow-md shadow-gray-500 badge text-2xl bg-gray-200 px-5 py-4 border-2 border-orange-300 font-mono"><p class="font-bold text-shadow-lg">1€</p></a>
+      class="hover:scale-105 hover:shadow-lg hover:shadow-gray-700 transition-all duration-300 shadow-md shadow-gray-500 badge text-2xl bg-gray-200 px-5 py-4 border-2 border-orange-300 font-mono"><p class="font-bold text-shadow-lg">1.20€</p></a>
     </div>
   </div>
 </div>
