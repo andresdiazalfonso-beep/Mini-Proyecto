@@ -6,18 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-
-<style>
-@keyframes latido {
-  0%, 100% { transform: scale(1); }
-  25% { transform: scale(1.2); }
-  50% { transform: scale(1); }
-  75% { transform: scale(1.15); }
-}
-</style>
-
-
 </head>
 
 <body class="min-h-screen bg-white flex items-center justify-center px-4">
@@ -26,7 +14,7 @@
 
     <!-- LOGO + TITULO -->
     <div class="text-center mb-5">
-      <img src="../assets/iconos/logo.svg" alt="Logo ONG" class="w-20 mx-auto mb-4"  style="animation: latido 5s infinite; transform-origin: center;">
+      <img src="../assets/iconos/logo.svg" alt="Logo ONG" class="w-20 mx-auto mb-4 animate-pulse">
 
       <h1 class="text-2xl font-extrabold text-[#4A2C2A]">
         Crear una cuenta
