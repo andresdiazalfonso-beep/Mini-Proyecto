@@ -8,7 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="gap-6 justify-center p-10 bg-gray-100">
-
 <div>
   <div class="flex flex-wrap gap-6 justify-center">
     <div class="card bg-base-100 w-96 shadow-sm">
