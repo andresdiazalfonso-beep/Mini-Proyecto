@@ -1,7 +1,16 @@
 <?php
 include_once '../language/lenguage.php';
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Inicio</title>
+</head>
+<body>
 <!-- Header -->
 <header class="bg-[#faf7f4] shadow-md border-b-2 border-[#e0dad1] fixed top-0 left-0 right-0 z-50">
   <!-- Cambié a 'fixed' y añadí z-50 para que quede sobre el contenido -->
@@ -39,8 +48,8 @@ include_once '../language/lenguage.php';
     <div class="hidden md:flex md:items-center">
       <form method="post">
         <select name="idioma" onchange="this.form.submit()" class="select select-sm rounded-full">
-          <option value="es" <?= $idioma === 'es' ? 'selected' : '' ?>>Español</option>
-          <option value="en" <?= $idioma === 'en' ? 'selected' : '' ?>>English</option>
+          <option value="es" <?= $idioma === 'es' ? 'selected' : '' ?>><img src="../assets/iconos/bandera-spain.svg" class="w-5 h-5">Español</option>
+          <option value="en" <?= $idioma === 'en' ? 'selected' : '' ?>><img src="../assets/iconos/bandera-english.svg" class="w-5 h-5">English</option>
         </select>
       </form>
     </div>
@@ -90,3 +99,5 @@ document.addEventListener('click', (e) => {
   }
 });
 </script>
+</body>
+</html>
