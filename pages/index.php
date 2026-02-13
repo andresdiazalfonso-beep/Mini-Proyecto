@@ -72,11 +72,23 @@ setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; showSlide(current
         <div>
             <h2 class="text-4xl font-bold text-[#4A2C2A] mb-10"><?= $textos['que_hacemos_titulo'] ?></h2>
             <p class="text-base text-gray-700 mb-4"><?= $textos['que_hacemos_texto'] ?></p>
-            <ul class="list-disc list-inside text-gray-700 space-y-2">
-                <li class=""><?= $textos['que_hacemos_lista1'] ?></li>
-                <li><?= $textos['que_hacemos_lista2'] ?></li>
-                <li><?= $textos['que_hacemos_lista3'] ?></li>
-                <li><?= $textos['que_hacemos_lista4'] ?></li>
+            <ul class="list-none text-gray-700 space-y-2 ml-16">
+                <li class="flex items-center gap-2">
+                    <img src="../assets/iconos/bandera-spain.svg" class="w-2 h-2">
+                    <?= $textos['que_hacemos_lista1'] ?>
+                </li>
+                <li class="flex items-center gap-2">
+                    <img src="../assets/iconos/bandera-spain.svg" class="w-2 h-2">
+                    <?= $textos['que_hacemos_lista2'] ?>
+                </li>
+                <li class="flex items-center gap-2">
+                    <img src="../assets/iconos/bandera-spain.svg" class="w-2 h-2">
+                    <?= $textos['que_hacemos_lista3'] ?>
+                </li>
+                <li class="flex items-center gap-2">
+                    <img src="../assets/iconos/bandera-spain.svg" class="w-2 h-2">
+                    <?= $textos['que_hacemos_lista4'] ?>
+                </li>
             </ul>
         </div>
     </div>
