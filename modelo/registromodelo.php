@@ -3,7 +3,7 @@ function sanear($datos){
     return htmlspecialchars(trim($datos));
 }
 
-function validar_datos($datos){
+function validar_datos($datos,$conexion){
     $errores = [];
 
     if(empty($datos['nombre']) || empty($datos['email'])  || empty($datos['password']) || empty($datos['password_confirm'])){
@@ -27,11 +27,23 @@ function validar_datos($datos){
         $errores[] = "Las contraseñas no coinciden";
     }
 
-
-    //Validar si no existen correos iguales
+    //validar si existe email en la base de datos
     $sql = "SELECT id FROM usuarios WHERE email = ?";
+    $resultado = mysqli_prepare($conexion,$sql);
+    
+    if($resultado){
+        mysqli_stmt_bind_param($resultado,"s",$datos['email']);
+        mysqli_execute($resultado);
+        mysqli_store_result($resultado);
+
+        if(mysqli_stmt_num_rows($resultado) > 0){
+            $errores[] = "El correo ya esta registrado";
+        }
+    }
+    mysqli_stmt_close($resultado);
 
 
+    return $errores;
 }
 
 ?>
