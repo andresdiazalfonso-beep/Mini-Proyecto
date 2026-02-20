@@ -4,16 +4,18 @@ session_start();
 require_once "../Conexion/conexion.php";
 require_once "../modelo/registromodelo.php";
 
+$errores = [];
+
 if($_SERVER['REQUEST_METHOD'] === "POST"){
 
     $datos = [
         "nombre" => sanear($_POST['nombre']),
         "email" => sanear($_POST['email']),
         "password" => sanear($_POST['password']),
-        "password_confirm" => sanear($_POST[['password_confirm']])
+        "password_confirm" => sanear($_POST['password_confirm'])
     ];
 
-    $errores = validar($datos,$conexion);
+    $errores = validar_datos($datos,$conexion);
     $_SESSION['errores'] = $errores;
 
     if(empty($errores)){

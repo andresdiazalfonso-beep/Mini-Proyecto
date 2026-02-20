@@ -52,8 +52,10 @@ function guardar_registro($conexion,$datos){
     mysqli_stmt_bind_param($resultado,"sss",$datos['nombre'],$datos['email'],$datos['password']);
 
     if(mysqli_execute($resultado)){
+        mysqli_stmt_close($resultado);
         return true;
     }else{
+        mysqli_stmt_close($resultado);
         return false;
     }
 }

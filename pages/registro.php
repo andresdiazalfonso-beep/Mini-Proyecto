@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+$mensaje = $_SESSION['mensaje'] ?? "";
+$errores = $_SESSION['errores'] ?? [];
+unset($_SESSION['errores']);
+unset($_SESSION['mensaje']);
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -84,6 +93,13 @@
         Inicia sesión
       </a>
     </p>
+
+
+    <?php if(!empty($errores)):?>
+      <?php foreach($errores as $error):?>
+        <p class="text-red"><?= $error ?></p>
+      <?php endforeach;?>
+    <?php endif;?>
 
   </div>
 
