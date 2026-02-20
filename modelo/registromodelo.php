@@ -28,6 +28,10 @@ function validar_datos($datos){
     }
 
 
+    //Validar si no existen correos iguales
+    $sql = "SELECT id FROM usuarios WHERE email = ?";
+
+
 }
 
 ?>
