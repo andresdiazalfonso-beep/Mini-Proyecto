@@ -17,11 +17,11 @@ include_once '../language/lenguage.php';
 
   <div class="max-w-7xl mx-auto px-3 py-4 flex justify-between items-center lg:pl-20">
     <!-- Logo -->
-    <a href="#"> 
+    <a href="../pages/index.php"> 
       <div class="flex gap-2 justify-center items-center">
         <img src="../assets/iconos/logo.svg" alt="Logo" class="w-10 h-10 transition-transform hover:scale-110 duration-400">
         <div class="text-xl font-bold font-serif tracking-wide text-[#3d120d]">
-          Help<span class="text-orange-500 text-2xl">4</span>África
+          Help<span class="text-orange-500 text-2xl">4</span>&Aacute;frica
         </div>
       </div>
     </a>

@@ -11,7 +11,7 @@ require_once '..\partials\header.php'; // Incluye el header fijo
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="gap-6 justify-center p-10 bg-gray-100">
+<body class="gap-6 justify-center p-10 bg-gray-100 mt-15">
 <div>
   <div class="flex flex-wrap gap-6 justify-center">
     <div class="card bg-base-100 w-96 shadow-sm">
@@ -69,10 +69,10 @@ require_once '..\partials\header.php'; // Incluye el header fijo
   </figure>
   <div class="card-body">
     <h2 class="card-title flex justify-between">
-      Semillas de Palmera
+      &Aacute;rboles
       <div class="badge badge-success text-lg font-bold"><em>20 semillas</em></div>
     </h2>
-    <p>Un par de semillas de palmera.<br>Con algo de agua y tiempo, proporcionan sombra y enriquecen la tierra.</p>
+    <p>Semillas para clima &aacute;rido<br>Con algo de agua y tiempo, proporcionan sombra y enriquecen la tierra.</p>
     <div class="card-actions justify-end">
       <a
       href="#"
@@ -119,7 +119,7 @@ require_once '..\partials\header.php'; // Incluye el header fijo
       Equipo
       <div class="badge badge-secondary text-lg font-bold"><em>5 piezas</em></div>
     </h2>
-    <p>Sombrero, guantes, palas de 2 tamaños y una hazada.</p>
+    <p>Sombrero, guantes, palas de 2 tama&ntilde;os y una hazada.</p>
     <div class="card-actions justify-end">
       <a
       href="#"
@@ -143,7 +143,7 @@ require_once '..\partials\header.php'; // Incluye el header fijo
       Semillas de hortaliza
       <div class="badge badge-secondary text-lg font-bold"><em>30 semillas</em></div>
     </h2>
-    <p>Algunas semillas para hortalizas de diverso tipo.<br>Pueden soprtar condiciones climáticas adversas.</p>
+    <p>Algunas semillas para hortalizas de diverso tipo.<br>Pueden soprtar condiciones clim&aacute;ticas adversas.</p>
     <div class="card-actions justify-end">
       <a
       href="#"
@@ -158,7 +158,7 @@ require_once '..\partials\header.php'; // Incluye el header fijo
 </div>
 
 <div class="flex flex-row g-10 text-center">
-  <p>Todo donativo realizado estacute; 100% destinado a la ayuda y mantenimiento de la vida sudafricana, 
+  <p>Todo donativo realizado est&aacute; 100% destinado a la ayuda y mantenimiento de la vida sudafricana, 
     agradecemos su ayuda tanto el equipo dedicado a esto, como las cientas de personas salvadas diariamente 
     gracias a las donaciones que nos llegan y le podemos hacer llegar.<br>Gracias de todo corazón.
   </p>
