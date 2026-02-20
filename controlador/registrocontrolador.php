@@ -13,6 +13,10 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
     ];
 
     $errores = validar($datos);
+
+    if(empty($errores)){
+        
+    }
 }
 
 ?>

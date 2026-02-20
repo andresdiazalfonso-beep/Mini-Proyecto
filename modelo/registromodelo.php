@@ -46,4 +46,16 @@ function validar_datos($datos,$conexion){
     return $errores;
 }
 
+function guardar_registro($conexion,$datos){
+    $sql = "INSERT INTO usuarios (nombre,email,password) VALUES (?,?,?)";
+    $resultado = mysqli_prepare($sql);
+    mysqli_stmt_bind_param($resultado,"sss",$datos['nombre'],$datos['email'],$datos['password']);
+
+    if(mysqli_execute($resultado)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 ?>
