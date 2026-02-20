@@ -40,7 +40,7 @@ require_once '..\partials\header.php'; // Incluye el header fijo
 <div class="card bg-base-100 w-96 shadow-sm">
   <figure>
     <img
-      class="h-65 w-full"
+      class="h-65 w-full object-cover"
       src="https://mercadolasaguilas.es/wp-content/uploads/2025/04/Diseno-sin-titulo-9-782x1024.jpg"
       alt="Comida" />
   </figure>
