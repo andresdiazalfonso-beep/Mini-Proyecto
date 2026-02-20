@@ -13,7 +13,9 @@
 
     <!-- LOGO + TITULO -->
     <div class="text-center mb-5">
+      <a href="index.php">
       <img src="../assets/iconos/logo.svg" alt="Logo ONG" class="w-20 mx-auto mb-4 animate-pulse">
+      </a>
 
       <h1 class="text-2xl font-extrabold text-[#4A2C2A]">
         Crear una cuenta

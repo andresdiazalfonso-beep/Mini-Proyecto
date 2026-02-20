@@ -46,7 +46,7 @@
     </div>
 
     <!-- Enlaces rápidos -->
-    <div class="md:pl-30">
+    <div class="md:pl-10">
       <h4 class="text-white font-semibold mb-4">Enlaces Rápidos</h4>
       <ul class="space-y-3 text-sm">
         <li><a href="index.php" class="hover:text-orange-500 transition">Inicio</a></li>
@@ -59,7 +59,7 @@
 
     
     <!-- Contacto -->
-    <div class="md:pl-20">
+    <div>
       <h4 class="text-white font-semibold mb-4 ">Contacto</h4>
       <ul class="space-y-4 text-sm text-[#D6C2AE]">
          <li class="flex gap-3 tracking-wide">
