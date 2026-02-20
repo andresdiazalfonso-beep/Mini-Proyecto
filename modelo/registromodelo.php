@@ -6,27 +6,27 @@ function sanear($datos){
 function validar_datos($datos){
     $errores = [];
 
-    if(empty($datos['nombre'])){
-        $errores[] = "El nombre esta vacio";
+    if(empty($datos['nombre']) || empty($datos['email'])  || empty($datos['password']) || empty($datos['password_confirm'])){
+        $errores[] = "Todos los campos son obligatorios";
     }
+
     if(strlen($datos['nombre']) < 4){
         $errores[] = "El nombre debe tener almenos 4 caracteres";
     }
 
-
-    if(empty($datos['email'])){
-        $errores[] = "El correo electronico esta vacio";
-    }
     if(!filter_var($datos['email'],FILTER_VALIDATE_EMAIL)){
         $errores[] = "El correo no tiene formato";
     }
 
-    if(empty($datos['password'])){
-        $errores[] = "La contraseña esta vacia";
+    if(strlen($datos['password']) < 6){
+        $errores[] = "La contraseña debe tener almenos 6 caracteres";
     }
-    if(strlen($datos['password']) < 4){
-        $errores[] = "La contraseña debe tener almenos 4 caracteres";
+
+
+    if($datos['password'] !== $datos['password_confirm']){
+        $errores[] = "Las contraseñas no coinciden";
     }
+
 
 }
 
