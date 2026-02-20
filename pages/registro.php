@@ -61,7 +61,7 @@
 
       <div class="flex items-center text-sm">
         <label class="flex items-center gap-2 cursor-pointer">
-          <input type="checkbox" class="checkbox checkbox-sm">
+          <input type="checkbox" required class="checkbox checkbox-sm">
           <span>
             Acepto los
             <a href="#" class="text-[#e36935]">
