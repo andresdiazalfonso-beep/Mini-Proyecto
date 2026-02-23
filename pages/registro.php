@@ -46,7 +46,7 @@ unset($_SESSION['mensaje']);
         <label class="label text-sm font-semibold">Nombre</label>
         <input type="text" name="nombre" required
                class="input input-bordered w-full rounded-xl"
-               placeholder="Tu nombre completo">
+               placeholder="Nombre de Ususario">
       </div>
 
       <div>
