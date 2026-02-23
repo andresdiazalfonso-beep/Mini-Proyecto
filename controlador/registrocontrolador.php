@@ -6,19 +6,6 @@ require_once "../modelo/registromodelo.php";
 
 $errores = [];
 
-    $verificar_tabla = "SHOW TABLES LIKE 'usuarios'";
-    $resultado = mysqli_query($conexion,$verificar_tabla);
-
-    if(mysqli_num_rows($resultado) == 0){
-        $crear_tabla_usuarios = "CREATE TABLE usuarios (
-            id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-            nombre VARCHAR(100) NOT NULL,
-            email VARCHAR(100) NOT NULL,
-            password VARCHAR(255) NOT NULL
-        )";
-        mysqli_query($conexion,$crear_tabla_usuarios);
-    }
-
 if($_SERVER['REQUEST_METHOD'] === "POST"){
 
     $datos = [
