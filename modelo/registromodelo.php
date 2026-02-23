@@ -43,20 +43,6 @@ function validar_datos($datos, $conexion){
 
 
 function guardar_registro($conexion, $datos){
-    $verificar_tabla = "SHOW TABLE LIKE 'usuariosa'";
-    $resultado = mysqli_query($conexion,$verificar_tabla);
-
-    if(mysqli_num_rows($resultado) == 0){
-        $crear_tabla_usuarios = "CREATE TABLE usuarios (
-            id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-            nombre VARCHAR(100) NOT NULL,
-            email VARCHAR(100) NOT NULL UNIQUE,
-            password VARCHAR(255) NOT NULL,
-            fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )";
-        mysqli_query($conexion,$crear_tabla_usuarios);
-    }
-
 
     $sql = "INSERT INTO usuarios (nombre,email,password) VALUES (?,?,?)";
     $stmt = mysqli_prepare($conexion, $sql);
