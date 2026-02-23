@@ -11,54 +11,68 @@ require_once '..\partials\header.php'; // Incluye el header fijo
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Dinero</title>
 </head>
-<body class="mt-25">
-<div class="flex-row">
-    
-</div>
-<div class="flex flex-row  gap-4">
-    <div class="flex-col card card-side bg-base-100 shadow-sm">
-    <figure>
-        <img
-        src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-        alt="Movie" />
-    </figure>
-    <div class="card-body">
-        <h2 class="card-title">New movie is released!</h2>
-        <p>Click the button to watch on Jetflix app.</p>
-        <div class="card-actions justify-end">
-        <button class="btn btn-primary">Watch</button>
+<body class="mt-25 mb-10">
+<div class="flex justify-center">
+    <div class="flex flex-row gap-4">
+        <div class="flex-col card card-side bg-base-100 shadow-sm pt-10 h-90">
+            <figure class="flex-row">
+                <img
+                class="rounded-lg h-40 w-40"
+                src="..\assets\iconos\shopping-basket-svgrepo-com.svg"
+                alt="Movie" />
+            </figure>
+            <div class="card-body cursor-default h-5 flex-row">
+                <div class="flex-col mt-auto">
+                    <div class="flex-row">
+                        <h2 class="card-title">New movie is released!</h2>
+                        <p>Click the button to watch on Jetflix app.</p>
+                    </div>
+                    <div class="card-actions justify-end align-bottom">
+                    <button class="btn btn-primary">Watch</button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
 
-    <div class="flex-col card card-side bg-base-100 shadow-sm">
-    <figure>
-        <img
-        src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-        alt="Movie" />
-    </figure>
-    <div class="card-body">
-        <h2 class="card-title">New movie is released!</h2>
-        <p>Click the button to watch on Jetflix app.</p>
-        <div class="card-actions justify-end">
-        <button class="btn btn-primary">Watch</button>
+        <div class="flex-col card card-side bg-base-100 shadow-sm pt-10 h-90">
+            <figure class="flex-row">
+                <img
+                class="rounded-lg h-40 w-40"
+                src="..\assets\iconos\shopping-basket-svgrepo-com.svg"
+                alt="Movie" />
+            </figure>
+            <div class="card-body cursor-default h-5 flex-row">
+                <div class="flex-col mt-auto">
+                    <div class="flex-row">
+                        <h2 class="card-title">New movie is released!</h2>
+                        <p>Click the button to watch on Jetflix app.</p>
+                    </div>
+                    <div class="card-actions justify-end align-bottom">
+                    <button class="btn btn-primary">Watch</button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
 
-    <div class="flex-col card card-side bg-base-100 shadow-sm">
-    <figure>
-        <img
-        src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-        alt="Movie" />
-    </figure>
-    <div class="card-body">
-        <h2 class="card-title">New movie is released!</h2>
-        <p>Click the button to watch on Jetflix app.</p>
-        <div class="card-actions justify-end">
-        <button class="btn btn-primary">Watch</button>
+        <div class="flex-col card card-side bg-base-100 shadow-sm pt-10 h-90">
+            <figure class="flex-row">
+                <img
+                class="rounded-lg h-40 w-40"
+                src="..\assets\iconos\shopping-basket-svgrepo-com.svg"
+                alt="Movie" />
+            </figure>
+            <div class="card-body cursor-default h-5 flex-row">
+                <div class="flex-col mt-auto">
+                    <div class="flex-row">
+                        <h2 class="card-title">New movie is released!</h2>
+                        <p>Click the button to watch on Jetflix app.</p>
+                    </div>
+                    <div class="card-actions justify-end align-bottom">
+                    <button class="btn btn-primary">Watch</button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
     </div>
 </div>
 
