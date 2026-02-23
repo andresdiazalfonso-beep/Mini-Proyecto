@@ -43,7 +43,7 @@ function validar_datos($datos, $conexion){
 
 
 function guardar_registro($conexion, $datos){
-    $verificar_tabla = "SHOW TABLE LIKE 'usuariosa'";
+    $verificar_tabla = "SHOW TABLE LIKE 'usuarios'";
     $resultado = mysqli_query($conexion,$verificar_tabla);
 
     if(mysqli_num_rows($resultado) == 0){
