@@ -6,6 +6,8 @@ $errores = $_SESSION['errores'] ?? [];
 unset($_SESSION['errores']);
 unset($_SESSION['mensaje']);
 ?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -58,32 +60,52 @@ unset($_SESSION['mensaje']);
     <!-- FORMULARIO -->
     <form action="../controlador/registrocontrolador.php" method="POST" class="space-y-5">
 
+    <!-- Nombre del usuario -->
       <div>
         <label class="label text-sm font-semibold">Nombre</label>
         <input type="text" name="nombre" required
                class="input input-bordered w-full rounded-xl"
                placeholder="Nombre de Usuario">
+          
+        <?php if(isset($errores['nombre'])): ?>
+          <p class="text-red-500 text-sm mt-1"><?= $errores['nombre'] ?></p>
+        <?php endif; ?>
       </div>
 
+    <!-- Correo Electrónico -->
       <div>
         <label class="label text-sm font-semibold">Correo electrónico</label>
         <input type="email" name="email" required
                class="input input-bordered w-full rounded-xl"
                placeholder="correo@ejemplo.com">
+          
+        <?php if(isset($errores['email'])): ?>
+          <p class="text-red-500 text-sm mt-1"><?= $errores['email'] ?></p>
+        <?php endif; ?>
       </div>
 
+    <!-- Contraseña -->
       <div>
         <label class="label text-sm font-semibold">Contraseña</label>
         <input type="password" name="password" required
                class="input input-bordered w-full rounded-xl"
                placeholder="Mínimo 6 caracteres">
+        
+        <?php if(isset($errores['password'])): ?>
+          <p class="text-red-500 text-sm mt-1"><?= $errores['password'] ?></p>
+        <?php endif; ?>
       </div>
 
+    <!-- Confirmar contraseña -->
       <div>
         <label class="label text-sm font-semibold">Confirmar contraseña</label>
         <input type="password" name="password_confirm" required
                class="input input-bordered w-full rounded-xl"
                placeholder="Repite la contraseña">
+               
+        <?php if(isset($errores['password_confirm'])): ?>
+          <p class="text-red-500 text-sm mt-1"><?= $errores['password_confirm'] ?></p>
+        <?php endif; ?>
       </div>
 
       <div class="flex items-center text-sm">

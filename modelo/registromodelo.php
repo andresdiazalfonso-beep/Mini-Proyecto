@@ -7,19 +7,19 @@ function validar_datos($datos, $conexion){
     $errores = [];
 
     if(strlen($datos['nombre']) < 4){
-        $errores[] = "El nombre debe tener al menos 4 caracteres";
+        $errores['nombre'] = "El nombre debe tener al menos 4 caracteres";
     }
 
     if(!filter_var($datos['email'],FILTER_VALIDATE_EMAIL)){
-        $errores[] = "El correo no tiene formato";
+        $errores['email'] = "El correo no tiene formato";
     }
 
     if(strlen($datos['password']) < 6){
-        $errores[] = "La contraseña debe tener al menos 6 caracteres";
+        $errores['password'] = "La contraseña debe tener al menos 6 caracteres";
     }
 
     if($datos['password'] !== $datos['password_confirm']){
-        $errores[] = "Las contraseñas no coinciden";
+        $errores['password_confirm'] = "Las contraseñas no coinciden";
     }
 
     //Validar si existe ya el email
@@ -32,7 +32,7 @@ function validar_datos($datos, $conexion){
         mysqli_stmt_store_result($stmt);
 
         if(mysqli_stmt_num_rows($stmt) > 0){
-            $errores[] = "El correo ya está registrado";
+            $errores['email'] = "El correo ya está registrado";
         }
 
         mysqli_stmt_close($stmt);
