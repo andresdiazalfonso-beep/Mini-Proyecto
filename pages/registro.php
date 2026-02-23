@@ -102,7 +102,6 @@ unset($_SESSION['mensaje']);
         <p class="text-red"><?= $error ?></p>
       <?php endforeach;?>
     <?php endif;?>
-
   </div>
 
 
