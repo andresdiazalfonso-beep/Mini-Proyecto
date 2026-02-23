@@ -12,7 +12,9 @@ require_once '..\partials\header.php'; // Incluye el header fijo
     <title>Dinero</title>
 </head>
 <body class="mt-25">
-
+<div class="flex-row">
+    
+</div>
 <div class="flex flex-row  gap-4">
     <div class="flex-col card card-side bg-base-100 shadow-sm">
     <figure>
