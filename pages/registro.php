@@ -5,7 +5,6 @@ $mensaje = $_SESSION['mensaje'] ?? "";
 $errores = $_SESSION['errores'] ?? [];
 unset($_SESSION['errores']);
 unset($_SESSION['mensaje']);
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -16,14 +15,31 @@ unset($_SESSION['mensaje']);
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="min-h-screen bg-white flex items-center justify-center px-4">
-
+<body>
+  <div class="mt-15 ml-15">
+  <!-- FLECHA VOLVER AL INICIO -->
+    <a href="index.php" class="flex items-center text-[#e36935] font-semibold mb-4 hover:underline">
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="w-5 h-5" 
+           fill="none" 
+           viewBox="0 0 24 24" 
+           stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M15 19l-7-7 7-7" />
+      </svg>
+      Volver al inicio
+    </a>
+  </div>
+  
+<!--FORMULARIO LOGIN -->
+<div class="min-h-screen bg-white flex items-center justify-center px-4">
   <div class="w-full max-w-md rounded-2xl p-8">
 
+    
     <!-- LOGO + TITULO -->
     <div class="text-center mb-5">
       <a href="index.php">
-      <img src="../assets/iconos/logo.svg" alt="Logo ONG" class="w-20 mx-auto mb-4 animate-pulse">
+        <img src="../assets/iconos/logo.svg" alt="Logo ONG" class="w-20 mx-auto mb-4 animate-pulse">
       </a>
 
       <h1 class="text-2xl font-extrabold text-[#4A2C2A]">
@@ -46,7 +62,7 @@ unset($_SESSION['mensaje']);
         <label class="label text-sm font-semibold">Nombre</label>
         <input type="text" name="nombre" required
                class="input input-bordered w-full rounded-xl"
-               placeholder="Nombre de Ususario">
+               placeholder="Nombre de Usuario">
       </div>
 
       <div>
@@ -96,14 +112,15 @@ unset($_SESSION['mensaje']);
       </a>
     </p>
 
-
+    <!-- ERRORES -->
     <?php if(!empty($errores)):?>
       <?php foreach($errores as $error):?>
-        <p class="text-red"><?= $error ?></p>
+        <p class="text-red-500 mt-2"><?= $error ?></p>
       <?php endforeach;?>
     <?php endif;?>
-  </div>
 
+  </div>
+</div>
 
 </body>
 </html>

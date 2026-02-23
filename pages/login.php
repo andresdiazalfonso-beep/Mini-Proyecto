@@ -8,8 +8,24 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="min-h-screen bg-white flex items-center justify-center px-4">
+<body>
+  <div class="mt-15 ml-15">
+  <!-- FLECHA VOLVER AL INICIO -->
+    <a href="index.php" class="flex items-center text-[#e36935] font-semibold mb-4 hover:underline">
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           class="w-5 h-5" 
+           fill="none" 
+           viewBox="0 0 24 24" 
+           stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M15 19l-7-7 7-7" />
+      </svg>
+      Volver al inicio
+    </a>
+  </div>
 
+<!--FORMULARIO LOGIN -->
+<div class="min-h-screen bg-white flex items-center justify-center px-4">
   <div class="w-full max-w-md rounded-2xl p-8">
 
     <!-- LOGO + TITULO -->
@@ -68,6 +84,6 @@
     </p>
 
   </div>
-
+</div>
 </body>
 </html>
