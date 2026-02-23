@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <div class="mt-15 ml-15">
+  <div class="pt-10 ml-15">
   <!-- FLECHA VOLVER AL INICIO -->
     <a href="index.php" class="flex items-center text-[#e36935] font-semibold mb-4 hover:underline">
       <svg xmlns="http://www.w3.org/2000/svg" 
