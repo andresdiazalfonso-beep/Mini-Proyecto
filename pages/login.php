@@ -35,7 +35,7 @@
     <form action="../controlador/logincontrolador.php" method="POST" class="space-y-5">
 
       <div>
-        <label class="label text-sm font-semibold">Correo electrónico</label>
+        <label class="label text-sm font-semibold">Nombre</label>
         <input type="email" name="email" required class="input input-bordered w-full rounded-xl">
       </div>
 
