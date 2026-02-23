@@ -133,14 +133,6 @@ unset($_SESSION['mensaje']);
         Inicia sesión
       </a>
     </p>
-
-    <!-- ERRORES -->
-    <?php if(!empty($errores)):?>
-      <?php foreach($errores as $error):?>
-        <p class="text-red-500 mt-2"><?= $error ?></p>
-      <?php endforeach;?>
-    <?php endif;?>
-
   </div>
 </div>
 
