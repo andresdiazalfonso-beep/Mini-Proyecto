@@ -6,7 +6,7 @@ require_once "../modelo/registromodelo.php";
 
 $errores = [];
 
-    $verificar_tabla = "SHOW TABLE LIKE 'usuarios'";
+    $verificar_tabla = "SHOW TABLES LIKE 'usuarios'";
     $resultado = mysqli_query($conexion,$verificar_tabla);
 
     if(mysqli_num_rows($resultado) == 0){
