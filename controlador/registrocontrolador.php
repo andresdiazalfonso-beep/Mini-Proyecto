@@ -35,8 +35,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
         $resultado = guardar_registro($conexion,$datos);
 
         if($resultado){
-            $_SESSION['mensaje'] = "Registro Correcto";
-            header("Location: ../pages/registro.php");
+            header("Location: ../pages/login.php");
             exit();
         }else{
             $_SESSION['errores'][] = "Error al registrar al usuario";
