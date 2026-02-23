@@ -6,10 +6,6 @@ function sanear($datos){
 function validar_datos($datos, $conexion){
     $errores = [];
 
-    if(empty($datos['nombre']) || empty($datos['email'])  || empty($datos['password']) || empty($datos['password_confirm'])){
-        $errores[] = "Todos los campos son obligatorios";
-    }
-
     if(strlen($datos['nombre']) < 4){
         $errores[] = "El nombre debe tener al menos 4 caracteres";
     }
