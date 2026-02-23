@@ -43,7 +43,6 @@ function validar_datos($datos, $conexion){
 
 
 function guardar_registro($conexion, $datos){
-
     $sql = "INSERT INTO usuarios (nombre,email,password) VALUES (?,?,?)";
     $stmt = mysqli_prepare($conexion, $sql);
 
