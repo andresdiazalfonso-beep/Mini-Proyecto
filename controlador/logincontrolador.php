@@ -12,10 +12,15 @@ if ($_SERVER['REQUEST_METHOD'] === "POST"){
     if($usuario){
 
         //Verificar Contraseña
-        
-
-
-
+        if(password_verify($password, $usuario['password'])){
+            $_SESSION['id_usuario'] = $usuario['id_usuario'];
+            header("Location: ../pages/index.php");
+            exit();
+        }else{
+            echo "<script>alert('Contraseña incorrecta'); window.location.href='../pages/login.php';</script>";
+        }
+    }else{
+        echo "<script>alert('Email no registrado'); window.location.href='../pages/login.php';</script>";
     }
 }
 
