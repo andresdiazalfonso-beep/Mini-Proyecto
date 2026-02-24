@@ -23,6 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === "POST"){
     }else{
        $errores['email'] = "Correo electrónico no registrado";
     }
+
+    $_SESSION['errores'] = $errores;
 }
+header("Location: ../pages/login.php");
+exit();
 
 ?>

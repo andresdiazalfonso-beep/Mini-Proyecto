@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+$errores = $_SESSION['errores'] ?? [];
+unset($_SESSION['errores']);
+
 ?>
 
 
