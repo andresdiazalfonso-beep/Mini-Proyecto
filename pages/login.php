@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -53,11 +59,19 @@
       <div>
         <label class="label text-sm font-semibold">Correo electrónico</label>
         <input type="email" name="email" required class="input input-bordered w-full rounded-xl">
+
+        <?php if(isset($errores['email'])): ?>
+          <p class="text-red-500 text-sm mt-1"><?= $errores['nombre'] ?></p>
+        <?php endif; ?>
       </div>
 
       <div>
         <label class="label text-sm font-semibold">Contraseña</label>
         <input type="password" name="password" required class="input input-bordered w-full rounded-xl">
+
+        <?php if(isset($errores['password'])): ?>
+          <p class="text-red-500 text-sm mt-1"><?= $errores['nombre'] ?></p>
+        <?php endif; ?>
       </div>
 
       <div class="flex items-center text-sm">

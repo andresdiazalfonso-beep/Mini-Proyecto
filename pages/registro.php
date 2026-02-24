@@ -60,7 +60,7 @@ unset($_SESSION['mensaje']);
     <!-- FORMULARIO -->
     <form action="../controlador/registrocontrolador.php" method="POST" class="space-y-5">
 
-    <!-- Nombre del usuario -->
+    <!-- Nombre y Apellido -->
       <div>
         <label class="label text-sm font-semibold">Nombre Completo</label>
         <input type="text" name="nombre" required

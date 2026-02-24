@@ -3,6 +3,7 @@ session_start();
 require_once "../Conexion/conexion.php";
 require_once "../modelo/loginmodelo.php";
 
+$errores = [];
 if ($_SERVER['REQUEST_METHOD'] === "POST"){
     $email = sanear($_POST['email']);
     $password = sanear($_POST['password']);
@@ -17,10 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] === "POST"){
             header("Location: ../pages/index.php");
             exit();
         }else{
-            echo "<script>alert('Contraseña incorrecta'); window.location.href='../pages/login.php';</script>";
+            $errores['password'] = "Contraseña Incorrecta";
         }
     }else{
-        echo "<script>alert('Email no registrado'); window.location.href='../pages/login.php';</script>";
+       $errores['email'] = "Correo electrónico no registrado";
     }
 }
 
