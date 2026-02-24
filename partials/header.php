@@ -50,7 +50,7 @@ include_once '../language/lenguage.php';
     <?php else:?>
       <!-- Botón de Cerrar Sesión -->
       <div class="hidden md:flex gap-1">
-      <a href="logout.php">
+      <a href="../partials/logout.php">
         <div class="md:btn md:w-full md:rounded-full hover:bg-[#e36935e6] border-[#e36935e6] text-[#e36935e6] hover:text-white md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-sm"><?= $textos['cerrar_sesion'] ?></div>
       </a>
     </div>
