@@ -61,7 +61,7 @@ unset($_SESSION['errores']);
 
       <div>
         <label class="label text-sm font-semibold">Correo electrónico</label>
-        <input type="email" name="email" required class="input input-bordered w-full rounded-xl">
+        <input type="email" name="email" required class="input input-bordered w-full rounded-xl" value="<?= isset($_COOKIE['recordar_email']) ? $_COOKIE['recordar_email'] : "" ?>">
 
         <?php if(isset($errores['email'])): ?>
           <p class="text-red-500 text-sm mt-1"><?= $errores['nombre'] ?></p>
@@ -70,7 +70,7 @@ unset($_SESSION['errores']);
 
       <div>
         <label class="label text-sm font-semibold">Contraseña</label>
-        <input type="password" name="password" required class="input input-bordered w-full rounded-xl">
+        <input type="password" name="password" required class="input input-bordered w-full rounded-xl" value="<?= isset($_COOKIE['recordar_email']) ? $_COOKIE['recordar_email'] : "" ?>">
 
         <?php if(isset($errores['password'])): ?>
           <p class="text-red-500 text-sm mt-1"><?= $errores['nombre'] ?></p>
