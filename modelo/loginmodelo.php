@@ -1,11 +1,10 @@
 <?php
-require_once "../Conexion/conexion.php";
 
 function sanear($datos){
     return htmlspecialchars(trim($datos));
 }
 
-function buscar_email($email){
+function buscar_email($email,$conexion){
     $sql = "SELECT 1 FROM usuarios WHERE email = ? LIMIT 1";
     $stmt = mysqli_prepare($conexion,$sql);
 
