@@ -23,7 +23,7 @@ function validar_datos($datos, $conexion){
     }
 
     //Validar si existe ya el email
-    $sql = "SELECT id FROM usuarios WHERE email = ?";
+    $sql = "SELECT 1 FROM usuarios WHERE email = ?";
     $stmt = mysqli_prepare($conexion, $sql);
 
     if($stmt){
