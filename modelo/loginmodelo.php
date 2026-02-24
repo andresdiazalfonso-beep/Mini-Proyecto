@@ -4,7 +4,7 @@ function sanear($datos){
     return htmlspecialchars(trim($datos));
 }
 
-function buscar_email($email,$conexion){
+function obtener_datos($email,$conexion){
     $sql = "SELECT id_usuario, nombre, email, password FROM usuarios WHERE email = ? LIMIT 1";
     $stmt = mysqli_prepare($conexion,$sql);
 
