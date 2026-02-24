@@ -62,10 +62,10 @@ unset($_SESSION['mensaje']);
 
     <!-- Nombre del usuario -->
       <div>
-        <label class="label text-sm font-semibold">Nombre</label>
+        <label class="label text-sm font-semibold">Nombre Completo</label>
         <input type="text" name="nombre" required
                class="input input-bordered w-full rounded-xl"
-               placeholder="Nombre de Usuario">
+               placeholder="Nombre y Apellido">
           
         <?php if(isset($errores['nombre'])): ?>
           <p class="text-red-500 text-sm mt-1"><?= $errores['nombre'] ?></p>
