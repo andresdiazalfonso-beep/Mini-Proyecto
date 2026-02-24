@@ -14,7 +14,7 @@ function obtener_datos($email,$conexion){
         
         $resultado = mysqli_stmt_get_result($stmt);
 
-        if($resultado && mysqli_stmt_num_rows($resultado) > 0){
+        if($resultado && mysqli_num_rows($resultado) > 0){
             $usuario = mysqli_fetch_assoc($resultado);
             mysqli_stmt_close($stmt);
             return $usuario;

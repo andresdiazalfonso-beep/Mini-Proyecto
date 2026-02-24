@@ -1,13 +1,13 @@
 <?php
 session_start();
 require_once "../Conexion/conexion.php";
-require_once "../modelo/logincontrolador.php";
+require_once "../modelo/loginmodelo.php";
 
 if ($_SERVER['REQUEST_METHOD'] === "POST"){
-    $email = sanear($_POST);
-    $password = sanear($_POST);
+    $email = sanear($_POST['email']);
+    $password = sanear($_POST['password']);
 
-    $usuario = buscar_email($email,$conexion);
+    $usuario = obtener_datos($email,$conexion);
 
     if($usuario){
 
