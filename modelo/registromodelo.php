@@ -47,7 +47,8 @@ function guardar_registro($conexion, $datos){
     $stmt = mysqli_prepare($conexion, $sql);
 
     if($stmt){
-        mysqli_stmt_bind_param($stmt, "sss", $datos['nombre'], $datos['email'], $datos['password']);
+        $hash = password_hash($datos['password'], PASSWORD_DEFAULT);
+        mysqli_stmt_bind_param($stmt, "sss", $datos['nombre'], $datos['email'],$hash);
 
         if(mysqli_stmt_execute($stmt)){
             mysqli_stmt_close($stmt);
