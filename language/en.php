@@ -7,6 +7,7 @@ return [
     'contacto' => 'Contact',
     'login' => 'Login',
     'registro' => 'Register',
+    'cerrar_sesion' => 'Logout',
 
 
    // Carrusel
