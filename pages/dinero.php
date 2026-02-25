@@ -7,73 +7,20 @@ require_once '..\partials\header.php'; // Incluye el header fijo
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        html, body {
+        background: linear-gradient(to bottom right, rgb(255, 238, 204), rgb(252, 168, 0), rgb(120, 79, 0));
+    }
+    </style>
     <title>Dinero</title>
 </head>
-<body class="mt-25 mb-10">
-<div class="flex justify-center">
-    <div class="flex flex-row gap-4">
-        <div class="flex-col card card-side bg-base-100 shadow-sm pt-10 h-90">
-            <figure class="flex-row">
-                <img
-                class="rounded-lg h-40 w-40"
-                src="..\assets\iconos\shopping-basket-svgrepo-com.svg"
-                alt="Movie" />
-            </figure>
-            <div class="card-body cursor-default h-5 flex-row">
-                <div class="flex-col mt-auto">
-                    <div class="flex-row">
-                        <h2 class="card-title">New movie is released!</h2>
-                        <p>Click the button to watch on Jetflix app.</p>
-                    </div>
-                    <div class="card-actions justify-end align-bottom">
-                    <button class="btn btn-primary">Watch</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<body class="min-h-screen pt-30 flex justify-center font-[Poppins]">
+<div class="h-100 w-200 bg-white rounded-xl shadow-2xl hover:-translate-y-2 transition-transform">
 
-        <div class="flex-col card card-side bg-base-100 shadow-sm pt-10 h-90">
-            <figure class="flex-row">
-                <img
-                class="rounded-lg h-40 w-40"
-                src="..\assets\iconos\shopping-basket-svgrepo-com.svg"
-                alt="Movie" />
-            </figure>
-            <div class="card-body cursor-default h-5 flex-row">
-                <div class="flex-col mt-auto">
-                    <div class="flex-row">
-                        <h2 class="card-title">New movie is released!</h2>
-                        <p>Click the button to watch on Jetflix app.</p>
-                    </div>
-                    <div class="card-actions justify-end align-bottom">
-                    <button class="btn btn-primary">Watch</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex-col card card-side bg-base-100 shadow-sm pt-10 h-90">
-            <figure class="flex-row">
-                <img
-                class="rounded-lg h-40 w-40"
-                src="..\assets\iconos\shopping-basket-svgrepo-com.svg"
-                alt="Movie" />
-            </figure>
-            <div class="card-body cursor-default h-5 flex-row">
-                <div class="flex-col mt-auto">
-                    <div class="flex-row">
-                        <h2 class="card-title">New movie is released!</h2>
-                        <p>Click the button to watch on Jetflix app.</p>
-                    </div>
-                    <div class="card-actions justify-end align-bottom">
-                    <button class="btn btn-primary">Watch</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 
