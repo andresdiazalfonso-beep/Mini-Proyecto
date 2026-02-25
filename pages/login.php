@@ -66,7 +66,7 @@ unset($_SESSION['errores']);
         <input type="email" name="email" required class="input input-bordered w-full rounded-xl" value="<?= isset($_COOKIE['recordar_email']) ? $_COOKIE['recordar_email'] : "" ?>">
 
         <?php if(isset($errores['email'])): ?>
-          <p class="text-red-500 text-sm mt-1"><?= $errores['nombre'] ?></p>
+          <p class="text-red-500 text-sm mt-1"><?= $errores['email'] ?></p>
         <?php endif; ?>
       </div>
 
@@ -75,7 +75,7 @@ unset($_SESSION['errores']);
         <input type="password" name="password" required class="input input-bordered w-full rounded-xl" value="<?= isset($_COOKIE['recordar_email']) ? $_COOKIE['recordar_email'] : "" ?>">
 
         <?php if(isset($errores['password'])): ?>
-          <p class="text-red-500 text-sm mt-1"><?= $errores['nombre'] ?></p>
+          <p class="text-red-500 text-sm mt-1"><?= $errores['password'] ?></p>
         <?php endif; ?>
       </div>
 

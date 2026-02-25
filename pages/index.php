@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Inicio</title>
 </head>
-<body class="font-[Poppins]">
+<body class="">
 
 <?php include_once "../partials/header.php";?>
 
