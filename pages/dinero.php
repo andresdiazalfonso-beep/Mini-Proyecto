@@ -19,8 +19,13 @@ require_once '..\partials\header.php'; // Incluye el header fijo
     <title>Dinero</title>
 </head>
 <body class="min-h-screen pt-30 flex justify-center font-[Poppins]">
-<div class="h-100 w-200 bg-white rounded-xl shadow-2xl hover:-translate-y-2 transition-transform">
-
+<div class="h-100 w-200 bg-white rounded-xl shadow-2xl hover:-translate-y-2 transition-transform p-10">
+    <button class="btn border-gray-800">5€</button>
+    <button class="btn border-gray-800">10€</button>
+    <button class="btn border-gray-800">25€</button>
+    <button class="btn border-gray-800">50€</button>
+    <button class="btn border-gray-800">75€</button>
+    <button class="btn border-gray-800">100€</button>
 </div>
 
 
