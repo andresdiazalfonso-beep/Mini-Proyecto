@@ -5,7 +5,7 @@ function sanear($datos){
 }
 
 function obtener_datos($email,$conexion){
-    $sql = "SELECT id_usuario, nombre, email, password FROM usuarios WHERE email = ? LIMIT 1";
+    $sql = "SELECT id_usuario, nombre, email, rol password FROM usuarios WHERE email = ? LIMIT 1";
     $stmt = mysqli_prepare($conexion,$sql);
 
     if($stmt){

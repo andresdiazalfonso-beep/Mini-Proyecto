@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST"){
         //Verificar Contraseña
         if(password_verify($password, $usuario['password'])){
             $_SESSION['id_usuario'] = $usuario['id_usuario'];
+            $_SESSION['rol'] = $usuario['rol'];
 
             // Si marca "Recordar", crea las cookies
             if(isset($_POST['recordar'])){
