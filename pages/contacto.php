@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Contacto</title>
 </head>
-<body>
+<body class="font-[Poppins]">
 <!-- Header -->
 <?php include_once "../partials/header.php";?>
 
@@ -16,7 +18,7 @@
 <section class="bg-white py-30">
   <div class="max-w-3xl mx-auto px-4">
     
-    <h1 class="text-4xl font-serif font-bold text-[#4A2C2A] text-center mb-4">
+    <h1 class="text-4xl font-bold text-[#4A2C2A] text-center mb-4">
       Contáctanos
     </h1>
 
