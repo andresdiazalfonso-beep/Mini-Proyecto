@@ -8,6 +8,7 @@ return [
     'login' => 'Login',
     'registro' => 'Register',
     'cerrar_sesion' => 'Logout',
+    'panel_admin' => 'Control Panel',
 
 
    // Carrusel

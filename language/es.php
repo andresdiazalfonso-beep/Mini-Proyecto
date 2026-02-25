@@ -8,6 +8,7 @@ return [
     'login' => 'Login',
     'registro' => 'Registro',
     'cerrar_sesion' => 'Cerrar sesión',
+    'panel_admin' => 'Panel de Control',
 
     // Carrusel
     'carrusel1_titulo' => 'Millones de niños sufren desnutrición',

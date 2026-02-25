@@ -34,8 +34,12 @@ include_once '../language/lenguage.php';
       <a href="../pages/index.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['inicio'] ?></a>
       <a href="../pages/producto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['productos'] ?></a>
       <a href="../pages/dinero.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['dinero'] ?></a>
-      <a href="../pages/contacto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['contacto'] ?></a>
-    </nav>
+    <?php if(isset($_SESSION['rol']) && $_SESSION['rol'] == "admin"):?>
+        <a href="../pages/contacto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['panel_admin'] ?></a>
+    <?php else:?>
+        <a href="../pages/contacto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['contacto'] ?></a>
+    <?php endif;?>
+      </nav>
 
     <!-- Botón Login y Registro -->
     <?php if(!isset($_SESSION['id_usuario'])):?>
@@ -51,7 +55,7 @@ include_once '../language/lenguage.php';
       <!-- Botón de Cerrar Sesión -->
       <div class="hidden md:flex gap-1">
       <a href="../partials/logout.php">
-        <div class="md:btn md:w-full md:rounded-full hover:bg-[#e36935e6] border-[#e36935e6] text-[#e36935e6] hover:text-white md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-sm"><?= $textos['cerrar_sesion'] ?></div>
+        <div class="md:btn md:w-full md:rounded-full hover:bg-[#e36935e6] border-[#e36935e6] text-[#e36935e6] hover:text-white md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-sm"><?= $textos['cerrar_sesion']?></div>
       </a>
     </div>
     <?php endif;?>
@@ -80,7 +84,7 @@ include_once '../language/lenguage.php';
       <a href="../pages/dinero.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['dinero'] ?></a>
       <a href="../pages/contacto.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['contacto'] ?></a>
     </nav>
-    
+
     <!-- Botón Login y Registro -->
     <?php if(!isset($_SESSION['id_usuario'])):?>
         <a href="../pages/login.php"><div class="btn w-full rounded-full hover:opacity-90 transition-transform hover:-translate-y-0.5 duration-300 mb-2 mt-2 hover:bg-[#e36935e6] border-[#e36935e6] text-[#e36935e6] hover:text-white"><?= $textos['login'] ?></div></a>
