@@ -14,10 +14,12 @@ unset($_SESSION['mensaje']);
   <meta charset="UTF-8">
   <title>Registro</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="font-[Poppins]">
   <div class="pt-10 ml-15">
   <!-- FLECHA VOLVER AL INICIO -->
     <a href="index.php" class="flex items-center text-[#e36935] font-semibold mb-4 hover:underline">
