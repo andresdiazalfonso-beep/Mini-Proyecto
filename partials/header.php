@@ -35,7 +35,7 @@ include_once '../language/lenguage.php';
       <a href="../pages/producto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['productos'] ?></a>
       <a href="../pages/dinero.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['dinero'] ?></a>
     <?php if(isset($_SESSION['rol']) && $_SESSION['rol'] == "admin"):?>
-        <a href="../pages/contacto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['panel_admin'] ?></a>
+        <a href="../admin/panel_admin.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['panel_admin'] ?></a>
     <?php else:?>
         <a href="../pages/contacto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['contacto'] ?></a>
     <?php endif;?>
