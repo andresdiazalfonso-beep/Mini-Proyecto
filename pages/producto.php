@@ -8,6 +8,8 @@ require_once '..\partials\header.php'; // Incluye el header fijo
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
@@ -16,7 +18,7 @@ require_once '..\partials\header.php'; // Incluye el header fijo
       }
     </style>
 </head>
-<body class="gap-6 justify-center p-10 bg-gray-100 mt-15">
+<body class="gap-6 justify-center p-10 bg-gray-100 mt-15 font-[Poppins]">
 <div class="hover:cursor-default">
   <div class="flex flex-wrap gap-6 justify-center">
     <div class="card bg-base-100 w-96 shadow-sm">
