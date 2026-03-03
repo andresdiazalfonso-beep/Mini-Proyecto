@@ -23,7 +23,7 @@ include_once '../language/lenguage.php';
     <a href="../pages/index.php"> 
       <div class="flex gap-2 justify-center items-center">
         <img src="../assets/iconos/logo.svg" alt="Logo" class="w-10 h-10 transition-transform hover:scale-110 duration-400">
-        <div class="text-xl font-bold font-serif tracking-wide text-[#3d120d]">
+        <div class="md:hidden lg:block sm:block text-xl font-bold font-serif tracking-wide text-[#3d120d]">
           Help<span class="text-orange-500 text-2xl">4</span>&Aacute;frica
         </div>
       </div>
