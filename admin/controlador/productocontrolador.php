@@ -3,33 +3,32 @@ session_start();
 require_once "../modelo/productosmodelo.php";
 require_once "../../Conexion/conexion.php";
 
-$productos = obtenerProductos($conexion);
-
 if($_SERVER['REQUEST_METHOD'] === "POST"){
     if($_POST['accion'] === "agregar"){
-        $imagen = $_FILES['imagen']['name'];
-        move_uploaded_file($_FILES['imagen']['tmp_name'], "../../assets/imagenes/".$imagen);
+
+        $imagen = file_get_contents($_FILES['imagen']['tmp_name']);
 
         agregarProducto(
             $conexion,
             $_POST['nombre'],
             $_POST['descripcion'],
             $_POST['precio'],
-            $imagen,
-            $_POST['stock']
+            $imagen
         );
-        header("Location: ../adminProductos.php");
+        $_SESSION['mensaje'] = "Producto agregado correctamente";
+        header("Location: ../vista/adminproductos.php");
         exit();
     }
 
     if($_POST['accion'] === "eliminar"){
         eliminarProducto($conexion,$_POST['id_producto']);
-        header("Location: ../adminProductos.php");
+        $_SESSION['mensaje'] = "Producto eliminado correctamente";
+        header("Location: ../vista/adminProductos.php");
         exit();
     }
 
-    if($_POST['accion'] === "actualizar"){
-        $imagen = $_FILES['imagen']['name'];
+    if($_POST['accion'] === "editar"){
+        $imagen = file_get_contents($_FILES['imagen']['tmp_name']);
         if($imagen != ""){
             move_uploaded_file($_FILES['imagen']['tmp_name'], "../../assets/imagenes/".$imagen);
         } else {
@@ -42,10 +41,11 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
             $_POST['nombre'],
             $_POST['descripcion'],
             $_POST['precio'],
-            $imagen,
-            $_POST['stock']
+            $imagen
         );
-        header("Location: ../adminProductos.php");
+
+        $_SESSION['mensaje'] = "Producto actualizado correctamente";
+        header("Location: ../vista/adminproductos.php");
         exit();
     }
 }
