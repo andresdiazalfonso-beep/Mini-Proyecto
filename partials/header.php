@@ -10,6 +10,93 @@ include_once '../language/lenguage.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Ocultar el banner superior de Google */
+        .goog-te-banner-frame.skiptranslate,
+        .goog-te-banner {
+            display: none !important;
+        }
+
+        body {
+            top: 0px !important;
+        }
+
+
+        .goog-te-gadget {
+            font-family: inherit !important;
+            font-size: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            margin: 0 !important;
+        }
+
+        .goog-te-gadget .goog-te-combo {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            background: transparent !important;
+            opacity: 0 !important;
+            /* Totalmente invisible pero clicable */
+            cursor: pointer !important;
+            z-index: 20;
+        }
+
+        /* Contenedor personalizado para el widget */
+        .translate-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            background: white;
+            border-radius: 9999px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .translate-container:hover {
+            border-color: #2facffff;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Ocultar elementos de Google que no queremos */
+        .goog-logo-link,
+        .goog-te-gadget>span,
+        .goog-te-gadget br {
+            display: none !important;
+        }
+
+        /* Contenedor para el logo de Google manual o el que inyecte */
+        .google-logo-custom {
+            width: 20px;
+            height: 20px;
+            background: url('https://www.gstatic.com/images/branding/product/1x/translate_24dp.png') no-repeat center;
+            background-size: contain;
+        }
+
+        #google_translate_element {
+            height: 24px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Asegurar que el desplegable de Google estÃ© por encima de todo */
+        .goog-te-menu-frame {
+            z-index: 99999999 !important;
+        }
+
+        .skiptranslate.goog-te-gadget {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    </style>
     <title>Inicio</title>
 </head>
 <body>
@@ -62,12 +149,13 @@ include_once '../language/lenguage.php';
 
     <!-- Select idioma escritorio -->
     <div class="hidden md:flex md:items-center">
-      <form method="post">
-        <select name="idioma" onchange="this.form.submit()" class="select select-sm rounded-full">
-          <option value="es" <?= $idioma === 'es' ? 'selected' : '' ?>><img src="../assets/iconos/bandera-spain.svg" class="w-5 h-5">Español</option>
-          <option value="en" <?= $idioma === 'en' ? 'selected' : '' ?>><img src="../assets/iconos/bandera-english.svg" class="w-5 h-5">English</option>
-        </select>
-      </form>
+      <!-- Google Translate Desktop Target -->
+                    <div class="translate-wrapper ml-4" id="desktop-translate-target">
+                        <div class="translate-container">
+                            <div class="google-logo-custom"></div>
+                            <div id="google_translate_element"></div>
+                        </div>
+                    </div>
     </div>
 
     <!-- Botón menú móvil -->
@@ -128,5 +216,17 @@ document.addEventListener('click', (e) => {
   }
 });
 </script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate&authuser=1" ></script>
+
+<script type="text/javascript">
+      function loadGoogleTranslate() {
+        new new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                autoDisplay: false
+            }, 'google_translate_element');
+      }
+</script>
+
 </body>
 </html>
