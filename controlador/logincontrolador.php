@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST"){
     $usuario = obtener_datos($email,$conexion);
 
     if($usuario){
-
         //Verificar Contraseña
         if(password_verify($password, $usuario['password'])){
             $_SESSION['id_usuario'] = $usuario['id_usuario'];
