@@ -21,11 +21,11 @@
          style="background-image:url('../assets/imagenes/carrusel1.jpg')">
         <div class="absolute inset-0 bg-black/60"></div>
         <div class="relative z-10 max-w-xl px-10 text-white ml-10">
-            <h2 class="text-4xl font-bold mb-4"><?= $textos['carrusel1_titulo'] ?></h2>
-            <p class="mb-6"><?= $textos['carrusel1_texto'] ?></p>
+            <h2 class="text-4xl font-bold mb-4">Millones de niños sufren desnutrición</h2>
+            <p class="mb-6">Necesitan ayuda urgente.</p>
             <a href="../pages/producto.php">
                 <div class="btn bg-[#e36935e6]/80 px-6 py-3 font-semibold rounded-full border-0 text-white/70 transition-transform hover:-translate-y-0.5 duration-300">
-                    <?= $textos['carrusel1_boton'] ?>
+                    Donar Productos
                 </div>
             </a>
         </div>
@@ -36,11 +36,11 @@
          style="background-image:url('../assets/imagenes/carrusel2.jpg')">
         <div class="absolute inset-0 bg-black/60"></div>
         <div class="relative z-10 max-w-xl px-10 text-white ml-10">
-            <h2 class="text-4xl font-bold mb-4"><?= $textos['carrusel2_titulo'] ?></h2>
-            <p class="mb-6"><?= $textos['carrusel2_texto'] ?></p>
+            <h2 class="text-4xl font-bold mb-4">Tu ayuda salva vidas</h2>
+            <p class="mb-6">Cada donación cuenta.</p>
             <a href="../pages/dinero.php">
                 <div class="btn bg-[#e36935e6]/80 px-6 py-3 font-semibold rounded-full border-0 text-white/70 transition-transform hover:-translate-y-0.5 duration-300">
-                    <?= $textos['carrusel2_boton'] ?>
+                    Donar Dinero
                 </div>
             </a>
         </div>
@@ -62,9 +62,9 @@ setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; showSlide(current
 <section class="max-w-7xl mx-auto px-4 py-16 space-y-20 mb-30 mt-30">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
-            <h2 class="text-4xl font-bold text-[#4A2C2A] mb-10"><?= $textos['quienes_somos_titulo'] ?></h2>
-            <p class="text-base text-gray-700 mb-4"><?= $textos['quienes_somos_texto1'] ?></p>
-            <p class="text-base text-gray-700"><?= $textos['quienes_somos_texto2'] ?></p>
+            <h2 class="text-4xl font-bold text-[#4A2C2A] mb-10">¿Quiénes somos?</h2>
+            <p class="text-base text-gray-700 mb-4">Somos una organización comprometida con la lucha del hambre, la falta de acceso a agua potable, educación y recursos básicos. Trabajamos cada día para brindar apoyo a comunidades vulnerables en África, garantizando el acceso a alimentos, agua potable y atención básica de salud.</p>
+            <p class="text-base text-gray-700">Creemos en la solidaridad y en el poder de las personas para generar un cambio real. Por eso trabajamos de manera honesta y comprometida, conectando a personas solidarias con quienes más lo necesitan.</p>
         </div>
         <img src="../assets/imagenes/quien_somos.jpg" alt="Quiénes somos" class="rounded-xl shadow-lg object-cover w-full h-[320px]">
     </div>
@@ -72,24 +72,24 @@ setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; showSlide(current
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <img src="../assets/imagenes/impacto1.jpg" alt="Qué hacemos" class="rounded-xl shadow-lg object-cover w-full h-[320px]">
         <div>
-            <h2 class="text-4xl font-bold text-[#4A2C2A] mb-10"><?= $textos['que_hacemos_titulo'] ?></h2>
-            <p class="text-base text-gray-700 mb-4"><?= $textos['que_hacemos_texto'] ?></p>
+            <h2 class="text-4xl font-bold text-[#4A2C2A] mb-10">¿Qué hacemos?</h2>
+            <p class="text-base text-gray-700 mb-4">Trabajamos para brindar apoyo humanitario a comunidades africanas a través de donaciones de productos esenciales y aportes económicos, asegurando que cada ayuda llegue de manera eficiente y responsable.</p>
             <ul class="list-none text-gray-700 space-y-2 ml-16">
                 <li class="flex items-center gap-2">
                     <img src="../assets/iconos/bandera-spain.svg" class="w-2 h-2">
-                    <?= $textos['que_hacemos_lista1'] ?>
+                    Atención nutricional a niños y niñas
                 </li>
                 <li class="flex items-center gap-2">
                     <img src="../assets/iconos/bandera-spain.svg" class="w-2 h-2">
-                    <?= $textos['que_hacemos_lista2'] ?>
+                    Distribución de alimentos
                 </li>
                 <li class="flex items-center gap-2">
                     <img src="../assets/iconos/bandera-spain.svg" class="w-2 h-2">
-                    <?= $textos['que_hacemos_lista3'] ?>
+                    Acceso a agua potable
                 </li>
                 <li class="flex items-center gap-2">
                     <img src="../assets/iconos/bandera-spain.svg" class="w-2 h-2">
-                    <?= $textos['que_hacemos_lista4'] ?>
+                    Formación y apoyo comunitario
                 </li>
             </ul>
         </div>
@@ -101,26 +101,26 @@ setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; showSlide(current
 <section class="bg-[#e36935e6]/10 py-10">
     <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-16">
-            <h2 class="text-3xl sm:text-4xl font-bold text-[#4A2C2A] mb-4"><?= $textos['como_ayudar_titulo'] ?></h2>
-            <p class="text-gray-700 max-w-md mx-auto"><?= $textos['como_ayudar_texto'] ?></p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-[#4A2C2A] mb-4">¿Cómo puedes ayudar?</h2>
+            <p class="text-gray-700 max-w-md mx-auto">Tu apoyo salva vidas. Elige cómo quieres donar.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-26 max-w-3xl mx-auto my-10">
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <img src="../assets/iconos/productosdonar.svg" alt="Donar productos" class="w-full h-48 mt-3">
                 <div class="p-6 text-center">
-                    <h3 class="text-xl font-bold mb-2"><?= $textos['donar_productos_titulo'] ?></h3>
-                    <p class="text-sm text-gray-600 mb-5"><?= $textos['donar_productos_texto'] ?></p>
-                    <a href="../pages/producto.php" class="btn w-full py-3 rounded-full bg-[#e36935e6]/80 text-white text-base transition-transform hover:-translate-y-0.5 duration-300"><?= $textos['productos'] ?></a>
+                    <h3 class="text-xl font-bold mb-2">Donar productos</h3>
+                    <p class="text-sm text-gray-600 mb-5">Alimentos y productos esenciales para familias que lo necesitan.</p>
+                    <a href="../pages/producto.php" class="btn w-full py-3 rounded-full bg-[#e36935e6]/80 text-white text-base transition-transform hover:-translate-y-0.5 duration-300">Donar Productos</a>
                 </div>
             </div>
 
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
                 <img src="../assets/iconos/money.svg" alt="Donar dinero" class="w-full h-48 mt-3">
                 <div class="p-6 text-center">
-                    <h3 class="text-xl font-bold mb-2"><?= $textos['donar_dinero_titulo'] ?></h3>
-                    <p class="text-sm text-gray-600 mb-5"><?= $textos['donar_dinero_texto'] ?></p>
-                    <a href="../pages/dinero.php" class="btn w-full py-3 rounded-full bg-[#e36935e6]/80 text-white text-base transition-transform hover:-translate-y-0.5 duration-300"><?= $textos['dinero'] ?></a>
+                    <h3 class="text-xl font-bold mb-2">Donar dinero</h3>
+                    <p class="text-sm text-gray-600 mb-5">Alimentos y productos esenciales para familias que lo necesitan.</p>
+                    <a href="../pages/dinero.php" class="btn w-full py-3 rounded-full bg-[#e36935e6]/80 text-white text-base transition-transform hover:-translate-y-0.5 duration-300">Donar Dinero</a>
                 </div>
             </div>
         </div>
@@ -129,24 +129,24 @@ setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; showSlide(current
 
 <!-- ================= PREGUNTAS FRECUENTES ================= -->
 <div class="max-w-7xl mx-auto px-3 py-10 mt-10">
-    <h1 class="text-4xl font-bold mb-10 mt-12 text-center text-[#4A2C2A]"><?= $textos['faq_title'] ?></h1>
+    <h1 class="text-4xl font-bold mb-10 mt-12 text-center text-[#4A2C2A]">Preguntas Frecuentes</h1>
 
     <div class="collapse collapse-arrow bg-base-100 border border-base-300 mb-10">
         <input type="checkbox"/>
-        <div class="collapse-title font-semibold"><?= $textos['faq_destino'] ?></div>
-        <div class="collapse-content text-sm"><?= $textos['faq_destino_texto'] ?></div>
+        <div class="collapse-title font-semibold">¿Cuál es el destino de mi ayuda?</div>
+        <div class="collapse-content text-sm">Tus donaciones, ya sean productos o dinero, se destinan a programas de nutrición, seguridad alimentaria, acceso a agua potable, salud y desarrollo comunitario. Garantizamos transparencia y publicamos informes periódicos sobre cómo se usan los recursos.</div>
     </div>
 
     <div class="collapse collapse-arrow bg-base-100 border border-base-300 mb-10">
         <input type="checkbox"/>
-        <div class="collapse-title font-semibold"><?= $textos['faq_dinero'] ?></div>
-        <div class="collapse-content text-sm"><?= $textos['faq_dinero_texto'] ?></div>
+        <div class="collapse-title font-semibold">¿Cómo puedo donar dinero?</div>
+        <div class="collapse-content text-sm">Puedes donar mediante tarjeta de crédito/débito, transferencia bancaria o plataformas en línea. También ofrecemos donaciones recurrentes. Todas las donaciones reciben un comprobante oficial.</div>
     </div>
 
     <div class="collapse collapse-arrow bg-base-100 border border-base-300 mb-10">
         <input type="checkbox"/>
-        <div class="collapse-title font-semibold"><?= $textos['faq_producto_extra'] ?></div>
-        <div class="collapse-content text-sm"><?= $textos['faq_producto_extra_texto'] ?></div>
+        <div class="collapse-title font-semibold">Quiero donar algo que no está en la lista, ¿puedo hacerlo?</div>
+        <div class="collapse-content text-sm">Contáctanos en la página de Contacto y revisaremos si podemos aceptarlo. Siempre valoramos la generosidad y buscamos aprovechar todas las donaciones de manera responsable.</div>
     </div>
 </div>
 
