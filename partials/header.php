@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-include_once '../language/lenguage.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -118,31 +117,27 @@ include_once '../language/lenguage.php';
 
     <!-- Menú escritorio -->
     <nav class="hidden md:flex md:space-x-5 md:justify-center md:items-center md:font-semibold md:size-lg">
-      <a href="../pages/index.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['inicio'] ?></a>
-      <a href="../pages/producto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['productos'] ?></a>
-      <a href="../pages/dinero.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['dinero'] ?></a>
-    <?php if(isset($_SESSION['rol']) && $_SESSION['rol'] == "admin"):?>
-        <a href="../admin/panel_admin.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['panel_admin'] ?></a>
-    <?php else:?>
-        <a href="../pages/contacto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['contacto'] ?></a>
-    <?php endif;?>
+      <a href="../pages/index.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Inicio</a>
+      <a href="../pages/producto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Productos</a>
+      <a href="../pages/dinero.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Dinero</a>
+        <a href="../pages/contacto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Contacto</a>
       </nav>
 
     <!-- Botón Login y Registro -->
     <?php if(!isset($_SESSION['id_usuario'])):?>
     <div class="hidden md:flex gap-2">
       <a href="../pages/login.php">
-        <div class="md:btn md:w-full md:rounded-full hover:bg-[#e36935e6] border-[#e36935e6] text-[#e36935e6] hover:text-white md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-sm"><?= $textos['login'] ?></div>
+        <div class="md:btn md:w-full md:rounded-full hover:bg-[#e36935e6] border-[#e36935e6] text-[#e36935e6] hover:text-white md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-sm">Login</div>
       </a>
       <a href="../pages/registro.php">
-        <div class="hover md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 hover:bg-[#faf7f4] hover:border-[#e36935e6] hover:text-[#e36935e6] md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm"><?= $textos['registro'] ?></div>
+        <div class="hover md:btn md:w-full md:rounded-full md:bg-[#e36935e6] md:hover:opacity-90 hover:bg-[#faf7f4] hover:border-[#e36935e6] hover:text-[#e36935e6] md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-white md:text-sm">Registro</div>
       </a>
     </div>
     <?php else:?>
       <!-- Botón de Cerrar Sesión -->
       <div class="hidden md:flex gap-1">
       <a href="../partials/logout.php">
-        <div class="md:btn md:w-full md:rounded-full hover:bg-[#e36935e6] border-[#e36935e6] text-[#e36935e6] hover:text-white md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-sm"><?= $textos['cerrar_sesion']?></div>
+        <div class="md:btn md:w-full md:rounded-full hover:bg-[#e36935e6] border-[#e36935e6] text-[#e36935e6] hover:text-white md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-sm">Cerrar Sesion</div>
       </a>
     </div>
     <?php endif;?>
@@ -150,12 +145,12 @@ include_once '../language/lenguage.php';
     <!-- Select idioma escritorio -->
     <div class="hidden md:flex md:items-center">
       <!-- Google Translate Desktop Target -->
-                    <div class="translate-wrapper ml-4" id="desktop-translate-target">
-                        <div class="translate-container">
-                            <div class="google-logo-custom"></div>
-                            <div id="google_translate_element"></div>
-                        </div>
-                    </div>
+        <div class="translate-wrapper ml-4" id="desktop-translate-target">
+            <div class="translate-container">
+              <div class="google-logo-custom"></div>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
     </div>
 
     <!-- Botón menú móvil -->
@@ -167,21 +162,21 @@ include_once '../language/lenguage.php';
   <!-- Menú móvil -->
   <div id="mobileMenu" class="hidden md:hidden bg-[#faf7f4] m-1 pb-3 font-semibold size-lg">
     <nav class="flex flex-col w-full px-4">
-      <a href="../pages/index.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['inicio'] ?></a>
-      <a href="../pages/producto.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['productos'] ?></a>
-      <a href="../pages/dinero.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['dinero'] ?></a>
-      <a href="../pages/contacto.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]"><?= $textos['contacto'] ?></a>
+      <a href="../pages/index.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Inicio</a>
+      <a href="../pages/producto.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Productos</a>
+      <a href="../pages/dinero.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Dinero</a>
+      <a href="../pages/contacto.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Contacto</a>
     </nav>
 
     <!-- Botón Login y Registro -->
     <?php if(!isset($_SESSION['id_usuario'])):?>
-        <a href="../pages/login.php"><div class="btn w-full rounded-full hover:opacity-90 transition-transform hover:-translate-y-0.5 duration-300 mb-2 mt-2 hover:bg-[#e36935e6] border-[#e36935e6] text-[#e36935e6] hover:text-white"><?= $textos['login'] ?></div></a>
-        <a href="../pages/registro.php"><div class="btn w-full rounded-full bg-[#e36935e6] hover:opacity-90 transition-transform hover:-translate-y-0.5 duration-300"><?= $textos['registro'] ?></div></a>
+        <a href="../pages/login.php"><div class="btn w-full rounded-full hover:opacity-90 transition-transform hover:-translate-y-0.5 duration-300 mb-2 mt-2 hover:bg-[#e36935e6] border-[#e36935e6] text-[#e36935e6] hover:text-white">Login</div></a>
+        <a href="../pages/registro.php"><div class="btn w-full rounded-full bg-[#e36935e6] hover:opacity-90 transition-transform hover:-translate-y-0.5 duration-300">Registro</div></a>
     <?php else:?>
           <!-- Botón de Cerrar Sesión -->
           <div class="hidden md:flex gap-1">
           <a href="../partials/logout.php">
-            <div class="md:btn md:w-full md:rounded-full hover:bg-[#e36935e6] border-[#e36935e6] text-[#e36935e6] hover:text-white md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-sm"><?= $textos['cerrar_sesion'] ?></div>
+            <div class="md:btn md:w-full md:rounded-full hover:bg-[#e36935e6] border-[#e36935e6] text-[#e36935e6] hover:text-white md:hover:opacity-90 md:transition-transform md:hover:-translate-y-0.5 md:duration-300 md:p-5 md:text-sm">Cerrar Sesion</div>
           </a>
         </div>
     <?php endif;?>
@@ -190,14 +185,14 @@ include_once '../language/lenguage.php';
 
     <!-- Select idioma móvil -->
     <div class="lg:hidden mt-4 px-2">
-      <form method="post" class="w-full">
-        <select name="idioma" onchange="this.form.submit()" class="w-full font-semibold text-[#3d120d] bg-white border border-[#e0dad1] px-4 py-3 shadow-sm appearance-none">
-          <option value="es" <?= $idioma === 'es' ? 'selected' : '' ?>>Español</option>
-          <option value="en" <?= $idioma === 'en' ? 'selected' : '' ?>>English</option>
-        </select>
-      </form>
+      <!-- Google Translate Desktop Target -->
+        <div class="translate-wrapper ml-4" id="desktop-translate-target">
+            <div class="translate-container">
+              <div class="google-logo-custom"></div>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
     </div>
-  </div>
 </header>
 
 <!-- Script menú móvil -->
