@@ -1,9 +1,7 @@
 <?php
-require_once "../../Conexion/conexion.php";
 
-function obtenerProductos(){
+function obtenerProductos($conexion){
 
-    global $conexion;
     $sql = "SELECT * FROM productos ORDER BY fecha_creacion DESC";
     $resultado = mysqli_query($conexion, $sql);
     return mysqli_fetch_all($resultado, MYSQLI_ASSOC);

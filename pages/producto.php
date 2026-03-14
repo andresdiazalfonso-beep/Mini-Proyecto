@@ -1,5 +1,11 @@
 <?php
-require_once '..\partials\header.php'; // Incluye el header fijo
+require_once '..\partials\header.php'; 
+// Asegúrate de que la ruta al modelo sea correcta según tu estructura
+require_once "../admin/modelo/productosmodelo.php"; 
+require_once "../Conexion/conexion.php";
+
+// Obtenemos los productos reales de la base de datos
+$productos = obtenerProductos($conexion);
 ?>
 
 <!DOCTYPE html>
@@ -7,133 +13,75 @@ require_once '..\partials\header.php'; // Incluye el header fijo
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
+    <title>Productos - Donaciones</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
       html, body {
-      background: linear-gradient(to bottom right, rgb(255, 180, 89), rgb(252, 168, 0), rgb(120, 79, 0));
+        background: linear-gradient(to bottom right, rgb(255, 180, 89), rgb(252, 168, 0), rgb(120, 79, 0));
+        min-height: 100vh;
       }
     </style>
 </head>
-<body class="gap-6 justify-center p-10 bg-gray-100 mt-15 font-[Poppins]">
-<div class="hover:cursor-default">
-  <div class="flex flex-wrap gap-6 justify-center">
-    <div class="card bg-base-100 w-96 shadow-sm">
-  <div class="card-body">
-    <div class="badge rounded-full bg-orange-100 text-sm font-bold text-orange-600"><em>500ml</em></div>
-    <h2 class="card-title flex justify-between">
-      Agua Mineral
-    </h2>
-    <p>Una simple botella de agua.<br>Ayuda, aunque no lo parezca.</p>
-    <div class="card-actions justify-end">
-      <a
-      href="#"
-      title="Confirmar donación"
-      class="hover:scale-105 hover:shadow-lg hover:shadow-gray-700 transition-all duration-300 shadow-md shadow-gray-500 badge text-2xl bg-gray-200 px-5 py-4 border-2 border-orange-300 font-mono">
-      <p class="font-bold text-shadow-md">0.50€</p>
-      </a>
+<body class="font-[Poppins] pt-20">
+
+<div class="container mx-auto px-4 pb-10">
+    <div class="flex flex-wrap gap-6 justify-center">
+        
+        <?php if (empty($productos)): ?>
+            <p class="text-white font-bold text-xl">No hay productos disponibles en este momento.</p>
+        <?php else: ?>
+            <?php foreach($productos as $producto): ?>
+                <div class="card bg-base-100 w-80 md:w-96 shadow-sm hover:shadow-2xl transition-all duration-300">
+                    <figure class="px-4 pt-4">
+                        <div class="w-full h-48 rounded-xl overflow-hidden border border-gray-100">
+                            <?php if(!empty($producto['imagen'])): ?>
+                                <img src="data:image/jpeg;base64,<?= base64_encode($producto['imagen']) ?>" 
+                                     class="w-full h-full object-cover" 
+                                     alt="<?= htmlspecialchars($producto['nombre']) ?>">
+                            <?php else: ?>
+                                <div class="bg-gray-200 w-full h-full flex items-center justify-center text-gray-400">Sin imagen</div>
+                            <?php endif; ?>
+                        </div>
+                    </figure>
+
+                    <div class="card-body">
+                        <div class="badge rounded-full bg-orange-100 text-sm font-bold text-orange-600 uppercase">
+                            Info
+                        </div>
+                        
+                        <h2 class="card-title text-gray-800">
+                            <?= htmlspecialchars($producto['nombre']) ?>
+                        </h2>
+                        
+                        <p class="text-gray-600 text-sm">
+                            <?= htmlspecialchars($producto['descripcion']) ?>
+                        </p>
+
+                        <div class="card-actions justify-end mt-4">
+                            <a href="confirmar_donacion.php?id=<?= $producto['id_producto'] ?>"
+                               title="Confirmar donación"
+                               class="hover:scale-110 hover:shadow-lg hover:shadow-gray-400 transition-all duration-300 shadow-md badge text-2xl bg-gray-100 px-6 py-5 border-2 border-orange-400 font-mono text-gray-800">
+                                <span class="font-bold"><?= number_format($producto['precio'], 2) ?>€</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+
     </div>
-  </div>
-</div>
-<div class="card bg-base-100 w-96 shadow-sm">
-  <div class="card-body">
-    <div class="badge rounded-full bg-orange-100 text-sm font-bold text-orange-600"><em>0.5kg</em></div>
-    <h2 class="card-title flex justify-between">
-      Pack de alimentos
-    </h2>
-    <p>Una variedad de alimentos.<br>Almuerzo y cena para 2.</p>
-    <div class="card-actions justify-end">
-      <a
-      href="#"
-      title="Confirmar donación"
-      class="hover:scale-105 hover:shadow-lg hover:shadow-gray-700 transition-all duration-300 shadow-md shadow-gray-500 badge text-2xl bg-gray-200 px-5 py-4 border-2 border-orange-300 font-mono">
-      <p class="font-bold text-shadow-lg">5€</p>
-      </a>
+
+    <div class="mt-16 max-w-3xl mx-auto text-center text-gray-50 bg-black/10 p-6 rounded-2xl backdrop-blur-sm">
+        <p class="leading-relaxed">
+            Todo donativo realizado está 100% destinado a la ayuda y mantenimiento de la vida sudafricana, 
+            agradecemos su ayuda tanto el equipo dedicado a esto, como las cientos de personas salvadas diariamente 
+            gracias a las donaciones que nos llegan. <br><strong>Gracias de todo corazón.</strong>
+        </p>
     </div>
-  </div>
-</div>
-<div class="card bg-base-100 w-96 shadow-sm">
-  <div class="card-body">
-    <div class="badge rounded-full bg-orange-100 text-sm font-bold text-orange-600"><em>Botiqu&iacute;n</em></div>
-    <h2 class="card-title flex justify-between">
-      Kit m&eacute;dico
-    </h2>
-    <p>Para curar heridas y enfermedades leves.<br>Para ni&ntilde;os y adultos.</p>
-    <div class="card-actions justify-end">
-      <a
-      href="#"
-      title="Confirmar donación"
-      class="hover:scale-105 hover:shadow-lg hover:shadow-gray-700 transition-all duration-300 shadow-md shadow-gray-500 badge text-2xl bg-gray-200 px-5 py-4 border-2 border-orange-300 font-mono">
-      <p class="font-bold text-shadow-lg">1€</p>
-      </a>
-    </div>
-  </div>
-</div>
-<div class="card bg-base-100 w-96 shadow-sm">
-  <div class="card-body">
-    <div class="badge rounded-full bg-orange-100 text-sm font-bold text-orange-600"><em>2 comidas</em></div>
-    <h2 class="card-title flex justify-between">
-      Comida infantil
-    </h2>
-    <p>Para los ni&ntilde;os.<br>Contienen vitaminas de diferente tipo, correctas para su desarrollo.</p>
-    <div class="card-actions justify-end">
-      <a
-      href="#"
-      title="Confirmar donación"
-      class="hover:scale-105 hover:shadow-lg hover:shadow-gray-700 transition-all duration-300 shadow-md shadow-gray-500 badge text-2xl bg-gray-200 px-5 py-4 border-2 border-orange-300 font-mono">
-      <p class="font-bold text-shadow-lg">0.50€</p>
-      </a>
-    </div>
-  </div>
-</div>
-<div class="flex flex-wrap gap-6 justify-center">
-    <div class="card bg-base-100 w-96 shadow-sm">
-  <div class="card-body">
-    <div class="badge rounded-full bg-orange-100 text-sm font-bold text-orange-600"><em>5 piezas</em></div>
-    <h2 class="card-title flex justify-between">
-      Equipo
-    </h2>
-    <p>Sombrero, guantes, palas de 2 tama&ntilde;os y una hazada.</p>
-    <div class="card-actions justify-end">
-      <a
-      href="#"
-      title="Confirmar donación"
-      class="hover:scale-105 hover:shadow-lg hover:shadow-gray-700 transition-all duration-300 shadow-md shadow-gray-500 badge text-2xl bg-gray-200 px-5 py-4 border-2 border-orange-300 font-mono">
-      <p class="font-bold text-shadow-lg">3€</p>
-      </a>
-    </div>
-  </div>
-</div>
-<div class="flex gap-6 justify-center">
-    <div class="card bg-base-100 w-96 shadow-sm">
-  <div class="card-body">
-    <div class="badge rounded-full bg-orange-100 text-sm font-bold text-orange-600"><em>30 semillas</em></div>
-    <h2 class="card-title flex justify-between">
-      Semillas
-    </h2>
-    <p>Algunas semillas de diverso tipo.<br>Pueden soprtar condiciones clim&aacute;ticas adversas.</p>
-    <div class="card-actions justify-end">
-      <a
-      href="#"
-      title="Confirmar donación"
-      class="hover:scale-105 hover:shadow-lg hover:shadow-gray-700 transition-all duration-300 shadow-md shadow-gray-500 badge text-2xl bg-gray-200 px-5 py-4 border-2 border-orange-300 font-mono">
-      <p class="font-bold text-shadow-lg">1€</p>
-      </a>
-    </div>
-  </div>
-</div>
-</div>
 </div>
 
-<div class="flex flex-row g-10 text-center text-gray-50">
-  <p>Todo donativo realizado est&aacute; 100% destinado a la ayuda y mantenimiento de la vida sudafricana, 
-    agradecemos su ayuda tanto el equipo dedicado a esto, como las cientas de personas salvadas diariamente 
-    gracias a las donaciones que nos llegan y les podemos hacer llegar.<br>Gracias de todo coraz&oacute;n.
-  </p>
-</div>
-   
 </body>
 </html>
