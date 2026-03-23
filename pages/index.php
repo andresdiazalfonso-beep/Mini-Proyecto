@@ -14,7 +14,7 @@
 <?php include_once "../partials/header.php";?>
 
 <!-- ================= CARRUSEL ================= -->
-<div class="relative w-full h-200 overflow-hidden mb-20">
+<div class="relative w-full h-200 overflow-hidden mb-10">
 
     <!-- Slide 1 -->
     <div class="slide absolute inset-0 bg-cover bg-center flex items-center transition-opacity opacity-100"
@@ -59,7 +59,7 @@ setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; showSlide(current
 
 
 <!-- ================= QUIÉNES SOMOS ================= -->
-<section class="max-w-7xl mx-auto px-4 py-16 space-y-20 mb-30 mt-30">
+<section class="max-w-7xl mx-auto px-4 py-16 space-y-20 mb-30 mt-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
             <h2 class="text-4xl font-bold text-[#4A2C2A] mb-10">¿Quiénes somos?</h2>
@@ -73,22 +73,22 @@ setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; showSlide(current
         <img src="../assets/imagenes/impacto1.jpg" alt="Qué hacemos" class="rounded-xl shadow-lg object-cover w-full h-[320px]">
         <div>
             <h2 class="text-4xl font-bold text-[#4A2C2A] mb-10">¿Qué hacemos?</h2>
-            <p class="text-base text-gray-700 mb-4">Trabajamos para brindar apoyo humanitario a comunidades africanas a través de donaciones de productos esenciales y aportes económicos, asegurando que cada ayuda llegue de manera eficiente y responsable.</p>
-            <ul class="list-none text-gray-700 space-y-2 ml-16">
+            <p class="text-base text-gray-700 mb-6">Trabajamos para brindar apoyo humanitario a comunidades africanas a través de donaciones de productos esenciales y aportes económicos, asegurando que cada ayuda llegue de manera eficiente y responsable.</p>
+            <ul class="list-none text-gray-700 space-y-3 ml-16">
                 <li class="flex items-center gap-2">
-                    <img src="../assets/iconos/bandera-spain.svg" class="w-2 h-2">
+                    <img src="../assets/iconos/feeding.svg" class="w-5 h-5">
                     Atención nutricional a niños y niñas
                 </li>
                 <li class="flex items-center gap-2">
-                    <img src="../assets/iconos/bandera-spain.svg" class="w-2 h-2">
+                    <img src="../assets/iconos/food.svg" class="w-5 h-5">
                     Distribución de alimentos
                 </li>
                 <li class="flex items-center gap-2">
-                    <img src="../assets/iconos/bandera-spain.svg" class="w-2 h-2">
+                    <img src="../assets/iconos/water.svg" class="w-5 h-5">
                     Acceso a agua potable
                 </li>
                 <li class="flex items-center gap-2">
-                    <img src="../assets/iconos/bandera-spain.svg" class="w-2 h-2">
+                    <img src="../assets/iconos/heart.svg" class="w-5 h-5">
                     Formación y apoyo comunitario
                 </li>
             </ul>
