@@ -216,12 +216,9 @@ document.addEventListener('click', (e) => {
 
 <script type="text/javascript">
       function loadGoogleTranslate() {
-        new new google.translate.TranslateElement({
+        new google.translate.TranslateElement({
                 pageLanguage: 'es',
                 autoDisplay: false
             }, 'google_translate_element');
       }
 </script>
-
-</body>
-</html>

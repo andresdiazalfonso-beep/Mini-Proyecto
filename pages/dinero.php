@@ -1,48 +1,98 @@
 <?php
-require_once '..\partials\header.php'; // Incluye el header fijo
+session_start();
+require_once __DIR__."/../partials/header.php"; 
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-        html, body {
-        background: linear-gradient(to bottom right, rgb(255, 238, 204), rgb(252, 168, 0), rgb(120, 79, 0));
-        }
-        button{
-        font-size: 20px;
-        }
-    </style>
-    <title>Dinero</title>
-</head>
-<body class="min-h-screen pt-30 flex justify-center font-[Poppins]">
-<div class="h-100 w-200 bg-white rounded-xl shadow-2xl hover:-translate-y-2 transition-transform px-10 py-10 flex flex-col gap-3">
-    <div class="text-center font-bold text-orange-600 text-xl mb-8">
-        <div class="hover:cursor-default">Escoja una <span class="text-orange-400">opci&oacute;n</span> a pagar</div>
-    </div>
-    <div class="flex justify-around mx-25 gap-5">
-        <button class="btn border-2 border-gray-800 py-6 flex-grow-1 hover:shadow-xl">5€</button>
-        <button class="btn border-2 border-gray-800 py-6 flex-grow-1 hover:shadow-xl">10€</button>
-        <button class="btn border-2 border-gray-800 py-6 flex-grow-1 hover:shadow-xl">25€</button>
-    </div>
-    <div class="flex justify-around mx-25 gap-5">
-        <button class="btn border-2 border-gray-800 py-6 flex-grow-1 hover:shadow-xl">50€</button>
-        <button class="btn border-2 border-gray-800 py-6 flex-grow-1 hover:shadow-xl">75€</button>
-        <button class="btn border-2 border-gray-800 py-6 flex-grow-1 hover:shadow-xl">100€</button>
-    </div>
-    <div class="flex justify-between mx-25 my-20 gap-5">
-        <button class="btn">Confirmar compra</button>
-        <a href="index.php" class="hover:cursor-pointer hover:underline text-orange-600 hover:font-bold">Volver al inicio</a>
-    </div>
-</div>
+    <main class="flex-grow bg-[#e36935e6]/10 py-16 flex items-center justify-center px-4">
+        <div class="bg-white max-w-2xl w-full mx-auto rounded-2xl shadow-xl p-8 md:p-12">
+            
+            <div class="text-center mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold text-[#4A2C2A] mb-4">
+                    Haz un donativo
+                </h1>
+                <p class="text-gray-600">
+                    Tu aportación nos ayuda a seguir salvando vidas y llevando recursos básicos a quienes más lo necesitan en África.
+                </p>
+            </div>
 
+            <form action="confirmar_dinero.php" method="POST" class="space-y-8">
+                
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-4 text-center">
+                        Selecciona una cantidad a donar
+                    </label>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        
+                        <label class="cursor-pointer">
+                            <input type="radio" name="cantidad" value="5" class="peer sr-only" required>
+                            <div class="rounded-xl border-2 border-gray-200 py-4 text-center text-xl font-bold text-gray-600 peer-checked:border-[#e36935] peer-checked:bg-[#e36935] peer-checked:text-white hover:border-[#e36935] transition-all">
+                                5€
+                            </div>
+                        </label>
 
-    
+                        <label class="cursor-pointer">
+                            <input type="radio" name="cantidad" value="10" class="peer sr-only">
+                            <div class="rounded-xl border-2 border-gray-200 py-4 text-center text-xl font-bold text-gray-600 peer-checked:border-[#e36935] peer-checked:bg-[#e36935] peer-checked:text-white hover:border-[#e36935] transition-all">
+                                10€
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer">
+                            <input type="radio" name="cantidad" value="25" class="peer sr-only">
+                            <div class="rounded-xl border-2 border-gray-200 py-4 text-center text-xl font-bold text-gray-600 peer-checked:border-[#e36935] peer-checked:bg-[#e36935] peer-checked:text-white hover:border-[#e36935] transition-all">
+                                25€
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer">
+                            <input type="radio" name="cantidad" value="50" class="peer sr-only">
+                            <div class="rounded-xl border-2 border-gray-200 py-4 text-center text-xl font-bold text-gray-600 peer-checked:border-[#e36935] peer-checked:bg-[#e36935] peer-checked:text-white hover:border-[#e36935] transition-all">
+                                50€
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer">
+                            <input type="radio" name="cantidad" value="75" class="peer sr-only">
+                            <div class="rounded-xl border-2 border-gray-200 py-4 text-center text-xl font-bold text-gray-600 peer-checked:border-[#e36935] peer-checked:bg-[#e36935] peer-checked:text-white hover:border-[#e36935] transition-all">
+                                75€
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer">
+                            <input type="radio" name="cantidad" value="100" class="peer sr-only">
+                            <div class="rounded-xl border-2 border-gray-200 py-4 text-center text-xl font-bold text-gray-600 peer-checked:border-[#e36935] peer-checked:bg-[#e36935] peer-checked:text-white hover:border-[#e36935] transition-all">
+                                100€
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">
+                        O introduce otra cantidad (€)
+                    </label>
+                    <input type="number" name="cantidad_libre" min="1" placeholder="Ej: 150" 
+                           class="input input-bordered w-full rounded-xl">
+                    <p class="text-xs text-gray-500 mt-2">Si rellenas este campo, se ignorará la opción seleccionada arriba.</p>
+                </div>
+
+                <div class="pt-4 space-y-4">
+                    <button type="submit" class="btn w-full bg-[#e36935] hover:bg-[#d65f2f] border-0 text-white rounded-xl text-lg py-3 h-auto">
+                        Confirmar donación
+                    </button>
+                    
+                    <div class="text-center">
+                        <a href="index.php" class="text-[#e36935] font-semibold hover:underline text-sm inline-flex items-center gap-1">
+                            Volver al inicio
+                        </a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <?php include_once __DIR__.'/../partials/footer.php'; ?>
+
 </body>
 </html>
