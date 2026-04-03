@@ -3,6 +3,9 @@ session_start();
 require_once "../modelo/productosmodelo.php";
 require_once "../../Conexion/conexion.php";
 
+$accion = isset($_GET['accion']) ? htmlspecialchars(trim($_GET['accion'])) : "nuevo";
+$id_producto = isset($_GET['id_producto']) ? intval($_GET['id_producto']) : "";
+
 $mensaje = $_SESSION['mensaje'] ?? "";
 unset($_SESSION['mensaje']);
 
@@ -21,10 +24,11 @@ $productos = obtenerProductos($conexion);
 </head>
 <body class="font-[Poppins]">
 
-<div class="p-5 mx-4 md:mx-60 lg:mx-100 pt-10">
+<div class="p-5 mx-4 md:mx-40 lg:mx-70 pt-10">
     <h1 class="text-3xl font-bold mb-6">Productos</h1>
 
-    <div class="bg-white p-6 rounded-lg shadow mb-10 border border-gray-100">
+<?php if($accion == "nuevo"):?>
+<div class="bg-white p-6 rounded-lg shadow mb-10 border border-gray-100 overflow-x-auto">
         <h2 class="font-semibold text-xl mb-4">Agregar Nuevo Producto</h2>
         <form action="../controlador/productocontrolador.php" method="post" enctype="multipart/form-data" class="space-y-4">
             <input type="hidden" name="accion" value="agregar">
@@ -56,6 +60,59 @@ $productos = obtenerProductos($conexion);
         </form>
     </div>
 </div>
+<?php endif; ?>
+
+
+<?php if($accion == "editar"):?>
+<?php $editarProducto = obtenerProductoPorId($conexion, $id_producto); ?>
+
+<div class="bg-white p-6 rounded-lg shadow mb-10 border border-gray-100 overflow-x-auto">
+        <h2 class="font-semibold text-xl mb-4">Editar Producto</h2>
+        <form action="../controlador/productocontrolador.php" method="post" enctype="multipart/form-data" class="space-y-4">
+            <input type="hidden" name="id_producto" value="<?= $id_producto; ?>">
+            <input type="hidden" name="imagen_actual" value="<?= base64_encode($editarProducto['imagen']); ?>">
+            <input type="hidden" name="accion" value="editar">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="form-control">
+                    <label class="label"><span class="label-text font-medium">Nombre</span></label>
+                    <input type="text" name="nombre" value="<?= htmlspecialchars($editarProducto['nombre']); ?>" class="input input-bordered w-full" required>
+                </div>
+                <div class="form-control">
+                    <label class="label"><span class="label-text font-medium">Precio (€)</span></label>
+                    <input type="number" step="0.01" name="precio" value="<?= intval($editarProducto['precio']); ?>" class="input input-bordered w-full" required>
+                </div>
+            </div>
+            
+            <div class="form-control">
+                <label class="label"><span class="label-text font-medium">Descripción</span></label>
+                <input type="text" name="descripcion" value="<?= htmlspecialchars($editarProducto['descripcion']); ?>" class="input input-bordered w-full" required>
+            </div>
+
+            <div class="form-control">
+                <label class="label"><span class="label-text font-medium">Imagen Actual</span></label>
+                <img src="data:imagen/jpeg;base64,<?= base64_encode($editarProducto['imagen']); ?>" width="120">
+            </div>
+            
+            <div class="form-control">
+                <label class="label"><span class="label-text font-medium">Imagen Nueva (Opcional)</span></label>
+                <input type="file" name="imagen" class="file-input file-input-bordered w-full">
+            </div>
+
+            <div class="flex gap-3 mt-8">
+                <button type="submit" class="btn bg-green-500 text-white hover:bg-green-600 px-6">
+                    Actualizar Producto
+                </button>
+
+                <a href="?accion=nuevo" class="btn btn-outline">
+                    Cancelar
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+<?php endif; ?>
+    
 
 <div class="p-1 mx-4 md:mx-40 pb-20">
     <?php if(!empty($mensaje)): ?>
@@ -76,7 +133,7 @@ $productos = obtenerProductos($conexion);
                 </div>
             </div>
             <div class="flex gap-2">
-                <form action="../controlador/productocontrolador.php" method="post" class="flex-1">
+                <form action="" method="get" class="flex-1">
                     <input type="hidden" name="accion" value="editar">
                     <input type="hidden" name="id_producto" value="<?= $producto['id_producto'] ?>">
                     <button class="btn btn-sm w-full bg-blue-500 text-white text-xs p-4">Editar</button>
@@ -87,12 +144,11 @@ $productos = obtenerProductos($conexion);
                     <button class="btn btn-sm w-full text-white bg-red-500 text-xs p-4">Eliminar</button>
                 </form>
             </div>
-            </div>
         </div>
         <?php endforeach; ?>
     </div>
 
-    <div class="hidden lg:block overflow-hidden bg-white rounded-lg shadow lg:mx-60">
+    <div class="hidden lg:block overflow-x-auto bg-white rounded-xl shadow-sm border border-gray-200">
         <table class="table-auto w-full border-collapse">
             <thead>
                 <tr class="bg-gray-100 text-center">
@@ -121,7 +177,7 @@ $productos = obtenerProductos($conexion);
                                 <input type="hidden" name="id_producto" value="<?= $producto['id_producto'] ?>">
                                 <button type="submit" class="px-3 py-1 bg-red-500 text-white text-sm font-bold rounded cursor-pointer">Eliminar</button>
                             </form>
-                            <form action="../controlador/productocontrolador.php" method="post">
+                            <form action="" method="get">
                                 <input type="hidden" name="accion" value="editar">
                                 <input type="hidden" name="id_producto" value="<?= $producto['id_producto'] ?>">
                                 <button type="submit" class="px-3 py-1 bg-blue-500 text-white text-sm font-bold rounded cursor-pointer">Editar</button>

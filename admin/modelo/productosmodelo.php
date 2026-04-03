@@ -13,6 +13,7 @@ function obtenerProductoPorId($conexion, $id){
     $stmt = mysqli_prepare($conexion, $sql);
     mysqli_stmt_bind_param($stmt,"i",$id);
     mysqli_stmt_execute($stmt);
+    
     $res = mysqli_stmt_get_result($stmt);
     return mysqli_fetch_assoc($res);
 }
@@ -23,6 +24,7 @@ function agregarProducto($conexion, $nombre, $descripcion, $precio, $imagen){
     $stmt = mysqli_prepare($conexion,$sql);
     mysqli_stmt_bind_param($stmt,"ssdb",$nombre,$descripcion,$precio,$imagen);
     mysqli_stmt_send_long_data($stmt,3,$imagen);
+    
     return mysqli_stmt_execute($stmt);
 }
 

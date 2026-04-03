@@ -11,75 +11,87 @@ $productos = obtenerProductos($conexion);
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos - Donaciones</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style>
-      html, body {
-        background: linear-gradient(to bottom right, rgb(255, 180, 89), rgb(252, 168, 0), rgb(120, 79, 0));
-        min-height: 100vh;
-      }
-    </style>
+<meta charset="UTF-8">
+<title>Donaciones</title>
+
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
 </head>
-<body class="font-[Poppins] pt-20">
 
-<div class="container mx-auto px-4 pb-10">
-    <div class="flex flex-wrap gap-6 justify-center">
-        
-        <?php if (empty($productos)): ?>
-            <p class="text-white font-bold text-xl">No hay productos disponibles en este momento.</p>
-        <?php else: ?>
-            <?php foreach($productos as $producto): ?>
-                <div class="card bg-base-100 w-80 md:w-96 shadow-sm hover:shadow-2xl transition-all duration-300">
-                    <figure class="px-4 pt-4">
-                        <div class="w-full h-48 rounded-xl overflow-hidden border border-gray-100">
-                            <?php if(!empty($producto['imagen'])): ?>
-                                <img src="data:image/jpeg;base64,<?= base64_encode($producto['imagen']) ?>" 
-                                     class="w-full h-full object-cover" 
-                                     alt="<?= htmlspecialchars($producto['nombre']) ?>">
-                            <?php else: ?>
-                                <div class="bg-gray-200 w-full h-full flex items-center justify-center text-gray-400">Sin imagen</div>
-                            <?php endif; ?>
-                        </div>
-                    </figure>
+<body class="bg-gray-100">
 
-                    <div class="card-body">
-                        <div class="badge rounded-full bg-orange-100 text-sm font-bold text-orange-600 uppercase">
-                            Info
-                        </div>
-                        
-                        <h2 class="card-title text-gray-800">
-                            <?= htmlspecialchars($producto['nombre']) ?>
-                        </h2>
-                        
-                        <p class="text-gray-600 text-sm">
-                            <?= htmlspecialchars($producto['descripcion']) ?>
-                        </p>
+<div class="max-w-7xl mx-auto p-6">
 
-                        <div class="card-actions justify-end mt-4">
-                            <a href="confirmar_donacion.php?id=<?= $producto['id_producto'] ?>"
-                               title="Confirmar donación"
-                               class="hover:scale-110 hover:shadow-lg hover:shadow-gray-400 transition-all duration-300 shadow-md badge text-2xl bg-gray-100 px-6 py-5 border-2 border-orange-400 font-mono text-gray-800">
-                                <span class="font-bold"><?= number_format($producto['precio'], 2) ?>€</span>
-                            </a>
-                        </div>
-                    </div>
+    <!-- TITULO -->
+    <h1 class="text-3xl font-bold mb-2">
+        Elige lo que quieres donar
+    </h1>
+
+    <p class="mb-6 text-gray-600">
+        Selecciona productos y añádelos al carrito
+    </p>
+
+    <div class="grid grid-cols-3 gap-6">
+
+        <!-- PRODUCTOS -->
+        <div class="col-span-2 grid grid-cols-2 gap-4">
+
+            <?php foreach($productos as $p): ?>
+                <div class="bg-white p-4 rounded-xl shadow border">
+
+                    <h2 class="font-bold text-lg"><?= $p['nombre'] ?></h2>
+
+                    <p class="text-sm text-gray-500 mb-2">
+                        <?= $p['descripcion'] ?>
+                    </p>
+
+                    <p class="font-bold text-orange-600 mb-3">
+                        €<?= $p['precio'] ?>
+                    </p>
+
+                    <!-- BOTÓN AÑADIR -->
+                    <form action="carrito.php" method="post">
+                        <input type="hidden" name="id_producto" value="<?= $p['id_producto'] ?>">
+
+                        <button class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">
+                            Añadir
+                        </button>
+                    </form>
+
                 </div>
             <?php endforeach; ?>
-        <?php endif; ?>
 
-    </div>
+        </div>
 
-    <div class="mt-16 max-w-3xl mx-auto text-center text-gray-50 bg-black/10 p-6 rounded-2xl backdrop-blur-sm">
-        <p class="leading-relaxed">
-            Todo donativo realizado está 100% destinado a la ayuda y mantenimiento de la vida sudafricana, 
-            agradecemos su ayuda tanto el equipo dedicado a esto, como las cientos de personas salvadas diariamente 
-            gracias a las donaciones que nos llegan. <br><strong>Gracias de todo corazón.</strong>
-        </p>
+        <!-- CARRITO -->
+        <div class="bg-white p-5 rounded-xl shadow h-fit">
+
+            <h2 class="font-bold text-lg mb-4">Tu Donación</h2>
+
+            <!-- Aquí luego metes foreach del carrito -->
+            <div class="space-y-2 mb-4">
+
+                <div class="flex justify-between">
+                    <span>Producto ejemplo</span>
+                    <span>€50</span>
+                </div>
+
+            </div>
+
+            <hr class="my-3">
+
+            <div class="flex justify-between font-bold">
+                <span>Total:</span>
+                <span>€0</span>
+            </div>
+
+            <button class="mt-4 w-full bg-orange-500 text-white py-2 rounded hover:bg-orange-600">
+                Completar Donación
+            </button>
+
+        </div>
+
     </div>
 </div>
 
