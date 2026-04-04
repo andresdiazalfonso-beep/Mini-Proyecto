@@ -41,7 +41,5 @@
         </div>
     </aside>
 
-    <!-- CONTENIDO -->
-    <main class="flex-1 bg-gray-100 p-6">
 </body>
 </html>

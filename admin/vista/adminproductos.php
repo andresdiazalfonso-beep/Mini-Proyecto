@@ -23,6 +23,9 @@ $productos = obtenerProductos($conexion);
     <title>Gestión de Productos</title>
 </head>
 <body class="font-[Poppins]">
+<?= require_once "../../partials/nav_admin.php";?>
+
+<div class="flex flex-col gap-6 max-w-20xl mx-auto">
 
 <div class="p-5 mx-4 md:mx-40 lg:mx-70 pt-10">
     <h1 class="text-3xl font-bold mb-6">Productos</h1>
@@ -119,6 +122,7 @@ $productos = obtenerProductos($conexion);
         <p class="font-semibold mb-5 text-sm bg-blue-50 p-3 rounded border-l-4 border-blue-500 text-blue-700"><?= $mensaje ?></p>
     <?php endif;?>
 
+<!-- En formato movil se mostraran en una columna y en formato movil en dos columnas -->    
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-4">
         <?php foreach($productos as $producto): ?>
         <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col gap-3">
@@ -128,8 +132,8 @@ $productos = obtenerProductos($conexion);
                 </div>
                 <div>
                     <span class="text-xs text-gray-400 font-mono">ID: <?= $producto['id_producto'] ?></span>
-                    <h3 class="font-bold text-gray-800"><?= htmlspecialchars($producto['nombre']) ?></h3>
-                    <p class="text-lg font-bold text-green-600"><?= number_format($producto['precio'], 2) ?> €</p>
+                    <h3 class="font-bold text-gray-800"><span class="sm:hidden text-xs text-gray-400 font-mono">Nombre: </span><?= htmlspecialchars($producto['nombre']) ?></h3>
+                    <p class="text-lg font-bold text-green-600"><span class="sm:hidden text-sm text-gray-400 font-mono">Precio: </span><?= number_format($producto['precio'], 2) ?> €</p>
                 </div>
             </div>
             <div class="flex gap-2">
@@ -148,6 +152,8 @@ $productos = obtenerProductos($conexion);
         <?php endforeach; ?>
     </div>
 
+
+<!--En pantallas grandes se mostraran en una tabla --> 
     <div class="hidden lg:block overflow-x-auto bg-white rounded-xl shadow-sm border border-gray-200">
         <table class="table-auto w-full border-collapse">
             <thead>
@@ -190,6 +196,6 @@ $productos = obtenerProductos($conexion);
         </table>
     </div>
 </div>
-
+</div>
 </body>
 </html>
