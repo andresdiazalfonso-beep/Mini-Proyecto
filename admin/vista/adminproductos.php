@@ -23,7 +23,7 @@ $productos = obtenerProductos($conexion);
     <title>Gestión de Productos</title>
 </head>
 <body class="font-[Poppins]">
-<?= require_once "../../partials/nav_admin.php";?>
+<?php require_once "../../partials/nav_admin.php";?>
 
 <div class="flex flex-col gap-6 max-w-20xl mx-auto">
 

@@ -10,36 +10,47 @@
 </head>
 <body class="font-[Poppins]">
     <div class="flex min-h-screen">
-
     <!-- SIDEBAR -->
-    <aside class="w-64 bg-gray-800 text-white flex flex-col p-5 hidden md:flex sm:w-64 bg-gray-800">
-        <h2 class="text-2xl font-bold mb-6">Panel Admin</h2>
+    <aside class="w-64 bg-[#3d120d] text-white flex flex-col p-6 shadow-lg hidden md:flex">
 
-        <nav class="flex flex-col gap-2">
+        <!-- LOGO -->
+        <div class="flex items-center gap-3 mb-10 mt-2">
+            <img src="/assets/iconos/logo.svg" alt="Logo" 
+                 class="w-12 h-12 transition-transform hover:scale-110 duration-300">
 
-            <a href="../admin/vista/adminusuarios.php" 
-               class="p-2 rounded hover:bg-gray-700 <?= basename($_SERVER['PHP_SELF']) == 'adminusuarios.php' ? 'bg-gray-700' : '' ?>">
-               👤 Usuarios
+            <h1 class="text-xl font-bold tracking-wide">
+                Help<span class="text-orange-400 text-2xl">4</span>África
+            </h1>
+        </div>
+
+        <!-- MENÚ -->
+        <nav class="flex flex-col gap-4 text-lg font-medium">
+
+            <a href="/admin/vista/adminusuarios.php" 
+               class="flex items-center gap-3 p-3 rounded-lg transition-all hover:bg-[#5a1d17] <?= basename($_SERVER['PHP_SELF']) == 'adminusuarios.php' ? 'bg-[#5a1d17]' : '' ?>">
+               👤 <span>Usuarios</span>
             </a>
 
-            <a href="../admin/vista/adminproductos.php" 
-               class="p-2 rounded hover:bg-gray-700 <?= basename($_SERVER['PHP_SELF']) == 'adminproductos.php' ? 'bg-gray-700' : '' ?>">
-               🛒 Productos
+            <a href="/admin/vista/adminproductos.php" 
+               class="flex items-center gap-3 p-3 rounded-lg transition-all hover:bg-[#5a1d17] <?= basename($_SERVER['PHP_SELF']) == 'adminproductos.php' ? 'bg-[#5a1d17]' : '' ?>">
+               🛒 <span>Productos</span>
             </a>
 
-            <a href="../admin/vista/adminpedidos.php" 
-               class="p-2 rounded hover:bg-gray-700 <?= basename($_SERVER['PHP_SELF']) == 'adminpedidos.php' ? 'bg-gray-700' : '' ?>">
-               📦 Pedidos
+            <a href="/admin/vista/adminpedidos.php" 
+               class="flex items-center gap-3 p-3 rounded-lg transition-all hover:bg-[#5a1d17] <?= basename($_SERVER['PHP_SELF']) == 'adminpedidos.php' ? 'bg-[#5a1d17]' : '' ?>">
+               📦 <span>Pedidos</span>
             </a>
 
         </nav>
 
-        <div class="mt-auto pt-5">
-            <a href="logout.php" class="block p-2 bg-red-500 text-center rounded hover:bg-red-600">
+        <!-- FOOTER -->
+        <div class="mt-auto pt-10">
+            <a href="/../partials/logout.php" 
+               class="block text-center bg-[#e36935e6] hover:bg-[#ce6538e8] transition p-3 rounded-lg font-semibold">
                 Cerrar sesión
             </a>
         </div>
-    </aside>
 
+    </aside>
 </body>
 </html>
