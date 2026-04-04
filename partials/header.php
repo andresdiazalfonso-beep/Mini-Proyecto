@@ -96,7 +96,6 @@ session_start();
             height: 100% !important;
         }
     </style>
-    <title>Inicio</title>
 </head>
 <body>
 <!-- Header -->
