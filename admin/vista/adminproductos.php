@@ -25,13 +25,13 @@ $productos = obtenerProductos($conexion);
 <body class="font-[Poppins]">
 <?php require_once "../../partials/nav_admin.php";?>
 
-<div class="flex flex-col gap-6 max-w-20xl mx-auto">
+<div class="flex flex-col gap-6">
 
-<div class="p-5 mx-4 md:mx-40 lg:mx-70 pt-10">
+<div class="p-5 pt-10 ml-0 md:ml-72 mx-4 md:mx-10">
     <h1 class="text-3xl font-bold mb-6">Productos</h1>
 
 <?php if($accion == "nuevo"):?>
-<div class="bg-white p-6 rounded-lg shadow mb-10 border border-gray-100 overflow-x-auto">
+<div class="bg-white p-6 rounded-lg shadow mb- 4border border-gray-100 overflow-x-auto">
         <h2 class="font-semibold text-xl mb-4">Agregar Nuevo Producto</h2>
         <form action="../controlador/productocontrolador.php" method="post" enctype="multipart/form-data" class="space-y-4">
             <input type="hidden" name="accion" value="agregar">
@@ -83,7 +83,7 @@ $productos = obtenerProductos($conexion);
                 </div>
                 <div class="form-control">
                     <label class="label"><span class="label-text font-medium">Precio (€)</span></label>
-                    <input type="number" step="0.01" name="precio" value="<?= intval($editarProducto['precio']); ?>" class="input input-bordered w-full" required>
+                    <input type="number" step="0.01" name="precio" value="<?= htmlspecialchars($editarProducto['precio']); ?>" class="input input-bordered w-full" required>
                 </div>
             </div>
             
@@ -94,7 +94,7 @@ $productos = obtenerProductos($conexion);
 
             <div class="form-control">
                 <label class="label"><span class="label-text font-medium">Imagen Actual</span></label>
-                <img src="data:imagen/jpeg;base64,<?= base64_encode($editarProducto['imagen']); ?>" width="120">
+                <img src="data:image/jpeg;base64,<?= base64_encode($editarProducto['imagen']); ?>" width="120">
             </div>
             
             <div class="form-control">
@@ -117,13 +117,13 @@ $productos = obtenerProductos($conexion);
 <?php endif; ?>
     
 
-<div class="p-1 mx-4 md:mx-40 pb-20">
+<div class="p-1 ml-0 md:ml-64 mx-4 md:mx-10 pb-20">
     <?php if(!empty($mensaje)): ?>
-        <p class="font-semibold mb-5 text-sm bg-blue-50 p-3 rounded border-l-4 border-blue-500 text-blue-700"><?= $mensaje ?></p>
+        <p class="font-semibold mb-5 text-sm bg-blue-50 p-3 rounded border-l-4 border-blue-500 text-blue-700 ml-10"><?= $mensaje ?></p>
     <?php endif;?>
 
 <!-- En formato movil se mostraran en una columna y en formato movil en dos columnas -->    
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-4 ml-5">
         <?php foreach($productos as $producto): ?>
         <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col gap-3">
             <div class="flex items-center gap-4">
@@ -145,7 +145,7 @@ $productos = obtenerProductos($conexion);
                 <form action="../controlador/productocontrolador.php" method="post" class="flex-1">
                     <input type="hidden" name="accion" value="eliminar">
                     <input type="hidden" name="id_producto" value="<?= $producto['id_producto'] ?>">
-                    <button class="btn btn-sm w-full text-white bg-red-500 text-xs p-4">Eliminar</button>
+                    <button class="btn btn-sm w-full text-white bg-red-500 text-xs p-4" onclick="return confirm('¿Seguro que quieres eliminar este producto?')">Eliminar</button>
                 </form>
             </div>
         </div>
@@ -154,7 +154,7 @@ $productos = obtenerProductos($conexion);
 
 
 <!--En pantallas grandes se mostraran en una tabla --> 
-    <div class="hidden lg:block overflow-x-auto bg-white rounded-xl shadow-sm border border-gray-200">
+    <div class="hidden lg:block overflow-x-auto bg-white rounded-xl shadow-sm border border-gray-200 md:ml-10">
         <table class="table-auto w-full border-collapse">
             <thead>
                 <tr class="bg-gray-100 text-center">
@@ -181,7 +181,7 @@ $productos = obtenerProductos($conexion);
                             <form action="../controlador/productocontrolador.php" method="post">
                                 <input type="hidden" name="accion" value="eliminar">
                                 <input type="hidden" name="id_producto" value="<?= $producto['id_producto'] ?>">
-                                <button type="submit" class="px-3 py-1 bg-red-500 text-white text-sm font-bold rounded cursor-pointer">Eliminar</button>
+                                <button type="submit" class="px-3 py-1 bg-red-500 text-white text-sm font-bold rounded cursor-pointer" onclick="return confirm('¿Seguro que quieres eliminar este producto?')">Eliminar</button>
                             </form>
                             <form action="" method="get">
                                 <input type="hidden" name="accion" value="editar">

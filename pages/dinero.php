@@ -1,11 +1,10 @@
 <?php
-session_start();
 // Conexión a la base de datos siguiendo la ruta de tus otros archivos
 require_once "../Conexion/conexion.php";
 require_once __DIR__."/../partials/header.php"; 
 ?>
 
-    <main class="flex-grow bg-[#e36935e6]/10 py-16 flex items-center justify-center px-4">
+    <main class="flex-grow bg-[#e36935e6]/10 py-16 flex items-center justify-center px-4 mt-18">
         <div class="bg-white max-w-2xl w-full mx-auto rounded-2xl shadow-xl p-8 md:p-12">
             
             <div class="text-center mb-10">
