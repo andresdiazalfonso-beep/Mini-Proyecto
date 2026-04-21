@@ -3,6 +3,12 @@ session_start();
 require_once "../modelo/productosmodelo.php";
 require_once "../../Conexion/conexion.php";
 
+
+if (!isset($_SESSION['usuario']) || $_SESSION['rol'] !== 'admin') {
+    header("Location: /login.php");
+    exit();
+}
+
 if($_SERVER['REQUEST_METHOD'] === "POST"){
     $accion = htmlspecialchars(trim($_POST['accion']));
     $id_producto = intval($_POST['id_producto']);
