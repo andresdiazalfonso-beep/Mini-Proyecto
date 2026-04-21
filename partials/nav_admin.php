@@ -1,8 +1,8 @@
 <!-- ../../partials/nav_admin.php -->
 
 <!-- BOTÓN MOBILE -->
-<button id="btnMenu" class="md:hidden fixed top-4 left-4 z-50 bg-[#3d120d] text-white p-2 rounded-lg shadow">
-    ☰
+<button id="menuBtn" class="md:hidden fixed top-4 right-4 z-50 bg-[#3d120d] text-white p-2 rounded-lg shadow" aria-expanded="false">
+    <img src="../../assets/iconos/boton_menu.svg" class="w-8 h-8">
 </button>
 
 <!-- SIDEBAR -->
@@ -50,19 +50,36 @@
 <!-- OVERLAY MOBILE -->
 <div id="overlay" class="fixed inset-0 bg-black/50 hidden z-30 md:hidden"></div>
 
-<!-- SCRIPT -->
+<!-- Script menú móvil -->
 <script>
-const btn = document.getElementById('btnMenu');
+const menuBtn = document.getElementById('menuBtn');
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('overlay');
 
-btn.addEventListener('click', () => {
-    sidebar.classList.toggle('-translate-x-full');
-    overlay.classList.toggle('hidden');
+function openMenu() {
+  sidebar.classList.remove('-translate-x-full');
+  overlay.classList.remove('hidden');
+  menuBtn.setAttribute('aria-expanded', 'true');
+}
+
+function closeMenu() {
+  sidebar.classList.add('-translate-x-full');
+  overlay.classList.add('hidden');
+  menuBtn.setAttribute('aria-expanded', 'false');
+}
+
+menuBtn?.addEventListener('click', () => {
+  const isOpen = !sidebar.classList.contains('-translate-x-full');
+  isOpen ? closeMenu() : openMenu();
 });
 
-overlay.addEventListener('click', () => {
-    sidebar.classList.add('-translate-x-full');
-    overlay.classList.add('hidden');
+overlay?.addEventListener('click', closeMenu);
+
+// cerrar al hacer click en un enlace del menú
+document.querySelectorAll('#sidebar a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth < 768) closeMenu();
+  });
 });
+
 </script>

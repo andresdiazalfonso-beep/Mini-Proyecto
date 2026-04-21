@@ -67,4 +67,6 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
         exit();
     }
 }
+header("Location: ../vista/adminproductos.php");
+exit();
 ?>
