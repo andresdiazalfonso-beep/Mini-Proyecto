@@ -1,6 +1,6 @@
 <?php
 // Conexión a la base de datos siguiendo la ruta de tus otros archivos
-require_once "../conexion/Conexion.php";
+require_once "../Conexion/conexion.php";
 require_once __DIR__."/../partials/header.php"; 
 ?>
 
@@ -16,7 +16,14 @@ require_once __DIR__."/../partials/header.php";
                 </p>
             </div>
 
-            <form action="confirmar_dinero.php" method="POST" class="space-y-8">
+            <?php if (!empty($_SESSION['error_dinero'])): ?>
+                <p class="text-sm bg-red-50 p-3 rounded border-l-4 border-red-500 text-red-700 mb-6">
+                    <?= htmlspecialchars($_SESSION['error_dinero']) ?>
+                </p>
+                <?php unset($_SESSION['error_dinero']); ?>
+            <?php endif; ?>
+
+            <form action="../controlador/dinerocontrolador.php" method="POST" class="space-y-8">
                 
                 <div>
                     <label class="block text-sm font-semibold text-gray-700 mb-4 text-center">
