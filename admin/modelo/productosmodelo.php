@@ -1,46 +1,43 @@
 <?php
+class ProductoModelo {
 
-function obtenerProductos($conexion){
+    private PDO $pdo;
 
-    $sql = "SELECT * FROM productos ORDER BY fecha_creacion DESC";
-    $resultado = mysqli_query($conexion, $sql);
-    return mysqli_fetch_all($resultado, MYSQLI_ASSOC);
-}
+    public function __construct(PDO $pdo) {
+        $this->pdo = $pdo;
+    }
 
-function obtenerProductoPorId($conexion, $id){
+    public function obtenerProductos() {
+        $sql = "SELECT * FROM productos ORDER BY fecha_creacion DESC";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 
-    $sql = "SELECT * FROM productos WHERE id_producto=?";
-    $stmt = mysqli_prepare($conexion, $sql);
-    mysqli_stmt_bind_param($stmt,"i",$id);
-    mysqli_stmt_execute($stmt);
-    
-    $res = mysqli_stmt_get_result($stmt);
-    return mysqli_fetch_assoc($res);
-}
+    public function obtenerProductoPorId(int $id) {
+        $sql = "SELECT * FROM productos WHERE id_producto = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$id]);
+        $producto = $stmt->fetch();
+        return $producto ?: null;
+    }
 
-function agregarProducto($conexion, $nombre, $descripcion, $precio, $imagen){
-    
-    $sql = "INSERT INTO productos(nombre, descripcion, precio, imagen) VALUES (?,?,?,?)";
-    $stmt = mysqli_prepare($conexion,$sql);
-    mysqli_stmt_bind_param($stmt,"ssdb",$nombre,$descripcion,$precio,$imagen);
-    mysqli_stmt_send_long_data($stmt,3,$imagen);
-    
-    return mysqli_stmt_execute($stmt);
-}
+    public function agregarProducto(string $nombre, string $descripcion, float $precio, string $imagen) {
+        $sql = "INSERT INTO productos (nombre, descripcion, precio, imagen) VALUES (?, ?, ?, ?)";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([$nombre, $descripcion, $precio, $imagen]);
+    }
 
-function actualizarProducto($conexion, $id, $nombre, $descripcion, $precio, $imagen){
+    public function actualizarProducto(int $id, string $nombre, string $descripcion, float $precio, string $imagen) {
+        $sql = "UPDATE productos SET nombre=?, descripcion=?, precio=?, imagen=? WHERE id_producto=?";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([$nombre, $descripcion, $precio, $imagen, $id]);
+    }
 
-    $sql = "UPDATE productos SET nombre=?, descripcion=?, precio=?, imagen=? WHERE id_producto=?";
-    $stmt = mysqli_prepare($conexion,$sql);
-    mysqli_stmt_bind_param($stmt,"ssdsi",$nombre,$descripcion,$precio,$imagen,$id);
-    return mysqli_stmt_execute($stmt);
-}
-
-function eliminarProducto($conexion, $id){
-    
-    $sql = "DELETE FROM productos WHERE id_producto=?";
-    $stmt = mysqli_prepare($conexion,$sql);
-    mysqli_stmt_bind_param($stmt,"i",$id);
-    return mysqli_stmt_execute($stmt);
+    public function eliminarProducto(int $id) {
+        $sql = "DELETE FROM productos WHERE id_producto=?";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([$id]);
+    }
 }
 ?>

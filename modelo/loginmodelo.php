@@ -1,30 +1,22 @@
 <?php
+class LoginModelo {
 
-function sanear($datos){
-    return htmlspecialchars(trim($datos));
-}
+    private PDO $pdo;
 
-function obtener_datos($email,$conexion){
-    $sql = "SELECT id_usuario, nombre, email, password, rol FROM usuarios WHERE email = ? LIMIT 1";
-    $stmt = mysqli_prepare($conexion,$sql);
-
-    if($stmt){
-        mysqli_stmt_bind_param($stmt,"s",$email);
-        mysqli_stmt_execute($stmt);
-        
-        $resultado = mysqli_stmt_get_result($stmt);
-
-        if($resultado && mysqli_num_rows($resultado) > 0){
-            $usuario = mysqli_fetch_assoc($resultado);
-            mysqli_stmt_close($stmt);
-            return $usuario;
-        }else{
-            mysqli_stmt_close($stmt);
-            return null;
-        }
-    }else{
-        return null;
+    public function __construct(PDO $pdo) {
+        $this->pdo = $pdo;
     }
 
+    public function sanear(string $datos) {
+        return htmlspecialchars(trim($datos));
+    }
+
+    public function obtener_datos(string $email) {
+        $sql = "SELECT id_usuario, nombre, email, password, rol FROM usuarios WHERE email = ? LIMIT 1";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$email]);
+        $usuario = $stmt->fetch();
+        return $usuario ?: null;
+    }
 }
 ?>

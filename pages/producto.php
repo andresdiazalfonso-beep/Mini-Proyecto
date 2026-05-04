@@ -1,11 +1,11 @@
 <?php
-require_once '..\partials\header.php'; 
-// Asegúrate de que la ruta al modelo sea correcta según tu estructura
-require_once "../admin/modelo/productosmodelo.php"; 
+require_once '../partials/header.php';
+require_once "../admin/modelo/productosmodelo.php";
 require_once "../Conexion/conexion.php";
 
-// Obtenemos los productos reales de la base de datos
-$productos = obtenerProductos($conexion);
+$pdo    = Conexion::obtener();
+$modelo = new ProductoModelo($pdo);
+$productos = $modelo->obtenerProductos();
 ?>
 
 <!DOCTYPE html>

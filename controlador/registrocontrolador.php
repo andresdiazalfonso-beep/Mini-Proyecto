@@ -1,37 +1,38 @@
 <?php
 session_start();
-
 require_once "../Conexion/conexion.php";
 require_once "../modelo/registromodelo.php";
 
 $errores = [];
 
-if($_SERVER['REQUEST_METHOD'] === "POST"){
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    $pdo    = Conexion::obtener();
+    $modelo = new RegistroModelo($pdo);
 
     $datos = [
-        "nombre" => sanear($_POST['nombre']),
-        "email" => sanear($_POST['email']),
-        "password" => sanear($_POST['password']),
-        "password_confirm" => sanear($_POST['password_confirm'])
+        "nombre"           => $modelo->sanear($_POST['nombre']),
+        "email"            => $modelo->sanear($_POST['email']),
+        "password"         => $modelo->sanear($_POST['password']),
+        "password_confirm" => $modelo->sanear($_POST['password_confirm'])
     ];
 
-    $errores = validar_datos($datos,$conexion);
+    $errores = $modelo->validar_datos($datos);
     $_SESSION['errores'] = $errores;
 
-    if(empty($errores)){
-        $resultado = guardar_registro($conexion,$datos);
+    if (empty($errores)) {
+        $resultado = $modelo->guardar_registro($datos);
 
-        if($resultado){
+        if ($resultado) {
             header("Location: ../pages/login.php");
             exit();
-        }else{
+        } else {
             $_SESSION['errores'][] = "Error al registrar al usuario";
             header("Location: ../pages/registro.php");
             exit();
         }
     }
 }
+
 header("Location: ../pages/registro.php");
 exit();
-
 ?>

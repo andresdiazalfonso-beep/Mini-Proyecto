@@ -1,6 +1,6 @@
 <?php
 // Conexión a la base de datos siguiendo la ruta de tus otros archivos
-require_once "../Conexion/conexion.php";
+require_once "../conexion/Conexion.php";
 require_once __DIR__."/../partials/header.php"; 
 ?>
 

@@ -4,41 +4,41 @@ require_once "../Conexion/conexion.php";
 require_once "../modelo/loginmodelo.php";
 
 $errores = [];
-if ($_SERVER['REQUEST_METHOD'] === "POST"){
-    $email = sanear($_POST['email']);
-    $password = sanear($_POST['password']);
 
-    $usuario = obtener_datos($email,$conexion);
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    $pdo = Conexion::obtener();
+    $modelo = new LoginModelo($pdo);
 
-    if($usuario){
-        //Verificar Contraseña
-        if(password_verify($password, $usuario['password'])){
+    $email    = $modelo->sanear($_POST['email']);
+    $password = $modelo->sanear($_POST['password']);
+
+    $usuario = $modelo->obtener_datos($email);
+
+    if ($usuario) {
+        if (password_verify($password, $usuario['password'])) {
             $_SESSION['id_usuario'] = $usuario['id_usuario'];
-            $_SESSION['rol'] = $usuario['rol'];
+            $_SESSION['rol']        = $usuario['rol'];
 
-            // Si marca "Recordar", crea las cookies
-            if(isset($_POST['recordar'])){
-                setcookie('recordar_email',$email,time() + (30*24*60*60), "/");
-                setcookie('recordar_password',$password,time() + (30*24*60*60), "/");
-            }else {
-                // Si desmarca "Recordar", borrar cookies si existen
-                setcookie("recordar_email", "", time() - 3600, "/");
+            if (isset($_POST['recordar'])) {
+                setcookie('recordar_email',    $email,    time() + (30 * 24 * 60 * 60), "/");
+                setcookie('recordar_password', $password, time() + (30 * 24 * 60 * 60), "/");
+            } else {
+                setcookie("recordar_email",    "", time() - 3600, "/");
                 setcookie("recordar_password", "", time() - 3600, "/");
             }
-            
+
             header("Location: ../pages/index.php");
             exit();
-
-        }else{
+        } else {
             $errores['password'] = "Contraseña Incorrecta";
         }
-    }else{
-       $errores['email'] = "Correo electrónico no registrado";
+    } else {
+        $errores['email'] = "Correo electrónico no registrado";
     }
 
     $_SESSION['errores'] = $errores;
 }
+
 header("Location: ../pages/login.php");
 exit();
-
 ?>

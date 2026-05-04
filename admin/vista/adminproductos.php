@@ -3,13 +3,16 @@ session_start();
 require_once "../modelo/productosmodelo.php";
 require_once "../../Conexion/conexion.php";
 
-$accion = isset($_GET['accion']) ? htmlspecialchars(trim($_GET['accion'])) : "nuevo";
-$id_producto = isset($_GET['id_producto']) ? intval($_GET['id_producto']) : "";
+$pdo    = Conexion::obtener();
+$modelo = new ProductoModelo($pdo);
+
+$accion      = isset($_GET['accion'])      ? htmlspecialchars(trim($_GET['accion']))  : "nuevo";
+$id_producto = isset($_GET['id_producto']) ? intval($_GET['id_producto'])              : "";
 
 $mensaje = $_SESSION['mensaje'] ?? "";
 unset($_SESSION['mensaje']);
 
-$productos = obtenerProductos($conexion);
+$productos = $modelo->obtenerProductos();
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +70,7 @@ $productos = obtenerProductos($conexion);
 
 
 <?php if($accion == "editar"):?>
-<?php $editarProducto = obtenerProductoPorId($conexion, $id_producto); ?>
+<?php $editarProducto = $modelo->obtenerProductoPorId($id_producto); ?>
 
 <div class="bg-white p-6 rounded-lg shadow mb-10 border border-gray-100 overflow-x-auto">
         <h2 class="font-semibold text-xl mb-4">Editar Producto</h2>
