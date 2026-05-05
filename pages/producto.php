@@ -99,7 +99,7 @@ $productos = $modelo->obtenerProductos();
                 <span class="text-orange-500">€0</span>
             </div>
 
-            <!-- Botón -->
+            
             <button class="mt-5 w-full bg-orange-500 text-white py-3 rounded-xl font-bold hover:bg-orange-600 transition">
                 Completar Donación
             </button>

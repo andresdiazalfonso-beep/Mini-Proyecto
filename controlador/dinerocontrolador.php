@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "../Conexion/conexion.php";
-require_once "../modelo/dineromodelo.php";
+require_once "../modelo/Dineromodelo.php";
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
