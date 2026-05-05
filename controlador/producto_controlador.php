@@ -1,8 +1,8 @@
 <?php
-require_once "/Conexion/conexion.php";
-require_once "/modelo/Producto.php";
-require_once "/modelo/Carrito.php";
-require_once "/Helpers/Helpers.php";
+require_once "../Conexion/conexion.php";
+require_once "../modelo/Producto.php";
+require_once "../modelo/Carrito.php";
+require_once "../Helpers/Helpers.php";
 
 session_start();
 
@@ -78,7 +78,7 @@ try{
 }
 
 
-include "/pages/producto.php";
+include "../pages/producto.php";
 
 
 
