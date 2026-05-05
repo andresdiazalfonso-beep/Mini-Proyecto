@@ -61,7 +61,7 @@ unset($_SESSION['error_login']);
     </div>
 
   <?php if(!empty($error_login)): ?>
-    <div class="alert alert-error mt-4">
+    <div class="alert alert-error mt-4 mb-4">
         <?= $error_login ?>
     </div>
   <?php endif; ?>
