@@ -3,7 +3,7 @@ require_once '../partials/header.php';
 require_once "../admin/modelo/productosmodelo.php";
 require_once "../Conexion/conexion.php";
 
-$pdo    = Conexion::obtener();
+$pdo    = Conexion::conectar();
 $modelo = new ProductoModelo($pdo);
 $productos = $modelo->obtenerProductos();
 ?>
@@ -21,7 +21,7 @@ $productos = $modelo->obtenerProductos();
 
 <body class="bg-gray-100">
 
-<div class="max-w-7xl mx-auto p-6">
+<div class="max-w-7xl mx-auto p-6 mt-20">
 
     <!-- TITULO -->
     <h1 class="text-3xl font-bold mb-2">
