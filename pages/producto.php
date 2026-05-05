@@ -35,6 +35,23 @@ $carrito = $_SESSION['carrito']->getCarrito();
         </p>
     </div>
 
+    <?php if(isset($_SESSION['mensaje'])): ?>
+        <div class="mb-4 p-4 rounded-xl bg-green-50 border border-green-200 text-green-700 shadow-sm flex items-center gap-2">
+            <?= $_SESSION['mensaje'] ?>
+        </div>
+        <?php unset($_SESSION['mensaje']); ?>
+    <?php endif; ?>
+
+    <?php if(isset($_SESSION['errores'])): ?>
+        <?php foreach($_SESSION['errores'] as $error): ?>
+            <div class="mb-4 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 shadow-sm flex items-center gap-2">
+                <?= $error ?>
+            </div>
+        <?php endforeach; ?>
+        <?php unset($_SESSION['errores']); ?>
+    <?php endif; ?>
+
+
     <div class="grid lg:grid-cols-3 gap-8">
 
         <!-- PRODUCTOS -->
@@ -57,17 +74,17 @@ $carrito = $_SESSION['carrito']->getCarrito();
                             <?= $p['descripcion'] ?>
                         </p>
 
-                        <p class="font-bold text-orange-500 text-lg mb-4">
+                        <p class="font-bold text-[#e36935e6] text-lg mb-4">
                             €<?= $p['precio'] ?>
                         </p>
                     </div>
 
                     <!-- BOTÓN -->
                     <form action="../controlador/producto_controlador.php" method="post">
-                        <input type="hidden" name="id_producto" value="<?= $p['id_producto'] ?>">
+                        <input type="hidden" name="producto_id" value="<?= $p['id_producto'] ?>">
                         <input type="hidden" name="accion" value="añadir">
 
-                        <button class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition">
+                        <button class="w-full bg-[#e36935e6] text-white py-2 rounded-lg font-semibold hover:bg-[#e36935e6]/90 transition">
                             Añadir al carrito
                         </button>
                     </form>
@@ -87,12 +104,38 @@ $carrito = $_SESSION['carrito']->getCarrito();
             <!-- Productos carrito -->
             <div class="space-y-3 mb-4">
 
-                <div class="flex justify-between items-center bg-gray-50 p-2 rounded">
-                    <?php foreach($carrito as $c): ?>
-                        <span class="text-sm"><?= $c['producto']->getNombre." x ".$c['cantidad'] ?></span>
-                        <span class="font-semibold"><?= $c->calcularPrecioFinal($c['cantidad']) ?></span>
-                    <?php endforeach; ?>
-                </div>
+                <?php foreach($carrito as $c): ?>
+
+                    <div class="flex justify-between items-center bg-gray-50 p-2 rounded">
+
+    <span class="text-sm">
+        <?= $c['producto']->getNombre() ?> x <?= $c['cantidad'] ?>
+    </span>
+
+    <div class="flex items-center gap-3">
+
+        <span class="font-semibold">
+            <?= number_format($c['producto']->calcularPrecioFinal($c['cantidad']),2,",",".") ?>€
+        </span>
+
+        <form action="../controlador/producto_controlador.php" method="post">
+            <input type="hidden" name="accion" value="eliminar">
+            <input type="hidden" name="producto_id" value="<?= $c['producto']->getId() ?>">
+
+            <button type="submit"
+                class="group flex items-center justify-center w-8 h-8 rounded-full 
+                    bg-gray-100 hover:bg-red-500 transition duration-300">
+
+                <img src="../assets/iconos/cross.svg"
+                    class="w-4 h-4 group-hover:invert transition duration-300">
+            </button>
+        </form>
+
+        </div>
+                
+    </div>
+
+                <?php endforeach; ?>
 
             </div>
 
@@ -101,12 +144,12 @@ $carrito = $_SESSION['carrito']->getCarrito();
             <!-- Total -->
             <div class="flex justify-between text-lg font-bold">
                 <span>Total:</span>
-                <span class="text-orange-500"><?= $c->calcularTotal() ?></span>
+                <span class="text-[#e36935e6]"><?= number_format($_SESSION['carrito']->calcularTotal(),2,",",".")."€" ?></span>
             </div>
 
             <form action="../controlador/producto_controlador.php" method="post">
                 <input type="hidden" name="accion" value="checkout">
-                <button class="mt-5 w-full bg-orange-500 text-white py-3 rounded-xl font-bold hover:bg-orange-600 transition">
+                <button class="mt-5 w-full bg-[#e36935e6] text-white py-3 rounded-xl font-bold hover:bg-[#e36935e6]/90 transition">
                     Completar Donación
                 </button>
             </form>

@@ -20,6 +20,7 @@ try{
     if($_SERVER['REQUEST_METHOD'] === "POST"){
         if (!isset($_SESSION['usuario'])) {
             $_SESSION['error_login'] = "Debes iniciar sesion antes de donar";
+            
             header("Location: /pages/login.php");
             exit();
         }
@@ -38,42 +39,49 @@ try{
         $datos = $stmt->fetch();
 
         $producto = new Producto($datos);
-        $carrito->añadirCarrito($producto, $cantidad);
+        $carrito->añadirCarrito($producto, 1);
 
             $_SESSION['carrito'] = $carrito;
             $_SESSION['mensaje'] = "Producto añadido al carrito.";
+
             header("Location: producto_controlador.php");
             exit();
     }       
             
-    if(isset($_POST['vaciar'])){
-        $carrito->vaciarCarrito();
+    if($accion === "eliminar"){
+        $id = Helpers::sanear($_POST['producto_id']);
+
+        $carrito->eliminarProducto($id);
+
         $_SESSION['carrito'] = $carrito;
-        $_SESSION['mensaje'] = "Carrito vaciado.";
-        header("Location: controlador_cliente.php");
+        $_SESSION['mensaje'] = "Producto eliminado del carrito";
+
+        header("Location: producto_controlador.php");
         exit();
     }
 
 
-    if(isset($_POST['checkout'])){
+    if($accion == "checkout"){
         $id_usuario = $_SESSION['usuario']['id_usuario'];
         
         if ($carrito->checkout($conexion, $id_usuario)){
             $_SESSION['mensaje'] =  "Compra realizada con éxito";
-            header("Location: controlador_cliente.php");
+
+            header("Location: producto_controlador.php");
             exit();
         } else {
             $_SESSION['errores'][] = "Error al procesar la compra";
-            header("Location: controlador_cliente.php");
+
+            header("Location: producto_controlador.php");
             exit();
         }
     }
 
 }
 
-}catch(PDOException $e){
+}catch(Exception $e){
     $_SESSION['errores'][] = $e->getMessage();
-    header("Location: controlador_cliente.php");
+    header("Location: producto_controlador.php");
     exit();
 }
 

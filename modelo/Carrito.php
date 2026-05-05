@@ -31,32 +31,38 @@ class Carrito{
         $this->carrito = [];
     }
 
-    public function checkout($pdo,$id_cliente){
+    public function eliminarProducto($id){
+        if(isset($this->carrito[$id])){
+            unset($this->carrito[$id]);
+        }
+    }
+
+    public function checkout($pdo,$id_usuario){
         try {
             $stmt = $pdo->prepare("INSERT INTO pedidos (id_usuario, total) VALUES (:u, :t)");
             $stmt->execute([
-                ':c' => $id_cliente,
+                ':u' => $id_usuario,
                 ':t' => $this->calcularTotal()
             ]);
             
             $pedido_id = $pdo->lastInsertId();
     
             foreach($this->carrito as $item){
-                $stmt = $pdo->prepare("INSERT INTO pedido_detalles (pedido_id, producto_id, cantidad, subtotal) 
-                VALUES (:pedido_id, :producto_id, :cantidad, :subtotal)");
+                $stmt = $pdo->prepare("INSERT INTO detalle_pedido (id_pedido, id_producto, cantidad, precio_unitario) 
+                VALUES (:pedido_id, :producto_id, :cantidad, :precio)");
                 
                 $stmt->execute([
                     ':pedido_id' => $pedido_id, 
                     ':producto_id' => $item['producto']->getId(), 
                     ':cantidad' => $item['cantidad'],
-                    ':subtotal' => $item['producto']->calcularPrecioFinal($item['cantidad'])
+                    ':precio' => $item['producto']->calcularPrecioFinal($item['cantidad'])
                 ]);
             }
         
             $this->vaciarCarrito();
 
             return true;
-            } catch (Exception $e) {
+            } catch (PDOException $e) {
                 return false;
             }
     }

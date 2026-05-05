@@ -25,7 +25,7 @@ class Producto{
     }
 
     public function getPrecio(){
-        $this->precio_unitario;
+        return $this->precio_unitario;
     }
 }
 
