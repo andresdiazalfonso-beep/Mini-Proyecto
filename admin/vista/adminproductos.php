@@ -3,7 +3,7 @@ session_start();
 require_once "../modelo/productosmodelo.php";
 require_once "../../Conexion/conexion.php";
 
-$pdo    = Conexion::obtener();
+$pdo    = Conexion::conectar();
 $modelo = new ProductoModelo($pdo);
 
 $accion      = isset($_GET['accion'])      ? htmlspecialchars(trim($_GET['accion']))  : "nuevo";

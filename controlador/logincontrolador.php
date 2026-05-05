@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     if ($usuario) {
         if (password_verify($password, $usuario['password'])) {
             $_SESSION['id_usuario'] = $usuario['id_usuario'];
-            $_SESSION['rol']        = $usuario['rol'];
+            $_SESSION['rol'] = $usuario['rol'];
 
             if (isset($_POST['recordar'])) {
                 setcookie('recordar_email',    $email,    time() + (30 * 24 * 60 * 60), "/");
@@ -27,8 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 setcookie("recordar_password", "", time() - 3600, "/");
             }
 
-            header("Location: ../pages/index.php");
-            exit();
+            if($_SESSION['rol'] == 'admin'){
+                header("Location: /admin/vista/adminproductos.php");
+                exit();
+            }else{
+                header("Location: pages/index.php");
+                exit();
+            }
         } else {
             $errores['password'] = "Contraseña Incorrecta";
         }

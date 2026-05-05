@@ -14,7 +14,7 @@
 <?php include_once "../partials/header.php";?>
 
 <!-- ================= CARRUSEL ================= -->
-<div class="relative w-full h-200 overflow-hidden mb-10">
+<div class="relative w-full h-200 overflow-hidden mb-10 mt-10">
 
     <!-- Slide 1 -->
     <div class="slide absolute inset-0 bg-cover bg-center flex items-center transition-opacity opacity-100"
