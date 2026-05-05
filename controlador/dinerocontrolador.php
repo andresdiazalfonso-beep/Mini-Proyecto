@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $id_usuario = $_SESSION['id_usuario'] ?? null;
 
     // Instanciamos la clase del modelo pasándole la conexión PDO
+    $conexion = Conexion::conectar();
     $modelo = new DineroModelo($conexion);
     
     // Llamamos al método

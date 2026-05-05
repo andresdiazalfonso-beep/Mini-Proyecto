@@ -6,7 +6,7 @@ require_once "../modelo/loginmodelo.php";
 $errores = [];
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
-    $pdo = Conexion::obtener();
+    $pdo = Conexion::conectar();
     $modelo = new LoginModelo($pdo);
 
     $email    = $modelo->sanear($_POST['email']);

@@ -6,7 +6,7 @@ require_once "../modelo/registromodelo.php";
 $errores = [];
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
-    $pdo    = Conexion::obtener();
+    $pdo    = Conexion::conectar();
     $modelo = new RegistroModelo($pdo);
 
     $datos = [
