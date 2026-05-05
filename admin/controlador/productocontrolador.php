@@ -3,7 +3,7 @@ session_start();
 require_once "../modelo/productosmodelo.php";
 require_once "../../Conexion/conexion.php";
 
-if (!isset($_SESSION['usuario']) || $_SESSION['rol'] !== 'admin') {
+if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
     header("Location: /pages/login.php");
     exit();
 }

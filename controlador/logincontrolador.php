@@ -16,22 +16,20 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     if ($usuario) {
         if (password_verify($password, $usuario['password'])) {
-            $_SESSION['id_usuario'] = $usuario['id_usuario'];
-            $_SESSION['rol'] = $usuario['rol'];
+            $_SESSION['usuario'] = $usuario;
 
             if (isset($_POST['recordar'])) {
-                setcookie('recordar_email',    $email,    time() + (30 * 24 * 60 * 60), "/");
-                setcookie('recordar_password', $password, time() + (30 * 24 * 60 * 60), "/");
+                setcookie('recordar_email', $email,    time() + (30 * 24 * 60 * 60), "/");
             } else {
-                setcookie("recordar_email",    "", time() - 3600, "/");
+                setcookie("recordar_email","", time() - 3600, "/");
                 setcookie("recordar_password", "", time() - 3600, "/");
             }
 
-            if($_SESSION['rol'] == 'admin'){
+            if($_SESSION['usuario']['rol'] == 'admin'){
                 header("Location: /admin/vista/adminproductos.php");
                 exit();
             }else{
-                header("Location: pages/index.php");
+                header("Location: /pages/index.php");
                 exit();
             }
         } else {
