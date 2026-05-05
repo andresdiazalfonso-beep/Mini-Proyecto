@@ -7,7 +7,7 @@ $pdo    = Conexion::conectar();
 $modelo = new ProductoModelo($pdo);
 $productos = $modelo->obtenerProductos();
 
-$carrito = $_SESSION['carrito'];
+$carrito = $_SESSION['carrito']->getCarrito();
 ?>
 
 <!DOCTYPE html>
@@ -21,9 +21,9 @@ $carrito = $_SESSION['carrito'];
 
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-[#e36935e6]/10">
 
-<div class="max-w-7xl mx-auto p-6 mt-20">
+<div class="max-w-7xl mx-auto p-6 mt-18 pt-10">
 
     <!-- TITULO -->
     <div class="mb-8">
@@ -88,8 +88,10 @@ $carrito = $_SESSION['carrito'];
             <div class="space-y-3 mb-4">
 
                 <div class="flex justify-between items-center bg-gray-50 p-2 rounded">
-                    <span class="text-sm">Producto ejemplo</span>
-                    <span class="font-semibold">€50</span>
+                    <?php foreach($carrito as $c): ?>
+                        <span class="text-sm"><?= $c['producto']->getNombre." x ".$c['cantidad'] ?></span>
+                        <span class="font-semibold"><?= $c->calcularPrecioFinal($c['cantidad']) ?></span>
+                    <?php endforeach; ?>
                 </div>
 
             </div>
@@ -99,10 +101,11 @@ $carrito = $_SESSION['carrito'];
             <!-- Total -->
             <div class="flex justify-between text-lg font-bold">
                 <span>Total:</span>
-                <span class="text-orange-500">€0</span>
+                <span class="text-orange-500"><?= $c->calcularTotal() ?></span>
             </div>
 
             <form action="../controlador/producto_controlador.php" method="post">
+                <input type="hidden" name="accion" value="checkout">
                 <button class="mt-5 w-full bg-orange-500 text-white py-3 rounded-xl font-bold hover:bg-orange-600 transition">
                     Completar Donación
                 </button>
