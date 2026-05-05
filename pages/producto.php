@@ -6,6 +6,8 @@ require_once "../Conexion/conexion.php";
 $pdo    = Conexion::conectar();
 $modelo = new ProductoModelo($pdo);
 $productos = $modelo->obtenerProductos();
+
+$carrito = $_SESSION['carrito'];
 ?>
 
 <!DOCTYPE html>
@@ -61,8 +63,9 @@ $productos = $modelo->obtenerProductos();
                     </div>
 
                     <!-- BOTÓN -->
-                    <form action="carrito.php" method="post">
+                    <form action="../controlador/producto_controlador.php" method="post">
                         <input type="hidden" name="id_producto" value="<?= $p['id_producto'] ?>">
+                        <input type="hidden" name="accion" value="añadir">
 
                         <button class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition">
                             Añadir al carrito
@@ -99,10 +102,11 @@ $productos = $modelo->obtenerProductos();
                 <span class="text-orange-500">€0</span>
             </div>
 
-            
-            <button class="mt-5 w-full bg-orange-500 text-white py-3 rounded-xl font-bold hover:bg-orange-600 transition">
-                Completar Donación
-            </button>
+            <form action="../controlador/producto_controlador.php" method="post">
+                <button class="mt-5 w-full bg-orange-500 text-white py-3 rounded-xl font-bold hover:bg-orange-600 transition">
+                    Completar Donación
+                </button>
+            </form>
 
         </div>
 

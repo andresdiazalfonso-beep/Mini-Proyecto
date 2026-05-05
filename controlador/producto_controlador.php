@@ -7,12 +7,6 @@ require_once "../Helpers/Helpers.php";
 session_start();
 
 
-if (!isset($_SESSION['usuario'])) {
-    header("Location: /pages/login.php");
-    exit();
-}
-
-
 if(!isset($_SESSION['carrito'])){
     $_SESSION['carrito'] = new Carrito();
 }
@@ -24,6 +18,12 @@ $conexion = Conexion::conectar();
 
 try{
     if($_SERVER['REQUEST_METHOD'] === "POST"){
+        if (!isset($_SESSION['usuario'])) {
+            $_SESSION['error_login'] = "Debes iniciar sesion antes de donar";
+            header("Location: /pages/login.php");
+            exit();
+        }
+
         $accion = $_POST['accion'] ?? "";
 
     if($accion === "añadir"){

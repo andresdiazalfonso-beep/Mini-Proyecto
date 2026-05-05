@@ -4,6 +4,8 @@ session_start();
 $errores = $_SESSION['errores'] ?? [];
 unset($_SESSION['errores']);
 
+$error_login = $_SESSION['error_login'] ?? "";
+unset($_SESSION['error_login']);
 ?>
 
 
@@ -58,6 +60,12 @@ unset($_SESSION['errores']);
         <hr class="h-0 border-b border-solid grow border-gray-200">
     </div>
 
+  <?php if(!empty($error_login)): ?>
+    <div class="alert alert-error mt-4">
+        <?= $error_login ?>
+    </div>
+  <?php endif; ?>
+
     <!-- FORMULARIO -->
     <form action="../controlador/logincontrolador.php" method="POST" class="space-y-5">
 
@@ -72,7 +80,7 @@ unset($_SESSION['errores']);
 
       <div>
         <label class="label text-sm font-semibold">Contraseña</label>
-        <input type="password" name="password" required class="input input-bordered w-full rounded-xl" value="<?= isset($_COOKIE['recordar_email']) ? $_COOKIE['recordar_email'] : "" ?>">
+        <input type="password" name="password" required class="input input-bordered w-full rounded-xl">
 
         <?php if(isset($errores['password'])): ?>
           <p class="text-red-500 text-sm mt-1"><?= $errores['password'] ?></p>
