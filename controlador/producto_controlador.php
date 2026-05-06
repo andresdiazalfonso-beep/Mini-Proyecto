@@ -74,6 +74,7 @@ try{
 
             header("Location: producto_controlador.php");
             exit();
+            
         }
     }
 
