@@ -62,20 +62,14 @@ try{
 
 
     if($accion == "checkout"){
-        $id_usuario = $_SESSION['usuario']['id_usuario'];
-        
-        if ($carrito->checkout($conexion, $id_usuario)){
-            $_SESSION['mensaje'] =  "Compra realizada con éxito";
-
+        if (empty($_SESSION['carrito']->getCarrito())) {
+            $_SESSION['errores'][] = "El carrito está vacío";
             header("Location: producto_controlador.php");
             exit();
-        } else {
-            $_SESSION['errores'][] = "Error al procesar la compra";
-
-            header("Location: producto_controlador.php");
-            exit();
-            
         }
+
+        header("Location: stripe_checkout.php");
+        exit();
     }
 
 }
