@@ -67,6 +67,7 @@ try{
             header("Location: producto_controlador.php");
             exit();
         }
+        
 
         header("Location: stripe_checkout.php");
         exit();
