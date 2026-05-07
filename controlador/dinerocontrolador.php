@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         exit();
     }
 
-    $id_usuario = $_SESSION['id_usuario'] ?? null;
+    $id_usuario = $_SESSION['usuario']['id_usuario'] ?? null;
 
     // Instanciamos la clase del modelo pasándole la conexión PDO
     $conexion = Conexion::conectar();
