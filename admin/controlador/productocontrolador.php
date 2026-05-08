@@ -24,14 +24,14 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $modelo->agregarProducto($nombre, $descripcion, $precio, $imagen);
 
         $_SESSION['mensaje'] = "Producto agregado correctamente";
-        header("Location: ../vista/adminproductos.php");
+        header("Location: productocontrolador.php");
         exit();
     }
 
     if ($accion === "eliminar") {
         $modelo->eliminarProducto($id_producto);
         $_SESSION['mensaje'] = "Producto eliminado correctamente";
-        header("Location: ../vista/adminProductos.php");
+        header("Location: productocontrolador.php");
         exit();
     }
 
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $modelo->actualizarProducto($id_producto, $nombre, $descripcion, $precio, $imagen);
 
         $_SESSION['mensaje'] = "Producto actualizado correctamente";
-        header("Location: ../vista/adminproductos.php");
+        header("Location: productocontrolador.php");
         exit();
     }
 }

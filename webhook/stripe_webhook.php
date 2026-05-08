@@ -9,7 +9,9 @@ $sig_header = $_SERVER['HTTP_STRIPE_SIGNATURE'];
 
 try {
     $event = \Stripe\Webhook::constructEvent(
-        $payload, $sig_header, $endpoint_secret
+        $payload,
+        $sig_header,
+        $endpoint_secret
     );
 } catch(Exception $e) {
     http_response_code(400);
@@ -23,11 +25,12 @@ if ($event->type === 'checkout.session.completed') {
 
     $pdo = Conexion::conectar();
 
-    // marcar como pagado
+    // Actualizar solo si no está ya pagado (evita duplicados)
     $stmt = $pdo->prepare("
         UPDATE pedidos 
         SET estado = 'pagado'
         WHERE id_pedido = :id
+        AND estado != 'pagado'
     ");
 
     $stmt->execute([':id' => $pedido_id]);

@@ -10,30 +10,36 @@ require_once "../Conexion/conexion.php";
 $carrito = $_SESSION['carrito']->getCarrito();
 $pdo = Conexion::conectar();
 
-// 🧾 Crear pedido (pendiente)
+// Crear pedido (pendiente)
 $stmt = $pdo->prepare("
     INSERT INTO pedidos (id_usuario, total, estado)
     VALUES (:u, :t, 'pendiente')
 ");
 
+$total = $_SESSION['carrito']->calcularTotal();
+
 $stmt->execute([
     ':u' => $_SESSION['usuario']['id_usuario'],
-    ':t' => $_SESSION['carrito']->calcularTotal()
+    ':t' => $total
 ]);
 
 $pedido_id = $pdo->lastInsertId();
 
-// Productos para Stripe
+// Stripe line items
 $line_items = [];
 
 foreach($carrito as $item){
     $producto = $item['producto'];
+    $cantidad = $item['cantidad'];
 
     $line_items[] = [
-        'quantity' => $item['cantidad'],
+        'quantity' => $cantidad,
         'price_data' => [
             'currency' => 'eur',
-            'unit_amount' => $producto->getPrecio() * 100,
+
+            // Precio unitario con IVA
+            'unit_amount' => round($producto->getPrecioConIVA() * 100),
+
             'product_data' => [
                 'name' => $producto->getNombre(),
             ],
@@ -41,9 +47,8 @@ foreach($carrito as $item){
     ];
 }
 
-// Crear sesión
+// Crear sesión Stripe
 $session = \Stripe\Checkout\Session::create([
-
     'payment_method_types' => ['card'],
 
     'customer_email' => $_SESSION['usuario']['email'],
@@ -63,4 +68,3 @@ $session = \Stripe\Checkout\Session::create([
 
 header("Location: " . $session->url);
 exit();
-?>
