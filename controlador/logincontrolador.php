@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             }
 
             if($_SESSION['usuario']['rol'] == 'admin'){
-                header("Location: /admin/vista/adminproductos.php");
+                header("Location: /admin/vista/admin_estadisticas.php");
                 exit();
             }else{
                 header("Location: /pages/index.php");
