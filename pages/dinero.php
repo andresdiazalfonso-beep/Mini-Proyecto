@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinero</title>
+</head>
+<body>
 <?php
 // Conexión a la base de datos siguiendo la ruta de tus otros archivos
 require_once "../Conexion/conexion.php";
