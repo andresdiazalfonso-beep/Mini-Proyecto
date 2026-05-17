@@ -27,7 +27,7 @@
     </a>
 
     <!-- USUARIOS -->
-    <a href="/admin/vista/adminusuarios.php"
+    <a href="/admin/controlador/admin_usuarioscontrolador.php"
        class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= basename($_SERVER['PHP_SELF']) == 'adminusuarios.php' ? 'bg-[#5a1d17]' : '' ?>">
        👤 Usuarios
     </a>

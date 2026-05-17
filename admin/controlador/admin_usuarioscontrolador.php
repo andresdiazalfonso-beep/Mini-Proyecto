@@ -53,6 +53,5 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
 }
 
-header("Location: ../vista/adminusuarios.php");
-exit();
+require_once "../vista/adminusuarios.php";
 ?>
