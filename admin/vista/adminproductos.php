@@ -25,7 +25,7 @@ $productos = $modelo->obtenerProductos();
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Gestión de Productos</title>
 </head>
-<body class="font-[Poppins]">
+<body class="font-[Poppins] bg-[#f5f5f5]">
 <?php require_once "../../partials/nav_admin.php";?>
 
 <div class="flex flex-col gap-6">

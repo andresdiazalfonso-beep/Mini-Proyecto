@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once "../modelo/usuariosmodelo.php";
 require_once "../../Conexion/conexion.php";
 
