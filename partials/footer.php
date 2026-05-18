@@ -51,11 +51,10 @@
     <div class="md:pl-10">
       <h4 class="text-white font-semibold mb-4">Enlaces Rápidos</h4>
       <ul class="space-y-3 text-sm">
-        <li><a href="index.php" class="hover:text-orange-500 transition">Inicio</a></li>
-        <li><a href="donar-productos.php" class="hover:text-orange-500 transition">Donar Productos</a></li>
-        <li><a href="donar-dinero.php" class="hover:text-orange-500 transition">Donar Dinero</a></li>
-        <li><a href="impacto.php" class="hover:text-orange-500 transition">Impacto</a></li>
-        <li><a href="contacto.php" class="hover:text-orange-500 transition">Contacto</a></li>
+        <li><a href="../pages/index.php" class="hover:text-orange-500 transition">Inicio</a></li>
+        <li><a href="../controlador/producto_controlador.php" class="hover:text-orange-500 transition">Donar Productos</a></li>
+        <li><a href="../pages/dinero.php" class="hover:text-orange-500 transition">Donar Dinero</a></li>
+        <li><a href="../pages/contacto.php" class="hover:text-orange-500 transition">Contacto</a></li>
       </ul>
     </div>
 

@@ -10,13 +10,6 @@
 // Conexión a la base de datos siguiendo la ruta de tus otros archivos
 require_once "../Conexion/conexion.php";
 require_once __DIR__."/../partials/header.php";
-require_once "../modelo/SuscripcionModelo.php";
-$suscripcionActiva = null;
-if (isset($_SESSION['usuario'])) {
-    $pdo = Conexion::conectar();
-    $modeloSusc = new SuscripcionModelo($pdo);
-    $suscripcionActiva = $modeloSusc->obtenerActiva((int) $_SESSION['usuario']['id_usuario']);
-}
 ?>
 
     <main class="flex-grow bg-[#e36935e6]/10 py-16 flex items-center justify-center px-4 mt-18">
@@ -112,98 +105,6 @@ if (isset($_SESSION['usuario'])) {
                 </div>
 
             </form>
-            <div class="mt-10 border-t pt-8">
-
-            <div class="text-center mb-6">
-                <h2 class="text-2xl font-bold text-[#4A2C2A]">Donación mensual</h2>
-                <p class="text-gray-500 text-sm mt-1">
-                    Ayuda de forma recurrente. Se renovará automáticamente cada mes.
-                </p>
-            </div>
-
-            <?php if (!isset($_SESSION['usuario'])): ?>
-                <!-- Usuario no logueado -->
-                <p class="text-center text-gray-500 text-sm">
-                    <a href="/pages/login.php" class="text-[#e36935] font-semibold hover:underline">
-                        Inicia sesión
-                    </a>
-                    para activar una suscripción mensual.
-                </p>
-
-            <?php elseif ($suscripcionActiva): ?>
-                <!-- Ya tiene suscripción activa → mostrar info y botón cancelar -->
-                <div class="bg-green-50 border border-green-200 rounded-xl p-5 text-center space-y-3">
-                    <p class="text-green-700 font-semibold text-lg">
-                        ✅ Suscripción activa: <?= number_format($suscripcionActiva['cantidad'], 2) ?>€/mes
-                    </p>
-                    <p class="text-green-600 text-sm">
-                        Próxima renovación:
-                        <span class="font-medium">
-                            <?= date('d/m/Y', strtotime($suscripcionActiva['proxima_renovacion'])) ?>
-                        </span>
-                    </p>
-                    <form action="/controlador/suscripcioncontrolador.php" method="POST">
-                        <input type="hidden" name="accion" value="cancelar">
-                        <button type="submit"
-                                class="btn btn-sm bg-red-500 hover:bg-red-600 border-0 text-white rounded-xl px-6">
-                            Cancelar suscripción
-                        </button>
-                    </form>
-                </div>
-
-            <?php else: ?>
-                <!-- Sin suscripción → formulario para suscribirse -->
-                <?php if (!empty($_SESSION['info_dinero'])): ?>
-                    <p class="text-sm bg-blue-50 p-3 rounded border-l-4 border-blue-400 text-blue-700 mb-4">
-                        <?= htmlspecialchars($_SESSION['info_dinero']) ?>
-                    </p>
-                    <?php unset($_SESSION['info_dinero']); ?>
-                <?php endif; ?>
-
-                <form action="/controlador/suscripcioncontrolador.php" method="POST" class="space-y-5">
-                    <input type="hidden" name="accion" value="suscribir">
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-3 text-center">
-                            Elige la cantidad mensual
-                        </label>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                            <?php foreach ([5, 10, 20, 50] as $op): ?>
-                                <label class="cursor-pointer">
-                                    <input type="radio" name="cantidad" value="<?= $op ?>"
-                                        class="peer sr-only" <?= $op === 10 ? 'checked' : '' ?>>
-                                    <div class="rounded-xl border-2 border-gray-200 py-3 text-center text-lg
-                                                font-bold text-gray-600 peer-checked:border-[#e36935]
-                                                peer-checked:bg-[#e36935] peer-checked:text-white
-                                                hover:border-[#e36935] transition-all">
-                                        <?= $op ?>€
-                                    </div>
-                                </label>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-1">
-                            O introduce otra cantidad (€)
-                        </label>
-                        <input type="number" name="cantidad_libre" min="1" placeholder="Ej: 30"
-                            class="input input-bordered w-full rounded-xl">
-                        <p class="text-xs text-gray-500 mt-1">
-                            Si rellenas este campo se ignorará la opción de arriba.
-                        </p>
-                    </div>
-
-                    <button type="submit"
-                            class="btn w-full bg-[#4A2C2A] hover:bg-[#3a2020] border-0
-                                text-white rounded-xl text-lg py-3 h-auto">
-                        Suscribirme mensualmente
-                    </button>
-                </form>
-
-            <?php endif; ?>
-
-            </div>
         </div>
     </main>
 
