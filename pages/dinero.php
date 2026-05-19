@@ -31,7 +31,7 @@ require_once __DIR__."/../partials/header.php";
                 <?php unset($_SESSION['error_dinero']); ?>
             <?php endif; ?>
 
-            <form action="/controlador/dinerocontrolador.php" method="POST" class="space-y-8">
+            <form action="/controlador/stripe_donacion.php" method="POST" class="space-y-8">
                 
                 <div>
                     <label class="block text-sm font-semibold text-gray-700 mb-4 text-center">
