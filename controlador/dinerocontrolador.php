@@ -4,6 +4,14 @@ require_once "../Conexion/conexion.php";
 require_once "../modelo/Dineromodelo.php";
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
+    // Se bloqueara llevandolo al login si no ha iniciado sesion
+    if (!isset($_SESSION['usuario'])) {
+        $_SESSION['error_login'] = "Debes iniciar sesion antes de donar";
+            
+        header("Location: /pages/login.php");
+        exit();
+    }
+
 
     // La cantidad libre tiene prioridad sobre el radio
     if (!empty($_POST['cantidad_libre'])) {

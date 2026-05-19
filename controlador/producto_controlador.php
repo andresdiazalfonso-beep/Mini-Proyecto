@@ -18,6 +18,7 @@ $conexion = Conexion::conectar();
 
 try{
     if($_SERVER['REQUEST_METHOD'] === "POST"){
+        // Se bloqueara llevandolo al login si no ha iniciado sesion
         if (!isset($_SESSION['usuario'])) {
             $_SESSION['error_login'] = "Debes iniciar sesion antes de donar";
             
