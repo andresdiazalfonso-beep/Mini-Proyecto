@@ -1,7 +1,7 @@
 <!-- ../../partials/nav_admin.php -->
 
 <!-- BOTÓN MOBILE -->
-<button id="menuBtn" class="md:hidden fixed top-4 right-4 z-50 bg-[#3d120d] text-white p-2 rounded-lg shadow" aria-expanded="false">
+<button id="menuBtn" class="md:hidden fixed top-4 right-4 z-50 text-white p-2 rounded-lg shadow" aria-expanded="false">
     <img src="../../assets/iconos/boton_menu.svg" class="w-8 h-8">
 </button>
 

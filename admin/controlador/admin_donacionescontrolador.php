@@ -54,14 +54,9 @@ $totalIngresos = array_sum(
 );
 
 $mensaje = $_SESSION['mensaje'] ?? "";
-
 unset($_SESSION['mensaje']);
 
 
-/*
-|--------------------------------------------------------------------------
-| CARGAR VISTA
-|--------------------------------------------------------------------------
-*/
 
 require_once "../vista/admindonaciones.php";
+?>

@@ -1,3 +1,13 @@
+<?php
+
+$mensaje = $mensaje ?? "";
+
+$donaciones = $donaciones ?? [];
+
+$totalDonaciones = $totalDonaciones ?? 0;
+
+$totalIngresos = $totalIngresos ?? 0;
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,7 +22,7 @@
 <title>Donaciones</title>
 </head>
 <body class="font-[Poppins] bg-[#f5f5f5]">
-    
+
 <?php require_once "../../partials/nav_admin.php"; ?>
 
 <div class="flex flex-col gap-6">
