@@ -111,32 +111,13 @@ $session = \Stripe\Checkout\Session::create([
 
     ],
 
-    'success_url' =>
-        'http://localhost/Mini-Proyecto/pages/resultado_donacion.php?estado=pagado&donacion_id=' . $donacion_id,
+    'success_url' => 'http://localhost/Mini-Proyecto/pages/resultado_pago.php?estado=pagado&donacion_id=' . $donacion_id,
 
-    'cancel_url' =>
-        'http://localhost/Mini-Proyecto/pages/resultado_donacion.php?estado=cancelado&donacion_id=' . $donacion_id,
-
-]);
-
-
-// ==========================
-// GUARDAR SESSION ID
-// ==========================
-
-$stmt = $pdo->prepare("
-    UPDATE donaciones_dinero
-    SET stripe_session_id = :s
-    WHERE id_donacion = :id
-");
-
-$stmt->execute([
-
-    ':s' => $session->id,
-    ':id' => $donacion_id
+    'cancel_url' =>  'http://localhost/Mini-Proyecto/pages/resultado_pago.php?estado=cancelado&donacion_id=' . $donacion_id,
 
 ]);
 
 
 header("Location: " . $session->url);
 exit();
+?>
