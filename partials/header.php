@@ -13,6 +13,7 @@ $nombreUsuario = $logueado ? htmlspecialchars($_SESSION['usuario']['nombre']) : 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         /* Ocultar el banner superior de Google */
@@ -176,7 +177,7 @@ $nombreUsuario = $logueado ? htmlspecialchars($_SESSION['usuario']['nombre']) : 
         }
     </style>
 </head>
-<body>
+<body class="font-[Poppins]">
 <!-- Header -->
 <header class="bg-[#faf7f4] shadow-md border-b-2 border-[#e0dad1] fixed top-0 left-0 right-0 z-50">
   
