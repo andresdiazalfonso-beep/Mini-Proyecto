@@ -44,6 +44,11 @@
        📦 Pedidos
     </a>
 
+    <a href="/admin/controlador/admin_donacionescontrolador.php"
+      class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= basename($_SERVER['PHP_SELF']) == 'admindonaciones.php' ? 'bg-[#5a1d17]' : '' ?>">
+      ❤️ Donaciones
+    </a>
+
 </nav>
 
     <!-- FOOTER -->
