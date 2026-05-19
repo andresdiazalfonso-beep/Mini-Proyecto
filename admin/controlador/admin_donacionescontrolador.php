@@ -41,22 +41,56 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
 /*
 |--------------------------------------------------------------------------
-| OBTENER DATOS
+| PAGINACIÓN
 |--------------------------------------------------------------------------
 */
 
-$donaciones = $modelo->obtenerDonaciones();
+$porPagina = 10;
 
-$totalDonaciones = count($donaciones);
+$paginaActual = isset($_GET['pagina'])
+    ? max(1, intval($_GET['pagina']))
+    : 1;
+
+$totalRegistros = $modelo->contarDonaciones();
+
+$totalPaginas = ceil($totalRegistros / $porPagina);
+
+$offset = ($paginaActual - 1) * $porPagina;
+
+
+/*
+|--------------------------------------------------------------------------
+| OBTENER DONACIONES
+|--------------------------------------------------------------------------
+*/
+
+$donaciones = $modelo->obtenerDonacionesPaginadas(
+    $porPagina,
+    $offset
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| ESTADÍSTICAS
+|--------------------------------------------------------------------------
+*/
+
+$totalDonaciones = $totalRegistros;
 
 $totalIngresos = array_sum(
     array_column($donaciones, 'cantidad')
 );
 
 $mensaje = $_SESSION['mensaje'] ?? "";
+
 unset($_SESSION['mensaje']);
 
 
+/*
+|--------------------------------------------------------------------------
+| CARGAR VISTA
+|--------------------------------------------------------------------------
+*/
 
 require_once "../vista/admindonaciones.php";
-?>

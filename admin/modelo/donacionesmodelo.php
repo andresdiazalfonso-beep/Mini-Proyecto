@@ -12,11 +12,11 @@ class DonacionesModelo {
 
     /*
     |--------------------------------------------------------------------------
-    | OBTENER DONACIONES
+    | OBTENER DONACIONES PAGINADAS
     |--------------------------------------------------------------------------
     */
 
-    public function obtenerDonaciones(): array {
+    public function obtenerDonacionesPaginadas($limite, $offset): array {
 
         $sql = "
             SELECT 
@@ -30,13 +30,33 @@ class DonacionesModelo {
             INNER JOIN usuarios u 
                 ON d.id_usuario = u.id_usuario
             ORDER BY d.fecha DESC
+            LIMIT ? OFFSET ?
         ";
 
         $stmt = $this->pdo->prepare($sql);
 
+        $stmt->bindValue(1, $limite, PDO::PARAM_INT);
+        $stmt->bindValue(2, $offset, PDO::PARAM_INT);
+
         $stmt->execute();
 
         return $stmt->fetchAll();
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | CONTAR DONACIONES
+    |--------------------------------------------------------------------------
+    */
+
+    public function contarDonaciones(): int {
+
+        $sql = "SELECT COUNT(*) FROM donaciones_dinero";
+
+        $stmt = $this->pdo->query($sql);
+
+        return (int) $stmt->fetchColumn();
     }
 
 

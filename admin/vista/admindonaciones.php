@@ -7,20 +7,31 @@ $donaciones = $donaciones ?? [];
 $totalDonaciones = $totalDonaciones ?? 0;
 
 $totalIngresos = $totalIngresos ?? 0;
+
+$totalPaginas = $totalPaginas ?? 1;
+
+$paginaActual = $paginaActual ?? 1;
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
+
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 <title>Donaciones</title>
+
 </head>
+
 <body class="font-[Poppins] bg-[#f5f5f5]">
 
 <?php require_once "../../partials/nav_admin.php"; ?>
@@ -127,11 +138,20 @@ $totalIngresos = $totalIngresos ?? 0;
         </p>
 
         <span class="inline-block mt-1 px-2 py-0.5 rounded-full text-xs font-semibold
-            <?= $donacion['estado'] === 'pagado'
-                ? 'bg-green-100 text-green-700'
-                : 'bg-red-100 text-red-700' ?>">
 
-            <?= ucfirst($donacion['estado']) ?>
+        <?=
+            $donacion['estado'] === 'pagado'
+                ? 'bg-green-100 text-green-700'
+
+            : ($donacion['estado'] === 'pendiente'
+                ? 'bg-yellow-100 text-yellow-700'
+
+                : 'bg-red-100 text-red-700')
+        ?>
+
+        ">
+
+        <?= ucfirst($donacion['estado']) ?>
 
         </span>
 
@@ -171,6 +191,7 @@ $totalIngresos = $totalIngresos ?? 0;
 <table class="table-auto w-full border-collapse">
 
 <thead>
+
 <tr class="bg-gray-100 text-center">
 
     <th class="px-4 py-3 border-b">ID</th>
@@ -188,6 +209,7 @@ $totalIngresos = $totalIngresos ?? 0;
     <th class="px-4 py-3 border-b">Acciones</th>
 
 </tr>
+
 </thead>
 
 <tbody>
@@ -214,21 +236,23 @@ $totalIngresos = $totalIngresos ?? 0;
 
     <td class="px-4 py-4">
 
-    <span class="px-3 py-1 rounded-full text-xs font-semibold
+        <span class="px-3 py-1 rounded-full text-xs font-semibold
 
-    <?=
-        $donacion['estado'] === 'pagado'
-            ? 'bg-green-100 text-green-700'
+        <?=
+            $donacion['estado'] === 'pagado'
+                ? 'bg-green-100 text-green-700'
 
-        : ($donacion['estado'] === 'pendiente'
-            ? 'bg-yellow-100 text-yellow-700'
+            : ($donacion['estado'] === 'pendiente'
+                ? 'bg-yellow-100 text-yellow-700'
 
-            : 'bg-red-100 text-red-700')
-    ?>">
+                : 'bg-red-100 text-red-700')
+        ?>
+
+        ">
 
         <?= ucfirst($donacion['estado']) ?>
 
-    </span>
+        </span>
 
     </td>
 
@@ -265,6 +289,53 @@ $totalIngresos = $totalIngresos ?? 0;
 </tbody>
 
 </table>
+
+</div>
+
+
+
+<!-- PAGINACIÓN -->
+
+<div class="flex justify-center items-center gap-2 mt-8 flex-wrap pb-10">
+
+<?php if($paginaActual > 1): ?>
+
+<a href="?pagina=<?= $paginaActual - 1 ?>"
+   class="px-4 py-2 bg-white border rounded-lg hover:bg-gray-100">
+
+    Anterior
+
+</a>
+
+<?php endif; ?>
+
+
+<?php for($i = 1; $i <= $totalPaginas; $i++): ?>
+
+<a href="?pagina=<?= $i ?>"
+   class="px-4 py-2 rounded-lg border font-semibold
+
+   <?= $i == $paginaActual
+        ? 'bg-[#e36935e6] text-white border-[#e36935e6]'
+        : 'bg-white hover:bg-gray-100' ?>">
+
+    <?= $i ?>
+
+</a>
+
+<?php endfor; ?>
+
+
+<?php if($paginaActual < $totalPaginas): ?>
+
+<a href="?pagina=<?= $paginaActual + 1 ?>"
+   class="px-4 py-2 bg-white border rounded-lg hover:bg-gray-100">
+
+    Siguiente
+
+</a>
+
+<?php endif; ?>
 
 </div>
 
