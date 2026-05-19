@@ -2,7 +2,7 @@
 session_start();
 
 require_once "../modelo/pedidosmodelo.php";
-require_once "../../Conexion/conexion.php";
+require_once "../../conexion/Conexion.php";
 
 if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
 
@@ -13,6 +13,33 @@ if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
 $pdo = Conexion::conectar();
 
 $modelo = new PedidosModelo($pdo);
+
+/* =========================
+   GESTIÓN DE ACCIONES POST
+========================= */
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $accionPost = $_POST['accion'] ?? '';
+    $idPost     = intval($_POST['id_pedido'] ?? 0);
+
+    if ($accionPost === 'eliminar' && $idPost > 0) {
+        $modelo->eliminarPedido($idPost);
+        $_SESSION['mensaje'] = "Pedido #$idPost eliminado correctamente.";
+    }
+
+    if ($accionPost === 'cambiar_estado' && $idPost > 0) {
+        $nuevoEstado = $_POST['estado'] ?? '';
+        $estadosValidos = ['pendiente', 'pagado', 'cancelado'];
+        if (in_array($nuevoEstado, $estadosValidos)) {
+            $modelo->actualizarEstado($idPost, $nuevoEstado);
+            $_SESSION['mensaje'] = "Estado del pedido #$idPost actualizado a '$nuevoEstado'.";
+        }
+    }
+
+    header("Location: /admin/vista/adminpedidos.php");
+    exit();
+}
 
 $accion = isset($_GET['accion'])
     ? htmlspecialchars(trim($_GET['accion']))
