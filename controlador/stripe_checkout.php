@@ -5,7 +5,7 @@ require_once "../modelo/Carrito.php";
 session_start();
 
 require_once "../config/stripe.php";
-require_once "../Conexion/conexion.php";
+require_once "../conexion/Conexion.php";
 
 $carrito = $_SESSION['carrito']->getCarrito();
 $pdo = Conexion::conectar();

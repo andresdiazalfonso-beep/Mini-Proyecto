@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once "../modelo/productosmodelo.php";
-require_once "../../Conexion/conexion.php";
+require_once "../modelo/ProductosModelo.php";
+require_once "../../conexion/Conexion.php";
 
 $pdo    = Conexion::conectar();
 $modelo = new ProductoModelo($pdo);

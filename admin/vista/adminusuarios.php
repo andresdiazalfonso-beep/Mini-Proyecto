@@ -1,6 +1,6 @@
 <?php
-require_once "../modelo/usuariosmodelo.php";
-require_once "../../Conexion/conexion.php";
+require_once "../modelo/UsuariosModelo.php";
+require_once "../../conexion/Conexion.php";
 
 if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
     header("Location: /pages/login.php");

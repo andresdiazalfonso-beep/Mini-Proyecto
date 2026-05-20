@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once "../modelo/donacionesmodelo.php";
-require_once "../../Conexion/conexion.php";
+require_once "../modelo/DonacionesModelo.php";
+require_once "../../conexion/Conexion.php";
 
 if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
 

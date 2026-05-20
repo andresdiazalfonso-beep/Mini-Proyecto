@@ -1,7 +1,7 @@
 <?php
 require_once '../partials/header.php';
-require_once "../admin/modelo/productosmodelo.php";
-require_once "../Conexion/conexion.php";
+require_once "../admin/modelo/ProductosModelo.php";
+require_once "../conexion/Conexion.php";
 
 $pdo    = Conexion::conectar();
 $modelo = new ProductoModelo($pdo);

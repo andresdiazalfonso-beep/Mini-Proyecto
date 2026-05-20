@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once "../modelo/pedidosmodelo.php";
+require_once "../modelo/PedidosModelo.php";
 require_once "../../conexion/Conexion.php";
 
 if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
