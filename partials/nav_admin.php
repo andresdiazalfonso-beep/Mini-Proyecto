@@ -54,6 +54,12 @@ $paginaActual = basename($_SERVER['PHP_SELF']); # Con esto detecta la página en
        ❤️ Donaciones
     </a>
 
+    <!-- CONTACTO -->
+    <a href="/admin/controlador/admin_contactoscontrolador.php"
+       class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'admin_contactoscontrolador.php' ? 'bg-[#5a1d17]' : '' ?>">
+       ✉️ Contacto
+    </a>
+
 </nav>
 
     <!-- FOOTER -->
