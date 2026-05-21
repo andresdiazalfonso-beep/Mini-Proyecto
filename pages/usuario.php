@@ -63,17 +63,13 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
     <div class="flex items-center gap-3">
 
         <div class="w-11 h-11 rounded-xl bg-[#e36935e6] flex items-center justify-center text-white font-bold text-xl">
-            H4A
+            <img src="../assets/iconos/logo.svg">
         </div>
 
         <div>
             <h1 class="font-bold text-xl text-gray-800">
                 Help4Africa
             </h1>
-
-            <p class="text-sm text-gray-400">
-                Panel de Usuario
-            </p>
         </div>
 
     </div>
@@ -167,7 +163,7 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
                 </div>
 
                 <div class="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center text-3xl">
-                    💰
+                    <img src="../assets/iconos/money.svg">
                 </div>
 
             </div>
