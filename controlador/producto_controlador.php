@@ -1,5 +1,5 @@
 <?php
-require_once "../Conexion/conexion.php";
+require_once "../conexion/Conexion.php";
 require_once "../modelo/Producto.php";
 require_once "../modelo/Carrito.php";
 require_once "../Helpers/Helpers.php";

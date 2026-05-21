@@ -2,7 +2,7 @@
 session_start();
 
 require_once "../config/stripe.php";
-require_once "../Conexion/conexion.php";
+require_once "../conexion/Conexion.php";
 
 if (!isset($_SESSION['usuario'])) {
 

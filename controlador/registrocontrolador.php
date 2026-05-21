@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once "../Conexion/conexion.php";
-require_once "../modelo/Registromodelo.php";
+require_once "../conexion/Conexion.php";
+require_once "../modelo/RegistroModelo.php";
 
 $errores = [];
 

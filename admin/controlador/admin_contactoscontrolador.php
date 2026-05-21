@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once "../modelo/DonacionesModelo.php";
+require_once "../modelo/ContactosModelo.php";
 require_once "../../conexion/Conexion.php";
 
 if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
@@ -12,12 +12,12 @@ if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
 
 $pdo = Conexion::conectar();
 
-$modelo = new DonacionesModelo($pdo);
+$modelo = new ContactosModelo($pdo);
 
 
 /*
 |--------------------------------------------------------------------------
-| ELIMINAR DONACIÓN
+| ELIMINAR CONTACTO
 |--------------------------------------------------------------------------
 */
 
@@ -27,13 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     if ($accion === "eliminar") {
 
-        $id_donacion = intval($_POST['id_donacion']);
+        $id_contacto = intval($_POST['id_contacto']);
 
-        $modelo->eliminarDonacion($id_donacion);
+        $modelo->eliminarContacto($id_contacto);
 
-        $_SESSION['mensaje'] = "Donación eliminada correctamente";
+        $_SESSION['mensaje'] = "Mensaje eliminado correctamente";
 
-        header("Location: ../controlador/admin_donacionescontrolador.php");
+        header("Location: ../controlador/admin_contactoscontrolador.php");
         exit();
     }
 }
@@ -51,7 +51,7 @@ $paginaActual = isset($_GET['pagina'])
     ? max(1, intval($_GET['pagina']))
     : 1;
 
-$totalRegistros = $modelo->contarDonaciones();
+$totalRegistros = $modelo->contarContactos();
 
 $totalPaginas = ceil($totalRegistros / $porPagina);
 
@@ -60,11 +60,11 @@ $offset = ($paginaActual - 1) * $porPagina;
 
 /*
 |--------------------------------------------------------------------------
-| OBTENER DONACIONES
+| OBTENER CONTACTOS
 |--------------------------------------------------------------------------
 */
 
-$donaciones = $modelo->obtenerDonacionesPaginadas(
+$contactos = $modelo->obtenerContactosPaginados(
     $porPagina,
     $offset
 );
@@ -76,11 +76,7 @@ $donaciones = $modelo->obtenerDonacionesPaginadas(
 |--------------------------------------------------------------------------
 */
 
-$totalDonaciones = $totalRegistros;
-
-$totalIngresos = array_sum(
-    array_column($donaciones, 'cantidad')
-);
+$totalContactos = $totalRegistros;
 
 $mensaje = $_SESSION['mensaje'] ?? "";
 
@@ -93,4 +89,4 @@ unset($_SESSION['mensaje']);
 |--------------------------------------------------------------------------
 */
 
-require_once "../vista/admindonaciones.php";
+require_once "../vista/admincontactos.php";

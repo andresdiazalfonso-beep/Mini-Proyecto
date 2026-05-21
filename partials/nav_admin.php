@@ -18,35 +18,48 @@
     </div>
 
 <!-- MENÚ -->
+<?php
+$paginaActual = basename($_SERVER['PHP_SELF']); # Con esto detecta la página en la que estás y guarda dicha información
+?>
+
 <nav class="flex flex-col gap-4 text-lg font-medium">
 
     <!-- ESTADÍSTICAS -->
     <a href="/admin/vista/admin_estadisticas.php"
-       class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= basename($_SERVER['PHP_SELF']) == 'adminestadisticas.php' ? 'bg-[#5a1d17]' : '' ?>">
+       class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'admin_estadisticas.php' ? 'bg-[#5a1d17]' : '' ?>">
        📊 Estadísticas
     </a>
 
     <!-- USUARIOS -->
     <a href="/admin/controlador/admin_usuarioscontrolador.php"
-       class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= basename($_SERVER['PHP_SELF']) == 'adminusuarios.php' ? 'bg-[#5a1d17]' : '' ?>">
+       class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'admin_usuarioscontrolador.php' ? 'bg-[#5a1d17]' : '' ?>">
        👤 Usuarios
     </a>
 
     <!-- PRODUCTOS -->
     <a href="/admin/vista/adminproductos.php"
-       class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= basename($_SERVER['PHP_SELF']) == 'adminproductos.php' ? 'bg-[#5a1d17]' : '' ?>">
+       class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'adminproductos.php' ? 'bg-[#5a1d17]' : '' ?>">
        🛒 Productos
     </a>
 
     <!-- PEDIDOS -->
     <a href="/admin/controlador/admin_pedidoscontrolador.php"
        class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= basename($_SERVER['PHP_SELF']) == 'adminpedidos.php' ? 'bg-[#5a1d17]' : '' ?>">
+    <a href="/admin/vista/adminpedidos.php"
+       class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'adminpedidos.php' ? 'bg-[#5a1d17]' : '' ?>">
        📦 Pedidos
     </a>
 
+    <!-- DONACIONES -->
     <a href="/admin/controlador/admin_donacionescontrolador.php"
-      class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= basename($_SERVER['PHP_SELF']) == 'admindonaciones.php' ? 'bg-[#5a1d17]' : '' ?>">
-      ❤️ Donaciones
+       class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'admin_donacionescontrolador.php' ? 'bg-[#5a1d17]' : '' ?>">
+       ❤️ Donaciones
+    </a>
+
+    <!-- CONTACTO -->
+    <a href="/admin/controlador/admin_contactoscontrolador.php"
+       class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'admin_contactoscontrolador.php' ? 'bg-[#5a1d17]' : '' ?>">
+       ✉️ Contacto
     </a>
 
 </nav>
