@@ -354,22 +354,7 @@ $ingresoTotal = array_sum(
 
     <td class="px-4 py-4">
 
-        <div class="flex justify-center gap-2">
-
-            <form action="" method="get">
-
-                <input type="hidden" name="accion" value="detalle">
-
-                <input type="hidden" name="id_pedido" value="<?= $pedido['id_pedido'] ?>">
-
-                <button type="submit"
-                    class="px-3 py-1 bg-blue-500 text-white text-sm font-bold rounded cursor-pointer">
-
-                    Ver
-
-                </button>
-
-            </form>
+        <div>
 
 
             <form action="../controlador/admin_pedidoscontrolador.php" method="post">
