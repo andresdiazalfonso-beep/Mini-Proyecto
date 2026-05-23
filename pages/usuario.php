@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "../Conexion/conexion.php";
+require_once "../conexion/Conexion.php";
 
 if (!isset($_SESSION['usuario'])) {
     header("Location: login.php");
@@ -58,45 +58,10 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
 
 <!-- NAVBAR -->
 
-<nav class="bg-white shadow-sm border-b border-gray-200 px-6 py-4 flex items-center justify-between">
-
-    <div class="flex items-center gap-3">
-
-        <div class="w-11 h-11 rounded-xl bg-[#e36935e6] flex items-center justify-center text-white font-bold text-xl">
-            <img src="../assets/iconos/logo.svg">
-        </div>
-
-        <div>
-            <h1 class="font-bold text-xl text-gray-800">
-                Help4Africa
-            </h1>
-        </div>
-
-    </div>
-
-    <div class="flex items-center gap-4">
-
-        <div class="hidden md:flex flex-col text-right">
-            <span class="font-semibold text-gray-700">
-                <?= htmlspecialchars($usuario['nombre']) ?>
-            </span>
-
-            <span class="text-sm text-gray-400">
-                <?= htmlspecialchars($usuario['email']) ?>
-            </span>
-        </div>
-
-        <a href="../controlador/logoutcontrolador.php"
-           class="bg-red-500 hover:bg-red-600 transition text-white px-4 py-2 rounded-lg text-sm font-semibold">
-            Cerrar sesión
-        </a>
-
-    </div>
-
-</nav>
+<?php include "../partials/header.php"; ?>
 
 
-<div class="max-w-7xl mx-auto p-6">
+<div class="max-w-7xl mx-auto p-6 mt-24">
 
     <!-- BIENVENIDA -->
 

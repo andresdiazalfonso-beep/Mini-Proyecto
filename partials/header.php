@@ -183,7 +183,7 @@ $nombreUsuario = $logueado ? htmlspecialchars($_SESSION['usuario']['nombre']) : 
   
   <div class="max-w-7xl mx-auto px-3 py-4 flex justify-between items-center lg:pl-20">
     <!-- Logo -->
-    <a href="../pages/index.php"> 
+    <a href="<?= $logueado ? '../pages/usuario.php' : '../pages/index.php' ?>">
       <div class="flex gap-2 justify-center items-center">
         <img src="../assets/iconos/logo.svg" alt="Logo" class="w-10 h-10 transition-transform hover:scale-110 duration-400">
         <div class="md:hidden lg:block sm:block text-xl font-bold font-serif tracking-wide text-[#3d120d]">
@@ -194,7 +194,7 @@ $nombreUsuario = $logueado ? htmlspecialchars($_SESSION['usuario']['nombre']) : 
 
     <!-- Menú escritorio -->
     <nav class="hidden md:flex md:space-x-5 md:justify-center md:items-center md:font-semibold md:size-lg">
-      <a href="../pages/index.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Inicio</a>
+      <a href="<?= $logueado ? '../pages/usuario.php' : '../pages/index.php' ?>" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Inicio</a>
       <a href="../controlador/producto_controlador.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Productos</a>
       <a href="../pages/dinero.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Dinero</a>
       <a href="../pages/contacto.php" class="hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Contacto</a>
@@ -267,7 +267,7 @@ $nombreUsuario = $logueado ? htmlspecialchars($_SESSION['usuario']['nombre']) : 
   <!-- Menú móvil -->
   <div id="mobileMenu" class="hidden md:hidden bg-[#faf7f4] m-1 pb-3 font-semibold size-lg">
     <nav class="flex flex-col w-full px-4">
-      <a href="../pages/index.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Inicio</a>
+      <a href="<?= $logueado ? '../pages/usuario.php' : '../pages/index.php' ?>" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Inicio</a>
       <a href="../controlador/producto_controlador.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Productos</a>
       <a href="../pages/dinero.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Donar Dinero</a>
       <a href="../pages/contacto.php" class="py-3 w-full text-left hover:text-orange-500 transition-all duration-300 text-[#3d120d]">Contacto</a>

@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 header("Location: /admin/vista/admin_estadisticas.php");
                 exit();
             }else{
-                header("Location: /pages/index.php");
+                header("Location: /pages/usuario.php");
                 exit();
             }
         } else {
