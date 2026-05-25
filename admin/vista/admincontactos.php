@@ -9,47 +9,37 @@ $paginaActual   = $paginaActual   ?? 1;
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
-
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 <title>Mensajes de Contacto</title>
-
 </head>
-
-<body class="font-[Poppins] bg-[#f5f5f5]">
+<body class="font-[Poppins] bg-[#f5f5f5] min-h-screen">
 
 <?php require_once "../../partials/nav_admin.php"; ?>
 
-<div class="flex flex-col gap-6">
+<div class="flex flex-col min-h-screen">
+<div class="flex-1 p-5 pt-10 ml-0 md:ml-72 mx-4 md:mx-10">
 
-<div class="p-5 pt-10 ml-0 md:ml-72 mx-4 md:mx-10">
+    <h1 class="text-3xl font-bold mb-6">
+        Mensajes de Contacto
+    </h1>
 
-<h1 class="text-3xl font-bold mb-6">
-    Mensajes de Contacto
-</h1>
+    <?php if(!empty($mensaje)): ?>
 
-<?php if(!empty($mensaje)): ?>
+    <p class="font-semibold mb-5 text-sm bg-blue-50 p-3 rounded border-l-4 border-blue-500 text-blue-700">
+        <?= htmlspecialchars($mensaje) ?>
+    </p>
 
-<p class="font-semibold mb-5 text-sm bg-blue-50 p-3 rounded border-l-4 border-blue-500 text-blue-700">
-    <?= htmlspecialchars($mensaje) ?>
-</p>
-
-<?php endif; ?>
-
+    <?php endif; ?>
 
 
 <!-- TARJETA RESUMEN -->
-
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
 
     <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
@@ -81,7 +71,6 @@ $paginaActual   = $paginaActual   ?? 1;
 
 
 <!-- TABLA -->
-
 <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
 
     <div class="overflow-x-auto">
@@ -177,7 +166,6 @@ $paginaActual   = $paginaActual   ?? 1;
 
 
 <!-- PAGINACIÓN -->
-
 <?php if ($totalPaginas > 1): ?>
 
 <div class="flex justify-center gap-2 mt-6">

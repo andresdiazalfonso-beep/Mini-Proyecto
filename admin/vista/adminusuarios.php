@@ -29,7 +29,7 @@ $usuarios = $modelo->obtenerUsuarios();
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Gestión de Usuarios</title>
 </head>
-<body class="font-[Poppins] bg-[#f5f5f5]">
+<body class="font-[Poppins] bg-[#f5f5f5] min-h-screen">
 <?php require_once "../../partials/nav_admin.php"; ?>
 
 <div class="flex flex-col gap-6">
