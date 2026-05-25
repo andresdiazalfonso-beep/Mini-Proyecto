@@ -8,21 +8,20 @@ $modelo = new ProductoModelo($pdo);
 $productos = $modelo->obtenerProductos();
 
 $carrito = $_SESSION['carrito']->getCarrito();
+
+$logueado = isset($_SESSION['usuario']);
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Donaciones</title>
-
-<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Donaciones</title>
 </head>
-
 <body class="bg-[#f8f4f1] font-[Poppins]">
-<div class="max-w-7xl mx-auto p-6 mt-18 pt-10">
+<div class="max-w-7xl mx-auto p-6 mt-18 pt-10 mb-20">
 
     <!-- TITULO -->
     <div class="mb-8">
@@ -100,41 +99,47 @@ $carrito = $_SESSION['carrito']->getCarrito();
                 Tu Donación
             </h2>
 
-            <!-- Productos carrito -->
-            <div class="space-y-3 mb-4">
+    <!-- Productos carrito -->
+    <div class="space-y-3 mb-4">
+    <?php if(empty($carrito)): ?>
+        <div class="bg-gray-50 rounded-xl p-5 text-center text-gray-400">
+            Tu carrito está vacío
+        </div>
 
-                <?php foreach($carrito as $c): ?>
+    <?php else: ?>
+    <?php foreach($carrito as $c): ?>
 
-                    <div class="flex justify-between items-center bg-gray-50 p-2 rounded">
+        <div class="flex justify-between items-center bg-gray-50 p-2 rounded">
 
-    <span class="text-sm">
-        <?= $c['producto']->getNombre() ?> x <?= $c['cantidad'] ?>
-    </span>
-
-    <div class="flex items-center gap-3">
-
-        <span class="font-semibold">
-            <?= number_format($c['producto']->calcularPrecioFinal($c['cantidad']),2,",",".") ?>€
+        <span class="text-sm">
+            <?= $c['producto']->getNombre() ?> x <?= $c['cantidad'] ?>
         </span>
 
-        <form action="../controlador/producto_controlador.php" method="post">
-            <input type="hidden" name="accion" value="eliminar">
-            <input type="hidden" name="producto_id" value="<?= $c['producto']->getId() ?>">
+        <div class="flex items-center gap-3">
 
-            <button type="submit"
-                class="group flex items-center justify-center w-8 h-8 rounded-full 
-                    bg-gray-100 hover:bg-red-500 transition duration-300">
+            <span class="font-semibold">
+                <?= number_format($c['producto']->calcularPrecioFinal($c['cantidad']),2,",",".") ?>€
+            </span>
 
-                <img src="../assets/iconos/cross.svg"
-                    class="w-4 h-4 group-hover:invert transition duration-300">
-            </button>
-        </form>
+            <form action="../controlador/producto_controlador.php" method="post">
+                <input type="hidden" name="accion" value="eliminar">
+                <input type="hidden" name="producto_id" value="<?= $c['producto']->getId() ?>">
 
+                <button type="submit"
+                    class="group flex items-center justify-center w-8 h-8 rounded-full 
+                        bg-gray-100 hover:bg-red-500 transition duration-300">
+
+                    <img src="../assets/iconos/cross.svg"
+                        class="w-4 h-4 group-hover:invert transition duration-300">
+                </button>
+            </form>
+
+            </div>
+                    
         </div>
-                
-    </div>
 
-                <?php endforeach; ?>
+    <?php endforeach; ?>
+    <?php endif; ?>
 
             </div>
 
@@ -157,6 +162,8 @@ $carrito = $_SESSION['carrito']->getCarrito();
 
     </div>
 </div>
-
+    <?php if(!$logueado): ?>
+        <?php include_once __DIR__.'/../partials/footer.php'; ?>
+    <?php endif; ?>
 </body>
 </html>

@@ -1,19 +1,24 @@
+<?php
+$logueado = isset($_SESSION['usuario']);
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Dinero</title>
 </head>
-<body>
+<body class="font-[Poppins] bg-[#f8f4f1]">
 <?php
 // Conexión a la base de datos siguiendo la ruta de tus otros archivos
 require_once "../conexion/Conexion.php";
 require_once __DIR__."/../partials/header.php";
 ?>
 
-    <main class="flex-grow bg-[#f8f4f1] py-16 flex items-center justify-center px-4 mt-18">
-        <div class="bg-white max-w-2xl w-full mx-auto rounded-2xl shadow-xl p-8 md:p-12">
+        <main class="flex-grow py-16 flex items-center justify-center px-4 mt-18 mb-18">
+            <div class="bg-white max-w-2xl w-full mx-auto rounded-2xl shadow-xl p-8 md:p-12">
             
             <div class="text-center mb-10">
                 <h1 class="text-3xl md:text-4xl font-bold text-[#4A2C2A] mb-4">
@@ -98,7 +103,7 @@ require_once __DIR__."/../partials/header.php";
                     </button>
                     
                     <div class="text-center">
-                        <?php if($_SESSION['usuario']): ?>
+                        <?php if($logueado): ?>
                             <a href="usuario.php" class="text-[#e36935] font-semibold hover:underline text-sm inline-flex items-center gap-1">
                                 Volver al inicio
                             </a>
@@ -113,7 +118,7 @@ require_once __DIR__."/../partials/header.php";
             </form>
         </div>
     </main>
-    <?php if(!$_SESSION['usuario']): ?>
+    <?php if(!$logueado): ?>
         <?php include_once __DIR__.'/../partials/footer.php'; ?>
     <?php endif; ?>
 </body>

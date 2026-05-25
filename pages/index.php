@@ -128,7 +128,7 @@ setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; showSlide(current
 </section>
 
 <!-- ================= PREGUNTAS FRECUENTES ================= -->
-<div class="max-w-7xl mx-auto px-3 py-10 mt-10">
+<div class="max-w-7xl mx-auto px-3 py-10 mt-10 mb-10">
     <h1 class="text-4xl font-bold mb-10 mt-12 text-center text-[#4A2C2A]">Preguntas Frecuentes</h1>
 
     <div class="collapse collapse-arrow bg-base-100 border border-base-300 mb-10">

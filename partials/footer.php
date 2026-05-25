@@ -11,8 +11,7 @@
 
 <body class="font-[Poppins]">
 
-<footer class="bg-[#5A4032] text-[#EAD9C9] w-full relative z-[1000] pt-5 mt-20">
-
+<footer class="bg-[#5A4032] text-[#EAD9C9] w-full relative z-[1000] pt-5">
   <!-- Contenido principal -->
   <div class="max-w-8xl mx-auto md:px-40 px-10 py-10 grid gap-12 md:grid-cols-4">
 

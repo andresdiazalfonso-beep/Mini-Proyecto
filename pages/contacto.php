@@ -20,11 +20,11 @@ unset($_SESSION['contacto_exito'], $_SESSION['contacto_errores'], $_SESSION['con
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Contacto</title>
 </head>
-<body class="font-[Poppins] bg-[#f8f6f3] text-gray-800">
+<body class="font-[Poppins] bg-[#f8f4f1] text-gray-800">
 
 <?php include_once "../partials/header.php"; ?>
 
-<section class="bg-white py-30 mt-10">
+<section class="py-30 mt-10">
   <div class="max-w-3xl mx-auto px-4">
 
     <h1 class="text-4xl font-bold text-[#4A2C2A] text-center mb-4">

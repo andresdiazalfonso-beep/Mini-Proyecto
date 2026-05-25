@@ -49,22 +49,17 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
 <title>Mi Panel</title>
 
 </head>
-
-<body class="bg-[#f5f5f5] font-[Poppins]">
+<body class="bg-[#f8f4f1] font-[Poppins]">
 
 <!-- NAVBAR -->
-
 <?php include "../partials/header.php"; ?>
-
 
 <div class="max-w-7xl mx-auto px-6 pt-24 mt-10 pb-15">
 
     <!-- BIENVENIDA -->
-
     <div class="bg-gradient-to-r from-[#e36935e6] to-orange-500 rounded-3xl p-8 text-white mb-8 shadow-lg">
 
         <h2 class="text-4xl font-black mb-2">
@@ -106,7 +101,6 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
 
 
         <!-- GASTADO -->
-
         <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
 
             <div class="flex items-center justify-between">
@@ -133,7 +127,6 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
 
 
         <!-- DONADO -->
-
         <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
 
             <div class="flex items-center justify-between">
@@ -162,7 +155,6 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
 
 
     <!-- ACCIONES RÁPIDAS -->
-
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
 
         <a href="../controlador/producto_controlador.php"
@@ -234,7 +226,6 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
 
 
     <!-- PEDIDOS RECIENTES -->
-
     <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
 
         <div class="p-6 border-b border-gray-100 flex items-center justify-between">
