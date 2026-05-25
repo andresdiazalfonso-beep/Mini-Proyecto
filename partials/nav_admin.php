@@ -43,8 +43,6 @@ $paginaActual = basename($_SERVER['PHP_SELF']); # Con esto detecta la página en
     </a>
 
     <!-- PEDIDOS -->
-    <a href="/admin/controlador/admin_pedidoscontrolador.php"
-       class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= basename($_SERVER['PHP_SELF']) == 'adminpedidos.php' ? 'bg-[#5a1d17]' : '' ?>">
     <a href="/admin/vista/adminpedidos.php"
        class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'adminpedidos.php' ? 'bg-[#5a1d17]' : '' ?>">
        📦 Pedidos
