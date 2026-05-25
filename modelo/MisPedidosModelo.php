@@ -16,5 +16,23 @@ class MisPedidosModelo {
         $stmt->execute([$idUsuario]);
         return $stmt->fetchAll();
     }
+
+    public function obtenerPaginados($idUsuario, $limit, $offset)
+{
+    $sql = "SELECT * FROM pedidos
+            WHERE id_usuario = ?
+            ORDER BY fecha DESC
+            LIMIT ? OFFSET ?";
+
+    $stmt = $this->pdo->prepare($sql);
+
+    $stmt->bindValue(1, $idUsuario, PDO::PARAM_INT);
+    $stmt->bindValue(2, $limit, PDO::PARAM_INT);
+    $stmt->bindValue(3, $offset, PDO::PARAM_INT);
+
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 }
 ?>

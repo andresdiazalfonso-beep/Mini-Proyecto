@@ -12,7 +12,26 @@ $usuario = $_SESSION['usuario'];
 $pdo     = Conexion::conectar();
 $modelo  = new MisPedidosModelo($pdo);
 
-$pedidos = $modelo->obtenerTodos((int)$usuario['id_usuario']);
+// Paginación
+$porPagina = 5;
+
+$pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+
+if ($pagina < 1) {
+    $pagina = 1;
+}
+
+$totalPedidos = count($modelo->obtenerTodos((int)$usuario['id_usuario']));
+
+$totalPaginas = ceil($totalPedidos / $porPagina);
+
+$offset = ($pagina - 1) * $porPagina;
+
+$pedidos = $modelo->obtenerPaginados(
+    (int)$usuario['id_usuario'],
+    $porPagina,
+    $offset
+);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -106,6 +125,39 @@ $pedidos = $modelo->obtenerTodos((int)$usuario['id_usuario']);
                 </tbody>
             </table>
         </div>
+        <?php if ($totalPaginas > 1): ?>
+
+<div class="flex justify-center items-center gap-2 p-6">
+
+    <?php if ($pagina > 1): ?>
+        <a href="?pagina=<?= $pagina - 1 ?>"
+           class="px-4 py-2 rounded-xl bg-white border border-gray-200 hover:bg-gray-100 transition">
+            ←
+        </a>
+    <?php endif; ?>
+
+    <?php for ($i = 1; $i <= $totalPaginas; $i++): ?>
+
+        <a href="?pagina=<?= $i ?>"
+           class="px-4 py-2 rounded-xl font-semibold transition
+           <?= $i == $pagina
+                ? 'bg-[#e36935e6] text-white'
+                : 'bg-white border border-gray-200 hover:bg-gray-100 text-gray-700' ?>">
+            <?= $i ?>
+        </a>
+
+    <?php endfor; ?>
+
+    <?php if ($pagina < $totalPaginas): ?>
+        <a href="?pagina=<?= $pagina + 1 ?>"
+           class="px-4 py-2 rounded-xl bg-white border border-gray-200 hover:bg-gray-100 transition">
+            →
+        </a>
+    <?php endif; ?>
+
+</div>
+
+<?php endif; ?>
         <?php else: ?>
         <div class="p-10 text-center">
             <div class="text-6xl mb-4">📦</div>

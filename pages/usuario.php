@@ -61,14 +61,14 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
 <?php include "../partials/header.php"; ?>
 
 
-<div class="max-w-7xl mx-auto p-6 mt-24">
+<div class="max-w-7xl mx-auto px-6 pt-24 mt-10">
 
     <!-- BIENVENIDA -->
 
     <div class="bg-gradient-to-r from-[#e36935e6] to-orange-500 rounded-3xl p-8 text-white mb-8 shadow-lg">
 
         <h2 class="text-4xl font-black mb-2">
-            ¡Hola <?= htmlspecialchars($usuario['nombre']) ?> 👋
+            ¡Hola <?= htmlspecialchars($usuario['nombre']) ?>
         </h2>
 
         <p class="text-orange-100 text-lg">
