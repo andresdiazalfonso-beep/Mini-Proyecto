@@ -61,7 +61,7 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
 <?php include "../partials/header.php"; ?>
 
 
-<div class="max-w-7xl mx-auto px-6 pt-24 mt-10">
+<div class="max-w-7xl mx-auto px-6 pt-24 mt-10 pb-15">
 
     <!-- BIENVENIDA -->
 
@@ -79,17 +79,14 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
 
 
     <!-- TARJETAS -->
-
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
 
         <!-- PEDIDOS -->
-
         <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
 
             <div class="flex items-center justify-between">
 
                 <div>
-
                     <p class="text-sm uppercase tracking-wide text-gray-400 font-semibold">
                         Pedidos
                     </p>
@@ -97,7 +94,6 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
                     <h3 class="text-4xl font-black mt-2 text-gray-800">
                         <?= $totalPedidos ?>
                     </h3>
-
                 </div>
 
                 <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center text-3xl">
