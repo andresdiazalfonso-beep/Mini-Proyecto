@@ -98,9 +98,15 @@ require_once __DIR__."/../partials/header.php";
                     </button>
                     
                     <div class="text-center">
-                        <a href="index.php" class="text-[#e36935] font-semibold hover:underline text-sm inline-flex items-center gap-1">
-                            Volver al inicio
-                        </a>
+                        <?php if($_SESSION['usuario']): ?>
+                            <a href="usuario.php" class="text-[#e36935] font-semibold hover:underline text-sm inline-flex items-center gap-1">
+                                Volver al inicio
+                            </a>
+                        <?php else: ?>
+                            <a href="index.php" class="text-[#e36935] font-semibold hover:underline text-sm inline-flex items-center gap-1">
+                                Volver al inicio
+                            </a>
+                        <?php endif;?>
                     </div>
                 </div>
 

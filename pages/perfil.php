@@ -258,8 +258,5 @@ $inicial = strtoupper(mb_substr($usuario['nombre'], 0, 1));
 
     </div>
   </main>
-
-  <?php include "../partials/footer.php"; ?>
-
 </body>
 </html>
