@@ -21,8 +21,7 @@ $carrito = $_SESSION['carrito']->getCarrito();
 
 </head>
 
-<body class="bg-[#e36935e6]/10">
-
+<body class="bg-[#f8f4f1] font-[Poppins]">
 <div class="max-w-7xl mx-auto p-6 mt-18 pt-10">
 
     <!-- TITULO -->

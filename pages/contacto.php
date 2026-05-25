@@ -20,7 +20,7 @@ unset($_SESSION['contacto_exito'], $_SESSION['contacto_errores'], $_SESSION['con
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Contacto</title>
 </head>
-<body class="font-[Poppins]">
+<body class="font-[Poppins] bg-[#f8f6f3] text-gray-800">
 
 <?php include_once "../partials/header.php"; ?>
 

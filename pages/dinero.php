@@ -12,7 +12,7 @@ require_once "../conexion/Conexion.php";
 require_once __DIR__."/../partials/header.php";
 ?>
 
-    <main class="flex-grow bg-[#e36935e6]/10 py-16 flex items-center justify-center px-4 mt-18">
+    <main class="flex-grow bg-[#f8f4f1] py-16 flex items-center justify-center px-4 mt-18">
         <div class="bg-white max-w-2xl w-full mx-auto rounded-2xl shadow-xl p-8 md:p-12">
             
             <div class="text-center mb-10">
@@ -113,8 +113,8 @@ require_once __DIR__."/../partials/header.php";
             </form>
         </div>
     </main>
-
-    <?php include_once __DIR__.'/../partials/footer.php'; ?>
-
+    <?php if(!$_SESSION['usuario']): ?>
+        <?php include_once __DIR__.'/../partials/footer.php'; ?>
+    <?php endif; ?>
 </body>
 </html>
