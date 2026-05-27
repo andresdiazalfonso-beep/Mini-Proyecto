@@ -176,8 +176,8 @@ while($fila = $stmt->fetch()){
 
             </div>
 
-            <div class="bg-orange-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                👥
+            <div class="bg-orange-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/people-svgrepo-com.svg" alt="gente">
             </div>
 
         </div>
@@ -204,8 +204,8 @@ while($fila = $stmt->fetch()){
 
             </div>
 
-            <div class="bg-blue-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                📦
+            <div class="bg-blue-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/box-svgrepo-com.svg" alt="caja">
             </div>
 
         </div>
@@ -232,8 +232,8 @@ while($fila = $stmt->fetch()){
 
             </div>
 
-            <div class="bg-red-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                ❤️
+            <div class="bg-red-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/heart-svgrepo-com.svg" alt="corazon">
             </div>
 
         </div>
@@ -260,8 +260,8 @@ while($fila = $stmt->fetch()){
 
             </div>
 
-            <div class="bg-green-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                ✅
+            <div class="bg-green-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/checkmark-complete-correct-svgrepo-com.svg" alt="check ok">
             </div>
 
         </div>

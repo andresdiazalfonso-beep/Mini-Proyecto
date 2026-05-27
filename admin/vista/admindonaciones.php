@@ -68,8 +68,8 @@ $paginaActual = $paginaActual ?? 1;
 
             </div>
 
-            <div class="bg-orange-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                ❤️
+            <div class="bg-orange-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/heart-svgrepo-com.svg" alt="corazon">
             </div>
 
         </div>
@@ -93,8 +93,8 @@ $paginaActual = $paginaActual ?? 1;
 
             </div>
 
-            <div class="bg-green-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                💰
+            <div class="bg-green-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/money-bag-dollar-currency-investment-banking-finance-svgrepo-com.svg" alt="bolsa de dinero">
             </div>
 
         </div>

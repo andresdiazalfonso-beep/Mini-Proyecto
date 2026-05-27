@@ -157,8 +157,8 @@ $ingresoTotal = array_sum(
 
             </div>
 
-            <div class="bg-blue-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                📦
+            <div class="bg-blue-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/box-svgrepo-com.svg" alt="caja">
             </div>
 
         </div>
@@ -185,8 +185,8 @@ $ingresoTotal = array_sum(
 
             </div>
 
-            <div class="bg-yellow-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                ⏳
+            <div class="bg-yellow-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-4">
+                <img src="../../assets/iconos/sand-clock-svgrepo-com.svg" alt="reloj de arena">
             </div>
 
         </div>
@@ -213,8 +213,8 @@ $ingresoTotal = array_sum(
 
             </div>
 
-            <div class="bg-green-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                ✅
+            <div class="bg-green-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/checkmark-complete-correct-svgrepo-com.svg" alt="check ok">
             </div>
 
         </div>
@@ -241,8 +241,8 @@ $ingresoTotal = array_sum(
 
             </div>
 
-            <div class="bg-red-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                ❌
+            <div class="bg-red-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/cancel-circle-svgrepo-com.svg" alt="no check">
             </div>
 
         </div>

@@ -97,7 +97,9 @@ unset($_SESSION['contacto_exito'], $_SESSION['contacto_errores'], $_SESSION['con
   </div>
 </section>
 
-<?php include_once "../partials/footer.php"; ?>
+<?php if(!$logueado): ?>
+  <?php include_once __DIR__.'/../partials/footer.php'; ?>
+<?php endif; ?>
 
 </body>
 </html>
