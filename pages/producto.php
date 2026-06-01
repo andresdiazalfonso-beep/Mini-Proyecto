@@ -29,7 +29,8 @@ $logueado = isset($_SESSION['usuario']);
             Haz una donación
         </h1>
         <p class="text-gray-500 mt-2">
-            Tu ayuda marca la diferencia ❤️
+            Tu ayuda marca la diferencia
+            <img class="inline w-[1em] h-[1em] align-middle object-contain" src="../../assets/iconos/heart-svgrepo-com.svg" alt="corazon">
         </p>
     </div>
 

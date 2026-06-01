@@ -27,37 +27,67 @@ $paginaActual = basename($_SERVER['PHP_SELF']); # Con esto detecta la página en
     <!-- ESTADÍSTICAS -->
     <a href="/admin/vista/admin_estadisticas.php"
        class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'admin_estadisticas.php' ? 'bg-[#5a1d17]' : '' ?>">
-       📊 Estadísticas
+       <div class="bg-[#f19d76] p-2 rounded-xl flex items-center justify-center">
+            <img class="w-6 h-6 object-contain shrink-0"
+                src="../../assets/iconos/stats-svgrepo-com.svg"
+                alt="estadisticas">
+        </div>
+       Estadísticas
     </a>
 
     <!-- USUARIOS -->
     <a href="/admin/controlador/admin_usuarioscontrolador.php"
        class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'admin_usuarioscontrolador.php' ? 'bg-[#5a1d17]' : '' ?>">
-       👤 Usuarios
+       <div class="bg-[#f19d76] p-2 rounded-xl flex items-center justify-center">
+            <img class="w-6 h-6 object-contain shrink-0"
+                src="../../assets/iconos/person-svgrepo-com.svg"
+                alt="persona">
+        </div>
+       Usuarios
     </a>
 
     <!-- PRODUCTOS -->
     <a href="/admin/vista/adminproductos.php"
        class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'adminproductos.php' ? 'bg-[#5a1d17]' : '' ?>">
-       🛒 Productos
+       <div class="bg-[#f19d76] p-2 rounded-xl flex items-center justify-center">
+            <img class="w-6 h-6 object-contain shrink-0"
+                src="../../assets/iconos/cart-shopping-svgrepo-com.svg"
+                alt="carro">
+        </div>
+       Productos
     </a>
 
     <!-- PEDIDOS -->
     <a href="/admin/vista/adminpedidos.php"
-       class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'adminpedidos.php' ? 'bg-[#5a1d17]' : '' ?>">
-       📦 Pedidos
+      class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'adminpedidos.php' ? 'bg-[#5a1d17]' : '' ?>"> 
+        <div class="bg-[#f19d76] p-2 rounded-xl flex items-center justify-center">
+            <img class="w-6 h-6 object-contain shrink-0"
+                src="../../assets/iconos/box-svgrepo-com.svg"
+                alt="caja">
+        </div>
+        Pedidos
     </a>
 
     <!-- DONACIONES -->
     <a href="/admin/controlador/admin_donacionescontrolador.php"
        class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'admin_donacionescontrolador.php' ? 'bg-[#5a1d17]' : '' ?>">
-       ❤️ Donaciones
+       <div class="bg-[#f19d76] p-2 rounded-xl flex items-center justify-center">
+            <img class="w-6 h-6 object-contain shrink-0"
+                src="../../assets/iconos/heart-svgrepo-com.svg"
+                alt="corazon">
+        </div>
+       Donaciones
     </a>
 
     <!-- CONTACTO -->
     <a href="/admin/controlador/admin_contactoscontrolador.php"
        class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'admin_contactoscontrolador.php' ? 'bg-[#5a1d17]' : '' ?>">
-       ✉️ Contacto
+       <div class="bg-[#f19d76] p-2 rounded-xl flex items-center justify-center">
+            <img class="w-6 h-6 object-contain shrink-0"
+                src="../../assets/iconos/mail-alt-3-svgrepo-com.svg"
+                alt="carta">
+        </div>
+       Contacto
     </a>
 
 </nav>

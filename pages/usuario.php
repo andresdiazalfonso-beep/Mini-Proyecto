@@ -66,8 +66,11 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
             ¡Hola <?= htmlspecialchars($usuario['nombre']) ?>
         </h2>
 
-        <p class="text-orange-100 text-lg">
-            Gracias por apoyar Help4Africa ❤️
+        <p class="text-orange-100 text-lg flex items-center gap-2">
+            Gracias por apoyar Help4Africa
+            <img class="w-6 h-6 object-contain shrink-0"
+                src="../../assets/iconos/heart-svgrepo-com.svg"
+                alt="corazon">
         </p>
 
     </div>
@@ -91,8 +94,8 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
                     </h3>
                 </div>
 
-                <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center text-3xl">
-                    📦
+                <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center text-3xl p-3">
+                    <img src="../../assets/iconos/box-svgrepo-com.svg" alt="caja">
                 </div>
 
             </div>
@@ -143,8 +146,8 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
 
                 </div>
 
-                <div class="w-16 h-16 rounded-2xl bg-pink-100 flex items-center justify-center text-3xl">
-                    ❤️
+                <div class="w-16 h-16 rounded-2xl bg-pink-100 flex items-center justify-center text-3xl p-3">
+                    <img src="../../assets/iconos/heart-svgrepo-com.svg" alt="corazon">
                 </div>
 
             </div>
@@ -160,8 +163,8 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
         <a href="../controlador/producto_controlador.php"
            class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition flex items-center gap-4">
 
-            <div class="w-14 h-14 rounded-xl bg-orange-100 flex items-center justify-center text-2xl">
-                🛍️
+            <div class="w-14 h-14 rounded-xl bg-orange-100 flex items-center justify-center text-2xl p-3">
+                <img src="../../assets/iconos/bag-shopping-svgrepo-com.svg" alt="bolsa de la compra">
             </div>
 
             <div>
@@ -182,8 +185,8 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
         <a href="dinero.php"
            class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition flex items-center gap-4">
 
-            <div class="w-14 h-14 rounded-xl bg-pink-100 flex items-center justify-center text-2xl">
-                ❤️
+            <div class="w-14 h-14 rounded-xl bg-pink-100 flex items-center justify-center text-2xl p-3">
+                <img src="../../assets/iconos/heart-svgrepo-com.svg" alt="corazon">
             </div>
 
             <div>
@@ -204,8 +207,8 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
         <a href="perfil.php"
            class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition flex items-center gap-4">
 
-            <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center text-2xl">
-                👤
+            <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center text-2xl p-3">
+                <img src="../../assets/iconos/person-svgrepo-com.svg" alt="persona">
             </div>
 
             <div>
@@ -309,8 +312,8 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
 
         <div class="p-10 text-center">
 
-            <div class="text-6xl mb-4">
-                📦
+            <div class="text-6xl mb-4 text-center">
+                <img class="inline-block w-16 h-16 object-contain" src="../../assets/iconos/box-svgrepo-com.svg" alt="caja">
             </div>
 
             <h3 class="text-xl font-bold text-gray-700 mb-2">

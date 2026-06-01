@@ -97,7 +97,9 @@ $usuarios = $modelo->obtenerUsuarios();
                     <p class="text-sm text-gray-400 uppercase font-semibold tracking-wide">Total Usuarios</p>
                     <h2 class="text-4xl font-black mt-2 text-gray-800"><?= count($usuarios) ?></h2>
                 </div>
-                <div class="bg-orange-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">👥</div>
+                <div class="bg-orange-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                    <img src="../../assets/iconos/people-svgrepo-com.svg" alt="personas">
+                </div>
             </div>
         </div>
         <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
@@ -108,7 +110,9 @@ $usuarios = $modelo->obtenerUsuarios();
                         <?= count(array_filter($usuarios, fn($u) => $u['rol'] === 'admin')) ?>
                     </h2>
                 </div>
-                <div class="bg-red-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">🔑</div>
+                <div class="bg-red-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                    <img src="../../assets/iconos/key-svgrepo-com.svg" alt="personas">
+                </div>
             </div>
         </div>
         <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
@@ -119,7 +123,9 @@ $usuarios = $modelo->obtenerUsuarios();
                         <?= count(array_filter($usuarios, fn($u) => $u['rol'] === 'usuario')) ?>
                     </h2>
                 </div>
-                <div class="bg-green-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">👤</div>
+                <div class="bg-green-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                    <img src="../../assets/iconos/person-svgrepo-com.svg" alt="gente">
+                </div>
             </div>
         </div>
     </div>

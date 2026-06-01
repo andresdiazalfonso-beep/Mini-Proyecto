@@ -58,8 +58,8 @@ $paginaActual   = $paginaActual   ?? 1;
 
             </div>
 
-            <div class="bg-blue-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                ✉️
+            <div class="bg-blue-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/mail-alt-3-svgrepo-com.svg" alt="carta">
             </div>
 
         </div>
