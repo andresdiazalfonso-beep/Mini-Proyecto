@@ -25,8 +25,8 @@ $paginaActual = basename($_SERVER['PHP_SELF']); # Con esto detecta la página en
 <nav class="flex flex-col gap-4 text-lg font-medium">
 
     <!-- ESTADÍSTICAS -->
-    <a href="/admin/vista/admin_estadisticas.php"
-       class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'admin_estadisticas.php' ? 'bg-[#5a1d17]' : '' ?>">
+    <a href="/admin/controlador/admin_estadisticascontrolador.php"
+       class="flex items-center gap-3 p-3 rounded-lg hover:bg-[#5a1d17] <?= $paginaActual == 'admin_estadisticascontrolador.php' ? 'bg-[#5a1d17]' : '' ?>">
        <div class="bg-[#f19d76] p-2 rounded-xl flex items-center justify-center">
             <img class="w-6 h-6 object-contain shrink-0"
                 src="../../assets/iconos/stats-svgrepo-com.svg"

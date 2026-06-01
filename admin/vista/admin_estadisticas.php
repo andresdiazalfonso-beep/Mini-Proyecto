@@ -1,121 +1,25 @@
 <?php
-session_start();
 
-require_once "../../conexion/Conexion.php";
+$totalUsuarios      = $totalUsuarios ?? 0;
+$totalPedidos       = $totalPedidos ?? 0;
+$totalDonaciones    = $totalDonaciones ?? 0;
+$ingresosProductos  = $ingresosProductos ?? 0;
+$ingresosDonaciones = $ingresosDonaciones ?? 0;
+$totalRecaudado     = $totalRecaudado ?? 0;
+$pedidosPagados     = $pedidosPagados ?? 0;
 
-$pdo = Conexion::conectar();
+$productosMasVendidos = $productosMasVendidos ?? [];
 
+$meses = $meses ?? [];
+$totales = $totales ?? [];
 
-// ==========================
-// ESTADÍSTICAS GENERALES
-// ==========================
+$mesesDonaciones = $mesesDonaciones ?? [];
+$totalesDonaciones = $totalesDonaciones ?? [];
 
-// TOTAL USUARIOS
-$stmt = $pdo->query("
-    SELECT COUNT(*) as total 
-    FROM usuarios
-");
-
-$totalUsuarios = $stmt->fetch()['total'];
-
-
-// TOTAL PEDIDOS
-$stmt = $pdo->query("
-    SELECT COUNT(*) as total 
-    FROM pedidos
-");
-
-$totalPedidos = $stmt->fetch()['total'];
-
-
-// INGRESOS
-$stmt = $pdo->query("
-    SELECT SUM(total) as ingresos 
-    FROM pedidos 
-    WHERE estado = 'pagado'
-");
-
-$ingresos = $stmt->fetch()['ingresos'] ?? 0;
-
-
-// PEDIDOS PAGADOS
-$stmt = $pdo->query("
-    SELECT COUNT(*) as total 
-    FROM pedidos 
-    WHERE estado = 'pagado'
-");
-
-$pedidosPagados = $stmt->fetch()['total'];
-
-
-// ==========================
-// PRODUCTOS MÁS VENDIDOS
-// ==========================
-
-$stmt = $pdo->query("
-    SELECT 
-        p.nombre,
-        SUM(dp.cantidad) as vendidos
-    FROM detalle_pedido dp
-    INNER JOIN productos p 
-        ON dp.id_producto = p.id_producto
-    GROUP BY p.id_producto
-    ORDER BY vendidos DESC
-    LIMIT 5
-");
-
-$productosMasVendidos = $stmt->fetchAll();
-
-
-// ==========================
-// VENTAS MENSUALES
-// ==========================
-
-$stmt = $pdo->query("
-    SELECT 
-        MONTH(fecha) as mes,
-        SUM(total) as total
-    FROM pedidos
-    WHERE estado = 'pagado'
-    GROUP BY MONTH(fecha)
-    ORDER BY mes
-");
-
-$ventasMensuales = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-$meses = [];
-$totales = [];
-
-foreach($ventasMensuales as $venta){
-
-    $meses[] = $venta['mes'];
-    $totales[] = $venta['total'];
-}
-
-
-// ==========================
-// ESTADO PEDIDOS
-// ==========================
-
-$stmt = $pdo->query("
-    SELECT 
-        estado,
-        COUNT(*) as total
-    FROM pedidos
-    GROUP BY estado
-");
-
-$estados = [];
-$totalesEstados = [];
-
-while($fila = $stmt->fetch()){
-
-    $estados[] = $fila['estado'];
-    $totalesEstados[] = $fila['total'];
-}
+$estados = $estados ?? [];
+$totalesEstados = $totalesEstados ?? [];
 
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -156,112 +60,128 @@ while($fila = $stmt->fetch()){
 
 
 <!-- TARJETAS -->
-
 <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
 
     <!-- USUARIOS -->
-    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
-
-        <div class="flex items-center justify-between mb-5">
-
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div class="flex items-center justify-between">
             <div>
-
-                <p class="text-sm text-gray-400 uppercase font-semibold tracking-wide">
-                    Usuarios
-                </p>
-
-                <h2 class="text-4xl font-black mt-2 text-gray-800">
-                    <?= $totalUsuarios ?>
-                </h2>
-
+                <p class="text-sm text-gray-400 uppercase font-semibold">Usuarios</p>
+                <h2 class="text-4xl font-black mt-2"><?= $totalUsuarios ?></h2>
             </div>
 
-            <div class="bg-orange-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
-                <img src="../../assets/iconos/people-svgrepo-com.svg" alt="gente">
+            <div class="bg-orange-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
+                👥
             </div>
-
         </div>
-
     </div>
-
-
 
     <!-- PEDIDOS -->
-
-    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
-
-        <div class="flex items-center justify-between mb-5">
-
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div class="flex items-center justify-between">
             <div>
-
-                <p class="text-sm text-gray-400 uppercase font-semibold tracking-wide">
-                    Pedidos
-                </p>
-
-                <h2 class="text-4xl font-black mt-2 text-gray-800">
-                    <?= $totalPedidos ?>
-                </h2>
-
+                <p class="text-sm text-gray-400 uppercase font-semibold">Pedidos</p>
+                <h2 class="text-4xl font-black mt-2"><?= $totalPedidos ?></h2>
             </div>
 
-            <div class="bg-blue-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
-                <img src="../../assets/iconos/box-svgrepo-com.svg" alt="caja">
+            <div class="bg-blue-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
+                📦
             </div>
-
         </div>
-
     </div>
 
-
-
     <!-- DONACIONES -->
-
-    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
-
-        <div class="flex items-center justify-between mb-5">
-
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div class="flex items-center justify-between">
             <div>
+                <p class="text-sm text-gray-400 uppercase font-semibold">Donaciones</p>
+                <h2 class="text-4xl font-black mt-2 text-cyan-600">
+                    <?= $totalDonaciones ?>
+                </h2>
+            </div>
 
-                <p class="text-sm text-gray-400 uppercase font-semibold tracking-wide">
-                    Donaciones
+            <div class="bg-cyan-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
+                💙
+            </div>
+        </div>
+    </div>
+
+    <!-- TIENDA -->
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="text-sm text-gray-400 uppercase font-semibold">
+                    Tienda Solidaria
                 </p>
 
                 <h2 class="text-4xl font-black mt-2 text-[#e36935e6]">
-                    <?= number_format($ingresos, 2,",",".")."€" ?>
+                    <?= number_format($ingresosProductos,2,",",".") ?>€
                 </h2>
-
             </div>
 
-            <div class="bg-red-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
-                <img src="../../assets/iconos/heart-svgrepo-com.svg" alt="corazon">
+            <div class="bg-orange-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
+                🛒
             </div>
-
         </div>
-
     </div>
 
+    <!-- DONACIONES € -->
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div class="flex items-center justify-between">
+            <div>
+                <p class="text-sm text-gray-400 uppercase font-semibold">
+                    Donaciones €
+                </p>
 
+                <h2 class="text-4xl font-black mt-2 text-green-600">
+                    <?= number_format($ingresosDonaciones,2,",",".") ?>€
+                </h2>
+            </div>
+
+            <div class="bg-green-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
+                💰
+            </div>
+        </div>
+    </div>
 
     <!-- PAGADOS -->
-
-    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
-
-        <div class="flex items-center justify-between mb-5">
-
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+        <div class="flex items-center justify-between">
             <div>
-
-                <p class="text-sm text-gray-400 uppercase font-semibold tracking-wide">
-                    Pagados
+                <p class="text-sm text-gray-400 uppercase font-semibold">
+                    Pedidos Pagados
                 </p>
 
                 <h2 class="text-4xl font-black mt-2 text-green-600">
                     <?= $pedidosPagados ?>
                 </h2>
+            </div>
+
+            <div class="bg-green-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
+                ✅
+            </div>
+        </div>
+    </div>
+
+    <!-- TOTAL RECAUDADO -->
+    <div class="xl:col-span-2 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
+
+        <div class="flex items-center justify-between mb-5">
+
+            <div>
+
+                <p class="text-sm text-gray-400 uppercase font-semibold tracking-wide">
+                    Total Recaudado
+                </p>
+
+                <h2 class="text-4xl font-black mt-2 text-[#e36935e6]">
+                    <?= number_format($totalRecaudado,2,",",".") ?>€
+                </h2>
 
             </div>
 
-            <div class="bg-green-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
-                <img src="../../assets/iconos/checkmark-complete-correct-svgrepo-com.svg" alt="check ok">
+            <div class="bg-red-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
+                ❤️
             </div>
 
         </div>
@@ -337,41 +257,39 @@ while($fila = $stmt->fetch()){
 
 <!-- GRAFICOS -->
 
-<div class="grid grid-cols-1 xl:grid-cols-2 gap-8 pb-20">
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8 pb-20">
 
-
-    <!-- GRAFICO VENTAS -->
-
-    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-
-        <h2 class="text-2xl font-bold text-gray-800 mb-6">
-            Ventas Mensuales
+    <!-- Ventas -->
+    <div class="bg-white rounded-2xl shadow-sm border p-6">
+        <h2 class="text-xl font-bold mb-4">
+            Ventas de Productos
         </h2>
 
         <div class="h-[320px]">
-
             <canvas id="ventasChart"></canvas>
-
         </div>
-
     </div>
 
+    <!-- Donaciones -->
+    <div class="bg-white rounded-2xl shadow-sm border p-6">
+        <h2 class="text-xl font-bold mb-4">
+            Donaciones de Dinero
+        </h2>
 
+        <div class="h-[320px]">
+            <canvas id="donacionesChart"></canvas>
+        </div>
+    </div>
 
-    <!-- GRAFICO PEDIDOS -->
-
-    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-
-        <h2 class="text-2xl font-bold text-gray-800 mb-6">
+    <!-- Estados -->
+    <div class="bg-white rounded-2xl shadow-sm border p-6">
+        <h2 class="text-xl font-bold mb-4">
             Estado de Pedidos
         </h2>
 
-        <div class="h-[320px] flex items-center justify-center">
-
+        <div class="h-[320px]">
             <canvas id="pedidosChart"></canvas>
-
         </div>
-
     </div>
 
 </div>
@@ -496,6 +414,45 @@ new Chart(pedidosCtx, {
         maintainAspectRatio: false,
 
         cutout: '70%'
+
+    }
+
+});
+
+</script>
+
+<script>
+
+new Chart(document.getElementById('donacionesChart'), {
+
+    type: 'line',
+
+    data: {
+
+        labels: <?= json_encode($mesesDonaciones) ?>,
+
+        datasets: [{
+
+            label: 'Donaciones (€)',
+
+            data: <?= json_encode($totalesDonaciones) ?>,
+
+            borderColor: '#3b82f6',
+
+            backgroundColor: '#93c5fd',
+
+            tension: 0.4,
+
+            fill: true
+
+        }]
+    },
+
+    options: {
+
+        responsive: true,
+
+        maintainAspectRatio: false
 
     }
 
