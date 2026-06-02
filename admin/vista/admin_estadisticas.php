@@ -63,35 +63,35 @@ $totalesEstados = $totalesEstados ?? [];
 <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-12">
 
     <!-- USUARIOS -->
-    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
         <div class="flex items-center justify-between">
             <div>
                 <p class="text-sm text-gray-400 uppercase font-semibold">Usuarios</p>
                 <h2 class="text-4xl font-black mt-2"><?= $totalUsuarios ?></h2>
             </div>
 
-            <div class="bg-orange-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                👥
+            <div class="bg-orange-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/people-svgrepo-com.svg" alt="personas">
             </div>
         </div>
     </div>
 
     <!-- PEDIDOS -->
-    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
         <div class="flex items-center justify-between">
             <div>
                 <p class="text-sm text-gray-400 uppercase font-semibold">Pedidos</p>
                 <h2 class="text-4xl font-black mt-2"><?= $totalPedidos ?></h2>
             </div>
 
-            <div class="bg-blue-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                📦
+            <div class="bg-blue-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/box-svgrepo-com.svg" alt="paquete">
             </div>
         </div>
     </div>
 
     <!-- DONACIONES -->
-    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
         <div class="flex items-center justify-between">
             <div>
                 <p class="text-sm text-gray-400 uppercase font-semibold">Donaciones</p>
@@ -100,14 +100,14 @@ $totalesEstados = $totalesEstados ?? [];
                 </h2>
             </div>
 
-            <div class="bg-cyan-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                💙
+            <div class="bg-cyan-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/heart-svgrepo-com.svg" alt="corazon">
             </div>
         </div>
     </div>
 
     <!-- TIENDA -->
-    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
         <div class="flex items-center justify-between">
             <div>
                 <p class="text-sm text-gray-400 uppercase font-semibold">
@@ -119,14 +119,14 @@ $totalesEstados = $totalesEstados ?? [];
                 </h2>
             </div>
 
-            <div class="bg-orange-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                🛒
+            <div class="bg-orange-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/cart-shopping-svgrepo-com.svg" alt="carrito-de-la-compra">
             </div>
         </div>
     </div>
 
     <!-- DONACIONES € -->
-    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
         <div class="flex items-center justify-between">
             <div>
                 <p class="text-sm text-gray-400 uppercase font-semibold">
@@ -138,14 +138,14 @@ $totalesEstados = $totalesEstados ?? [];
                 </h2>
             </div>
 
-            <div class="bg-green-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                💰
+            <div class="bg-green-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/money-bag-dollar-currency-investment-banking-finance-svgrepo-com.svg" alt="bolsa-de-dinero">
             </div>
         </div>
     </div>
 
     <!-- PAGADOS -->
-    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+    <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition duration-300">
         <div class="flex items-center justify-between">
             <div>
                 <p class="text-sm text-gray-400 uppercase font-semibold">
@@ -157,8 +157,8 @@ $totalesEstados = $totalesEstados ?? [];
                 </h2>
             </div>
 
-            <div class="bg-green-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                ✅
+            <div class="bg-green-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/checkmark-complete-correct-svgrepo-com.svg" alt="check-ok">
             </div>
         </div>
     </div>
@@ -180,8 +180,8 @@ $totalesEstados = $totalesEstados ?? [];
 
             </div>
 
-            <div class="bg-red-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center">
-                ❤️
+            <div class="bg-red-100 text-3xl w-16 h-16 rounded-2xl flex items-center justify-center p-3">
+                <img src="../../assets/iconos/heart-svgrepo-com.svg" alt="corazon">
             </div>
 
         </div>
