@@ -111,7 +111,7 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
                 <div>
 
                     <p class="text-sm uppercase tracking-wide text-gray-400 font-semibold">
-                        Total Gastado
+                        Gastado Tienda
                     </p>
 
                     <h3 class="text-4xl font-black mt-2 text-[#e36935e6]">

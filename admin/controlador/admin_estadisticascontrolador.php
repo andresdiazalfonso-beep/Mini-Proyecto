@@ -5,6 +5,12 @@ session_start();
 require_once "../../conexion/Conexion.php";
 require_once "../modelo/EstadisticasModelo.php";
 
+if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
+
+    header("Location: /pages/login.php");
+    exit();
+}
+
 $pdo = Conexion::conectar();
 $modelo = new EstadisticasModelo($pdo);
 
