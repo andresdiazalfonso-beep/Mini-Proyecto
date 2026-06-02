@@ -85,7 +85,7 @@ if($donacion_id && $estado){
 <?php if($estado == "pagado"): ?>
 
     <div class="text-7xl mb-5">
-        ❤️
+        <img src="../../assets/iconos/heart-svgrepo-com.svg" alt="corazon" class="w-[2em] h-[2em] inline-block align-middle">
     </div>
 
     <h1 class="text-4xl font-black text-[#e36935e6] mb-4">
@@ -100,7 +100,7 @@ if($donacion_id && $estado){
 
         <?php elseif($donacion_id): ?>
 
-            Gracias por apoyar nuestra ONG con tu donación ❤️
+            Gracias por apoyar nuestra ONG con tu donación <img src="../../assets/iconos/heart-svgrepo-com.svg" alt="corazon" class="w-[1em] h-[1em] inline-block align-middle">
 
         <?php endif; ?>
 
@@ -109,7 +109,7 @@ if($donacion_id && $estado){
 <?php else: ?>
 
     <div class="text-7xl mb-5">
-        ❌
+        <img src="../../assets/iconos/cross.svg" alt="mal" class="w-[2em] h-[2em] inline-block align-middle">
     </div>
 
     <h1 class="text-4xl font-black text-red-500 mb-4">
