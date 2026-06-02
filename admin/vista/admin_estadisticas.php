@@ -130,7 +130,7 @@ $totalesEstados = $totalesEstados ?? [];
         <div class="flex items-center justify-between">
             <div>
                 <p class="text-sm text-gray-400 uppercase font-semibold">
-                    Donaciones €
+                    Donaciones
                 </p>
 
                 <h2 class="text-4xl font-black mt-2 text-green-600">
