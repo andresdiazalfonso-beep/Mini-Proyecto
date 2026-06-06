@@ -63,7 +63,7 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
     <div class="bg-gradient-to-r from-[#e36935e6] to-orange-500 rounded-3xl p-8 text-white mb-8 shadow-lg">
 
         <h2 class="text-4xl font-black mb-2">
-            ¡Hola <?= htmlspecialchars($usuario['nombre']) ?>
+            ¡Hola <?= htmlspecialchars($usuario['nombre']) ?>!
         </h2>
 
         <p class="text-orange-100 text-lg flex items-center gap-2">
@@ -324,7 +324,7 @@ $pedidosRecientes = $stmtRecientes->fetchAll();
                 Explora nuestros productos y realiza tu primer pedido.
             </p>
 
-            <a href="productos.php"
+            <a href="../controlador/producto_controlador.php"
                class="bg-[#e36935e6] hover:bg-[#ce6538e8] text-white px-6 py-3 rounded-xl font-semibold transition">
 
                 Ver productos
