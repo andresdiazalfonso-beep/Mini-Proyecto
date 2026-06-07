@@ -1,5 +1,12 @@
 <?php
+session_start();
+
 $logueado = isset($_SESSION['usuario']);
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: ../pages/login.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
