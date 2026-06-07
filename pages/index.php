@@ -120,7 +120,7 @@ setInterval(()=>{ currentSlide=(currentSlide+1)%slides.length; showSlide(current
                 <div class="p-6 text-center">
                     <h3 class="text-xl font-bold mb-2">Donar productos</h3>
                     <p class="text-sm text-gray-600 mb-5">Alimentos y productos esenciales para familias que lo necesitan.</p>
-                    <a href="../pages/producto.php" class="btn w-full py-3 rounded-full bg-[#e36935e6]/80 text-white text-base transition-transform hover:-translate-y-0.5 duration-300">Donar Productos</a>
+                    <a href="../controlador/producto_controlador.php" class="btn w-full py-3 rounded-full bg-[#e36935e6]/80 text-white text-base transition-transform hover:-translate-y-0.5 duration-300">Donar Productos</a>
                 </div>
             </div>
 
