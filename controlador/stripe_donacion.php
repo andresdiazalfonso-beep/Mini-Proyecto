@@ -18,10 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] !== "POST") {
 }
 
 
-// ==========================
-// CANTIDAD
-// ==========================
-
+// Cantidad a donar
 if (!empty($_POST['cantidad_libre'])) {
 
     $cantidad = floatval($_POST['cantidad_libre']);
@@ -51,10 +48,7 @@ if ($cantidad < 1) {
 $pdo = Conexion::conectar();
 
 
-// ==========================
-// GUARDAR DONACIÓN PENDIENTE
-// ==========================
-
+// Crear pedido (pendiente)
 $stmt = $pdo->prepare("
     INSERT INTO donaciones_dinero 
     (id_usuario, cantidad, estado)
@@ -71,10 +65,7 @@ $stmt->execute([
 $donacion_id = $pdo->lastInsertId();
 
 
-// ==========================
-// CREAR SESIÓN STRIPE
-// ==========================
-
+// Crear sesión Stripe
 $session = \Stripe\Checkout\Session::create([
 
     'payment_method_types' => ['card'],
