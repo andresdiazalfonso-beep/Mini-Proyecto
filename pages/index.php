@@ -32,7 +32,7 @@ if (isset($_SESSION['usuario'])) {
         <div class="relative z-10 max-w-xl px-10 text-white ml-10">
             <h2 class="text-4xl font-bold mb-4">Millones de niños sufren desnutrición</h2>
             <p class="mb-6">Necesitan ayuda urgente.</p>
-            <a href="../pages/producto.php">
+            <a href="../controlador/producto_controlador.php">
                 <div class="btn bg-[#e36935e6]/80 px-6 py-3 font-semibold rounded-full border-0 text-white/70 transition-transform hover:-translate-y-0.5 duration-300">
                     Donar Productos
                 </div>
