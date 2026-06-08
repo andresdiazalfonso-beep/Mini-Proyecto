@@ -67,3 +67,4 @@ $session = \Stripe\Checkout\Session::create([
 
 header("Location: " . $session->url);
 exit();
+?>
