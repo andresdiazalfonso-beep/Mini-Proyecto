@@ -7,16 +7,15 @@ if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
     exit();
 }
 
-$pdo    = Conexion::conectar();
-$modelo = new UsuariosModelo($pdo);
-
 $accion     = isset($_GET['accion'])     ? htmlspecialchars(trim($_GET['accion']))  : "lista";
-$id_usuario = isset($_GET['id_usuario']) ? intval($_GET['id_usuario'])               : 0;
+$id_usuario = isset($_GET['id_usuario']) ? intval($_GET['id_usuario']) : 0;
+
+$filtro = $_filtro;
 
 $mensaje = $_SESSION['mensaje'] ?? "";
 unset($_SESSION['mensaje']);
 
-$usuarios = $modelo->obtenerUsuarios();
+$usuarios = $usuarios ?? [];
 ?>
 
 <!DOCTYPE html>
@@ -88,6 +87,41 @@ $usuarios = $modelo->obtenerUsuarios();
 
     <?php endif; endif; ?>
 
+    <!-- FILTRO -->
+    <div class="mb-6 bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+        <form method="GET" class="flex gap-2 items-center">
+
+            <select name="filtro" class="select select-bordered w-full max-w-xs">
+                <option value="recientes" <?= ($filtro ?? '') === 'recientes' ? 'selected' : '' ?>>
+                    Más recientes
+                </option>
+
+                <option value="nombre_asc" <?= ($filtro ?? '') === 'nombre_asc' ? 'selected' : '' ?>>
+                    Nombre A → Z
+                </option>
+
+                <option value="nombre_desc" <?= ($filtro ?? '') === 'nombre_desc' ? 'selected' : '' ?>>
+                    Nombre Z → A
+                </option>
+
+                <option value="rol_admin" <?= ($filtro ?? '') === 'rol_admin' ? 'selected' : '' ?>>
+                    Solo administradores
+                </option>
+
+                <option value="rol_usuario" <?= ($filtro ?? '') === 'rol_usuario' ? 'selected' : '' ?>>
+                    Solo usuarios
+                </option>
+            </select>
+
+            <button type="submit" class="btn bg-blue-500 text-white hover:bg-blue-600">
+                Filtrar
+            </button>
+
+            <a href="?accion=lista" class="btn btn-outline">
+                Reset
+            </a>
+        </form>
+    </div>
 
     <!-- TARJETA RESUMEN -->
     <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">

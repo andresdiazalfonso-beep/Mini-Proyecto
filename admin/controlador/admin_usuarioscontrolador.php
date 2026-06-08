@@ -74,6 +74,35 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
 }
 
+// Capturar parámetro de búsqueda
+$pdo    = Conexion::conectar();
+$modelo = new UsuariosModelo($pdo);
+$filtro = isset($_GET['filtro']) ? $_GET['filtro'] : 'recientes';
+
+$_filtro = $filtro;
+
+switch ($filtro) {
+    case 'nombre_asc':
+        $usuarios = $modelo->obtenerUsuariosOrdenados('nombre ASC');
+        break;
+
+    case 'nombre_desc':
+        $usuarios = $modelo->obtenerUsuariosOrdenados('nombre DESC');
+        break;
+
+    case 'rol_admin':
+        $usuarios = $modelo->obtenerUsuariosPorRol('admin');
+        break;
+
+    case 'rol_usuario':
+        $usuarios = $modelo->obtenerUsuariosPorRol('usuario');
+        break;
+
+    default:
+        $usuarios = $modelo->obtenerUsuarios(); // fecha_registro DESC
+        break;
+}
+
 /**
  * Carga de la vista de administración
  */

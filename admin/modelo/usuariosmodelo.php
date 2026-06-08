@@ -3,7 +3,7 @@
 class UsuariosModelo {
 
     /**
-     * @var PDO Conexión a la base de datos
+     * Conexión a la base de datos
      */
     private PDO $pdo;
 
@@ -69,6 +69,44 @@ class UsuariosModelo {
     public function totalUsuarios(): int {
         $stmt = $this->pdo->query("SELECT COUNT(*) FROM usuarios");
         return (int) $stmt->fetchColumn();
+    }
+
+    /**
+     * Busca usuarios de forma genérica
+     */
+    public function obtenerUsuariosOrdenados(string $orden): array {
+
+        $permitidos = [
+            'nombre ASC',
+            'nombre DESC',
+            'fecha_registro DESC'
+        ];
+
+        if (!in_array($orden, $permitidos)) {
+            $orden = 'fecha_registro DESC';
+        }
+
+        $sql = "SELECT id_usuario, nombre, email, rol, fecha_registro 
+                FROM usuarios 
+                ORDER BY $orden";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    /**
+     * Busca usuarios por rol
+     */
+    public function obtenerUsuariosPorRol(string $rol): array {
+        $sql = "SELECT id_usuario, nombre, email, rol, fecha_registro 
+                FROM usuarios 
+                WHERE rol = ?
+                ORDER BY fecha_registro DESC";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$rol]);
+        return $stmt->fetchAll();
     }
 }
 ?>
