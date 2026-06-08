@@ -25,7 +25,6 @@ $stmt->execute([
 
 $pedido_id = $pdo->lastInsertId();
 
-// Stripe line items
 $line_items = [];
 
 foreach($carrito as $item){
