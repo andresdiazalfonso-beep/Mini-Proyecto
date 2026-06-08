@@ -1,32 +1,55 @@
 <?php
+/**
+ * Inicialización del manejo de sesiones
+ */
 session_start();
+
+/**
+ * Inclusión de la clase de conexión y el modelo de gestión de pedidos
+ */
 require_once "../conexion/Conexion.php";
 require_once "../modelo/MisPedidosModelo.php";
 
+/**
+ * Control de acceso: Si no existe una sesión de usuario activa, redirige a la página de login
+ */
 if (!isset($_SESSION['usuario'])) {
     header("Location: login.php");
     exit();
 }
 
+/**
+ * Recuperación de los datos del usuario en sesión y configuración de las instancias de base de datos y modelo
+ */
 $usuario = $_SESSION['usuario'];
 $pdo     = Conexion::conectar();
 $modelo  = new MisPedidosModelo($pdo);
 
-// Paginación
+/**
+ * Define el número de registros por página
+ */
 $porPagina = 5;
 
+// Captura la página actual desde la URL. Por defecto es la página 1
 $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
 
+// Previene valores de página inferiores a 1
 if ($pagina < 1) {
     $pagina = 1;
 }
 
+// Obtiene la cantidad total de pedidos del usuario para calcular el número de páginas necesarias
 $totalPedidos = count($modelo->obtenerTodos((int)$usuario['id_usuario']));
 
+// Determina el número total de páginas redondeando hacia arriba
 $totalPaginas = ceil($totalPedidos / $porPagina);
 
+// Calcula la fila de inicio para la consulta SQL (offset)
 $offset = ($pagina - 1) * $porPagina;
 
+/**
+ * Recupera de forma paginada los pedidos correspondientes a la sección actual
+ */
 $pedidos = $modelo->obtenerPaginados(
     (int)$usuario['id_usuario'],
     $porPagina,
@@ -45,32 +68,10 @@ $pedidos = $modelo->obtenerPaginados(
 </head>
 <body class="bg-[#f5f5f5] font-[Poppins]">
 
-<!-- NAVBAR -->
-<nav class="bg-white shadow-sm border-b border-gray-200 px-6 py-4 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-xl bg-[#e36935e6] flex items-center justify-center text-white font-bold text-xl">
-            <img src="../assets/iconos/logo.svg">
-        </div>
-        <div>
-            <h1 class="font-bold text-xl text-gray-800">Help4Africa</h1>
-            <p class="text-xs text-gray-400">Mis Pedidos</p>
-        </div>
-    </div>
-    <div class="flex items-center gap-4">
-        <div class="hidden md:flex flex-col text-right">
-            <span class="font-semibold text-gray-700"><?= htmlspecialchars($usuario['nombre']) ?></span>
-            <span class="text-sm text-gray-400"><?= htmlspecialchars($usuario['email']) ?></span>
-        </div>
-        <a href="../controlador/logoutcontrolador.php"
-           class="bg-red-500 hover:bg-red-600 transition text-white px-4 py-2 rounded-lg text-sm font-semibold">
-            Cerrar sesión
-        </a>
-    </div>
-</nav>
+<?php include "../partials/header.php"; ?>
 
-<div class="max-w-7xl mx-auto p-6">
+<div class="max-w-7xl mx-auto px-6 pt-24 mt-10 pb-15">
 
-    <!-- CABECERA -->
     <div class="flex items-center justify-between mb-6">
         <div>
             <a href="usuario.php" class="flex items-center gap-1 text-[#e36935e6] font-semibold text-sm mb-2 hover:underline w-fit">
@@ -84,7 +85,6 @@ $pedidos = $modelo->obtenerPaginados(
         </div>
     </div>
 
-    <!-- TABLA -->
     <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
 
         <?php if (count($pedidos) > 0): ?>
@@ -125,42 +125,44 @@ $pedidos = $modelo->obtenerPaginados(
                 </tbody>
             </table>
         </div>
+        
         <?php if ($totalPaginas > 1): ?>
+        <div class="flex justify-center items-center gap-2 p-6">
 
-<div class="flex justify-center items-center gap-2 p-6">
+            <?php if ($pagina > 1): ?>
+                <a href="?pagina=<?= $pagina - 1 ?>"
+                   class="px-4 py-2 rounded-xl bg-white border border-gray-200 hover:bg-gray-100 transition">
+                    ←
+                </a>
+            <?php endif; ?>
 
-    <?php if ($pagina > 1): ?>
-        <a href="?pagina=<?= $pagina - 1 ?>"
-           class="px-4 py-2 rounded-xl bg-white border border-gray-200 hover:bg-gray-100 transition">
-            ←
-        </a>
-    <?php endif; ?>
+            <?php for ($i = 1; $i <= $totalPaginas; $i++): ?>
 
-    <?php for ($i = 1; $i <= $totalPaginas; $i++): ?>
+                <a href="?pagina=<?= $i ?>"
+                   class="px-4 py-2 rounded-xl font-semibold transition
+                   <?= $i == $pagina
+                        ? 'bg-[#e36935e6] text-white'
+                        : 'bg-white border border-gray-200 hover:bg-gray-100 text-gray-700' ?>">
+                    <?= $i ?>
+                </a>
 
-        <a href="?pagina=<?= $i ?>"
-           class="px-4 py-2 rounded-xl font-semibold transition
-           <?= $i == $pagina
-                ? 'bg-[#e36935e6] text-white'
-                : 'bg-white border border-gray-200 hover:bg-gray-100 text-gray-700' ?>">
-            <?= $i ?>
-        </a>
+            <?php endfor; ?>
 
-    <?php endfor; ?>
+            <?php if ($pagina < $totalPaginas): ?>
+                <a href="?pagina=<?= $pagina + 1 ?>"
+                   class="px-4 py-2 rounded-xl bg-white border border-gray-200 hover:bg-gray-100 transition">
+                    →
+                </a>
+            <?php endif; ?>
 
-    <?php if ($pagina < $totalPaginas): ?>
-        <a href="?pagina=<?= $pagina + 1 ?>"
-           class="px-4 py-2 rounded-xl bg-white border border-gray-200 hover:bg-gray-100 transition">
-            →
-        </a>
-    <?php endif; ?>
-
-</div>
-
-<?php endif; ?>
+        </div>
+        <?php endif; ?>
+        
         <?php else: ?>
         <div class="p-10 text-center">
-            <div class="text-6xl mb-4">📦</div>
+            <div class="text-6xl mb-4">
+                <img class="inline-block w-16 h-16 object-contain" src="../../assets/iconos/box-svgrepo-com.svg" alt="caja">
+            </div>
             <h3 class="text-xl font-bold text-gray-700 mb-2">No tienes pedidos todavía</h3>
             <p class="text-gray-400 mb-5">Explora nuestros productos y realiza tu primer pedido.</p>
             <a href="../controlador/producto_controlador.php"
