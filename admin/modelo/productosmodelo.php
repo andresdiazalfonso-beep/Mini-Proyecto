@@ -3,7 +3,7 @@
 class ProductoModelo {
 
     /**
-     * @var PDO Conexión a la base de datos
+     * Conexión a la base de datos
      */
     private PDO $pdo;
 
