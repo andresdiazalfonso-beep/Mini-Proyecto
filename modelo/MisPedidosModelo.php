@@ -1,12 +1,22 @@
 <?php
+
 class MisPedidosModelo {
 
+    /**
+     * Conexión a la base de datos
+     */
     private PDO $pdo;
 
+    /**
+     * Inicializa el modelo con la instancia de conexión PDO
+     */
     public function __construct(PDO $pdo) {
         $this->pdo = $pdo;
     }
 
+    /**
+     * Obtiene el historial completo de pedidos de un usuario específico ordenados por fecha de forma descendente
+     */
     public function obtenerTodos(int $idUsuario): array {
         $sql  = "SELECT id_pedido, total, estado, fecha
                  FROM pedidos
@@ -17,6 +27,9 @@ class MisPedidosModelo {
         return $stmt->fetchAll();
     }
 
+    /**
+     * Obtiene los pedidos de un usuario de forma paginada controlando el límite y el desplazamiento de los registros
+     */
     public function obtenerPaginados($idUsuario, $limit, $offset)
 {
     $sql = "SELECT * FROM pedidos

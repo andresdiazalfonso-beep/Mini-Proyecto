@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+/**
+ * Control de sesión: Comprueba si el usuario está autenticado y restringe el acceso directo a la vista
+ */
 $logueado = isset($_SESSION['usuario']);
 
 if (!isset($_SESSION['usuario'])) {
@@ -19,7 +22,9 @@ if (!isset($_SESSION['usuario'])) {
 </head>
 <body class="font-[Poppins] bg-[#f8f4f1]">
 <?php
-// Conexión a la base de datos siguiendo la ruta de tus otros archivos
+/**
+ * Inclusión de: Conexión a la base de datos y cabecera de la página
+ */
 require_once "../conexion/Conexion.php";
 require_once __DIR__."/../partials/header.php";
 ?>
@@ -36,7 +41,12 @@ require_once __DIR__."/../partials/header.php";
                 </p>
             </div>
 
-            <?php if (!empty($_SESSION['error_dinero'])): ?>
+            <?php 
+            /**
+             * Muestra y limpia los mensajes de error almacenados en la sesión en caso de fallos en el proceso
+             */
+            if (!empty($_SESSION['error_dinero'])): 
+            ?>
                 <p class="text-sm bg-red-50 p-3 rounded border-l-4 border-red-500 text-red-700 mb-6">
                     <?= htmlspecialchars($_SESSION['error_dinero']) ?>
                 </p>
@@ -125,7 +135,13 @@ require_once __DIR__."/../partials/header.php";
             </form>
         </div>
     </main>
-    <?php if(!$logueado): ?>
+    
+    <?php 
+    /**
+     * Inclusión condicional del pie de página si el usuario no ha iniciado sesión
+     */
+    if(!$logueado): 
+    ?>
         <?php include_once __DIR__.'/../partials/footer.php'; ?>
     <?php endif; ?>
 </body>

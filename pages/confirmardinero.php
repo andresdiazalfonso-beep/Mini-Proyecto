@@ -2,12 +2,17 @@
 session_start();
 require_once __DIR__ . "/../partials/header.php";
 
-// Si alguien entra aquí directamente sin haber donado, lo mandamos a dinero.php
+/**
+ * Control de acceso: Redirige a la página de donaciones si no existe un registro activo en la sesión
+ */
 if (!isset($_SESSION['donacion_cantidad'])) {
     header("Location: dinero.php");
     exit();
 }
 
+/**
+ * Recupera la cantidad donada para su visualización y limpia la variable de sesión para evitar duplicados al recargar
+ */
 $cantidad = $_SESSION['donacion_cantidad'];
 unset($_SESSION['donacion_cantidad']);
 ?>
@@ -46,7 +51,12 @@ unset($_SESSION['donacion_cantidad']);
         </div>
     </main>
 
-    <?php include_once __DIR__ . "/../partials/footer.php"; ?>
+    <?php 
+    /**
+     * Inclusión del pie de página común de la aplicación
+     */
+    include_once __DIR__ . "/../partials/footer.php"; 
+    ?>
 
 </body>
 </html>
