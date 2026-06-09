@@ -1,24 +1,12 @@
 <?php
-/**
- * Inclusión de: conexión, modelos y utilidades auxiliares
- */
+
 require_once "../conexion/Conexion.php";
 require_once "../modelo/Producto.php";
 require_once "../modelo/Carrito.php";
 require_once "../Helpers/Helpers.php";
 
-/**
- * Inicialización de la sesión
- */
-session_start();
 
-/**
- * Control de acceso global: Redirige a la pantalla de login si el usuario no ha iniciado sesión
- */
-if (!isset($_SESSION['usuario'])) {
-    header("Location: ../pages/login.php");
-    exit;
-}
+session_start();
 
 /**
  * Inicialización del carrito: Crea una nueva instancia de la clase Carrito en la sesión si no existe previamente
@@ -27,14 +15,7 @@ if(!isset($_SESSION['carrito'])){
     $_SESSION['carrito'] = new Carrito();
 }
 
-/**
- * Recupera la instancia del carrito guardada en la sesión actual
- */
 $carrito = $_SESSION['carrito'];
-
-/**
- * Establece la conexión PDO activa con la base de datos
- */
 $conexion = Conexion::conectar();
 
 try{
