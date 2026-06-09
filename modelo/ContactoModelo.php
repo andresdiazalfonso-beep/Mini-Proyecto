@@ -1,16 +1,29 @@
 <?php
+
 class ContactoModelo {
 
+    /**
+     * Conexión a la base de datos
+     */
     private PDO $pdo;
 
+    /**
+     * Inicializa el modelo con la instancia de conexión PDO
+     */
     public function __construct(PDO $pdo) {
         $this->pdo = $pdo;
     }
 
+    /**
+     * Limpia y sanea una cadena de texto eliminando espacios y convirtiendo caracteres especiales
+     */
     public function sanear(string $dato): string {
         return htmlspecialchars(trim($dato));
     }
 
+    /**
+     * Valida la longitud y formato de los datos recibidos del formulario de contacto
+     */
     public function validar(array $datos): array {
         $errores = [];
 
@@ -29,6 +42,9 @@ class ContactoModelo {
         return $errores;
     }
 
+    /**
+     * Inserta los datos del mensaje de contacto en la base de datos
+     */
     public function guardar(array $datos): bool {
         $sql = "INSERT INTO contactos (nombre, email, asunto, mensaje) VALUES (?, ?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);

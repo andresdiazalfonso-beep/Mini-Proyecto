@@ -32,7 +32,7 @@ $totalDonado = $stmtDonaciones->fetchColumn() ?? 0;
 /* PEDIDOS RECIENTES */
 $sqlRecientes = "SELECT * FROM pedidos
                  WHERE id_usuario = ?
-                 ORDER BY fecha DESC
+                 ORDER BY fecha_pedido DESC
                  LIMIT 5";
 $stmtRecientes = $pdo->prepare($sqlRecientes);
 $stmtRecientes->execute([$usuario['id_usuario']]);

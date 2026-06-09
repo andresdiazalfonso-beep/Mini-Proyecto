@@ -13,7 +13,7 @@ class PerfilModelo {
     }
 
     /**
-     * Obtiene todos los datos del usuario por ID.
+     * Obtiene todos los datos del usuario por ID
      */
     public function obtenerPorId(int $id): ?array {
         $sql = "SELECT id_usuario, nombre, email, rol, fecha_registro FROM usuarios WHERE id_usuario = ? LIMIT 1";
@@ -24,7 +24,7 @@ class PerfilModelo {
     }
 
     /**
-     * Comprueba si ya existe otro usuario con ese nombre (excluyendo el propio).
+     * Comprueba si ya existe otro usuario con ese nombre (excluyendo el propio)
      */
     public function nombreExiste(string $nombre, int $excluirId): bool {
         $sql = "SELECT 1 FROM usuarios WHERE nombre = ? AND id_usuario != ? LIMIT 1";
@@ -34,7 +34,7 @@ class PerfilModelo {
     }
 
     /**
-     * Comprueba si ya existe otro usuario con ese email (excluyendo el propio).
+     * Comprueba si ya existe otro usuario con ese email (excluyendo el propio)
      */
     public function emailExiste(string $email, int $excluirId): bool {
         $sql = "SELECT 1 FROM usuarios WHERE email = ? AND id_usuario != ? LIMIT 1";
@@ -44,7 +44,7 @@ class PerfilModelo {
     }
 
     /**
-     * Valida los datos antes de actualizar el perfil.
+     * Valida los datos antes de actualizar el perfil
      */
     public function validar(array $datos, int $idUsuario): array {
         $errores = [];
@@ -69,7 +69,7 @@ class PerfilModelo {
     }
 
     /**
-     * Actualiza nombre y email del usuario.
+     * Actualiza nombre y email del usuario
      */
     public function actualizar(int $id, string $nombre, string $email): bool {
         $sql = "UPDATE usuarios SET nombre = ?, email = ? WHERE id_usuario = ?";

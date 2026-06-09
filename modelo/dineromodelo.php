@@ -17,8 +17,8 @@ class DineroModelo {
             return $stmt->execute([$id_usuario, $cantidad]);
             
         } catch (PDOException $e) {
-            // Opcional: registrar el error en un log
-            // error_log("Error al guardar donación: " . $e->getMessage());
+            // Opcional: registrar el error
+            // ("Error al guardar donación: " . $e->getMessage());
             return false;
         }
     }

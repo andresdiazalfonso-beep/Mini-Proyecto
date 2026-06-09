@@ -1,16 +1,29 @@
 <?php
+
 class RegistroModelo {
 
+    /**
+     * Conexión a la base de datos
+     */
     private PDO $pdo;
 
+    /**
+     * Inicializa el modelo con la instancia de conexión PDO
+     */
     public function __construct(PDO $pdo) {
         $this->pdo = $pdo;
     }
 
+    /**
+     * Limpia y sanea una cadena de texto eliminando espacios y convirtiendo caracteres especiales
+     */
     public function sanear(string $datos) {
         return htmlspecialchars(trim($datos));
     }
 
+    /**
+     * Valida los datos del formulario de registro y comprueba la disponibilidad del email
+     */
     public function validar_datos(array $datos) {
         $errores = [];
 
@@ -41,6 +54,9 @@ class RegistroModelo {
         return $errores;
     }
 
+    /**
+     * Encripta la contraseña y registra al nuevo usuario en la base de datos
+     */
     public function guardar_registro(array $datos) {
         $sql = "INSERT INTO usuarios (nombre, email, password) VALUES (?, ?, ?)";
         $stmt = $this->pdo->prepare($sql);
