@@ -12,9 +12,6 @@ require_once "../Helpers/Helpers.php";
  */
 session_start();
 
-<<<<<<< HEAD
-
-=======
 /**
  * Control de acceso global: Redirige a la pantalla de login si el usuario no ha iniciado sesión
  */
@@ -26,7 +23,6 @@ if (!isset($_SESSION['usuario'])) {
 /**
  * Inicialización del carrito: Crea una nueva instancia de la clase Carrito en la sesión si no existe previamente
  */
->>>>>>> 948df8222a856942d13a81a7a69f56f47af059cc
 if(!isset($_SESSION['carrito'])){
     $_SESSION['carrito'] = new Carrito();
 }
