@@ -6,11 +6,6 @@ require_once "../Helpers/Helpers.php";
 
 session_start();
 
-if (!isset($_SESSION['usuario'])) {
-    header("Location: ../pages/login.php");
-    exit;
-}
-
 
 if(!isset($_SESSION['carrito'])){
     $_SESSION['carrito'] = new Carrito();
