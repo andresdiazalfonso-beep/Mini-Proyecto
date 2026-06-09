@@ -169,7 +169,6 @@ $usuarios = $modelo->obtenerUsuarios();
         <table class="table-auto w-full border-collapse">
             <thead>
                 <tr class="bg-gray-100 text-center">
-                    <th class="px-4 py-3 border-b">ID</th>
                     <th class="px-4 py-3 border-b">Nombre</th>
                     <th class="px-4 py-3 border-b">Email</th>
                     <th class="px-4 py-3 border-b">Rol</th>
@@ -180,7 +179,6 @@ $usuarios = $modelo->obtenerUsuarios();
             <tbody>
                 <?php foreach ($usuarios as $usuario): ?>
                 <tr class="border-b hover:bg-gray-50 transition-colors text-center">
-                    <td class="px-4 py-4"><?= $usuario['id_usuario'] ?></td>
                     <td class="px-4 py-4 font-medium"><?= htmlspecialchars($usuario['nombre']) ?></td>
                     <td class="px-4 py-4 text-gray-500"><?= htmlspecialchars($usuario['email']) ?></td>
                     <td class="px-4 py-4">
