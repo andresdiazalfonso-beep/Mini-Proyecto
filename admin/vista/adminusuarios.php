@@ -1,5 +1,5 @@
 <?php
-require_once "../modelo/UsuariosModelo.php";
+require_once "../modelo/usuariosmodelo.php";
 require_once "../../conexion/Conexion.php";
 
 if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
@@ -10,7 +10,7 @@ if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
 $accion     = isset($_GET['accion'])     ? htmlspecialchars(trim($_GET['accion']))  : "lista";
 $id_usuario = isset($_GET['id_usuario']) ? intval($_GET['id_usuario']) : 0;
 
-$filtro = $_filtro;
+$filtro = $_GET['filtro'] ?? '';
 
 $mensaje = $_SESSION['mensaje'] ?? "";
 unset($_SESSION['mensaje']);
